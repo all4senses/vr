@@ -1,0 +1,6 @@
+name = VR Blocks
+package = VoIP Rater
+description = "Defines different blocks for the site including ones for side bars and MegaMenu"
+core = 7.x
+tags[] = VoIP Rater
+files[] = vr_blocks.module

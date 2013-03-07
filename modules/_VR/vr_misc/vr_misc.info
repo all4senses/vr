@@ -1,0 +1,6 @@
+name = VR Misc
+package = VoIP Rater
+description = "Miscelanious helper functions and hooks implementations"
+core = 7.x
+tags[] = VoIP Rater
+files[] = vr_misc.module

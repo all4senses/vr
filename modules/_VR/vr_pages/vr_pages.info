@@ -1,0 +1,6 @@
+name = VR Pages
+package = VoIP Rater
+description = "Various functions and forms for pages"
+core = 7.x
+tags[] = VoIP Rater
+files[] = vr_pages.module
