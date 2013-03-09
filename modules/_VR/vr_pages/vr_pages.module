@@ -349,7 +349,7 @@ function vr_misc_process_html(&$vars) {
  */
 function vr_misc_js_alter(&$javascript) {
 
-  return;
+  
   ////global $user;
   ////if (!$user->uid) {
     
