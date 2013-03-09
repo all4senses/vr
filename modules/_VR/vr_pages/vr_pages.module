@@ -349,6 +349,7 @@ function vr_misc_process_html(&$vars) {
  */
 function vr_misc_js_alter(&$javascript) {
 
+  return;
   ////global $user;
   ////if (!$user->uid) {
     
@@ -446,18 +447,18 @@ function vr_misc_flush_caches() {
 //  variable_set('vr_allReviewsAmount', $num_votes + 100);
   
   // Reset blog archive block content.
-  $view = views_get_view('archive');
-  $view->preview('block_blog_summary');
-  $blog_summary = '';
-  if (!empty($view->result)) {
-    foreach ($view->result as $item) {
-      $url = preg_replace('/^(.*)(....)(..)$/', '$1$2/$3', $item->url);
-      $url = str_replace('http://www.voiprater.com/', '', $url);
-      $blog_summary .= '<li><a href="/' . $url . '">' . $item->link . '</a></li>';
-    }
-
-    variable_set('vr_blog_summary', $blog_summary);
-  }
+//  $view = views_get_view('archive');
+//  $view->preview('block_blog_summary');
+//  $blog_summary = '';
+//  if (!empty($view->result)) {
+//    foreach ($view->result as $item) {
+//      $url = preg_replace('/^(.*)(....)(..)$/', '$1$2/$3', $item->url);
+//      $url = str_replace('http://www.voiprater.com/', '', $url);
+//      $blog_summary .= '<li><a href="/' . $url . '">' . $item->link . '</a></li>';
+//    }
+//
+//    variable_set('vr_blog_summary', $blog_summary);
+//  }
   
 }
 
