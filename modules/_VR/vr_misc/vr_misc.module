@@ -3602,7 +3602,7 @@ function vr_misc_import_wp_blogPosts() {
     
     
     // Add only one node.
-    //vr_misc_createNode_BlogPost($form_state);
+    vr_misc_createNode_BlogPost($form_state);
     //break;
     
     $form_states[] = $form_state['values'];
@@ -3662,6 +3662,11 @@ function vr_misc_createNode_BlogPost($form_state) {
   
   $node->field_categories[$node->language][0]['tid'] = $form_state['values']['category'];
   
+  if (!empty($form_state['values']['tags'])) {
+    foreach ($form_state['values']['tags'] as $tag) {
+      $node->field_tags[$node->language][]['tid'] = $tag->drupal_tag->tid;
+    }
+  } 
   
   $node->path = array(
     'alias' => $form_state['values']['url_alias'],
@@ -3672,10 +3677,13 @@ function vr_misc_createNode_BlogPost($form_state) {
   //dpm($node);
   //return;
   
-  if ($node = node_submit($node)) {
-    node_save($node);
-    drupal_set_message('Saved, Ok!', 'warning');
-  }
+  
+  dpm($node);
+  
+//  if ($node = node_submit($node)) {
+//    node_save($node);
+//    drupal_set_message('Saved, Ok!', 'warning');
+//  }
   
 }
 
