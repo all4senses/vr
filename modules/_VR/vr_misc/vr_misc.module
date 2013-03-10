@@ -3475,8 +3475,10 @@ function vr_misc_import_wp_blogPosts() {
         ->fields('vp', array('ID', 'post_content', 'post_title', 'post_name', 'post_parent', 'post_date', 'post_modified'));
   $query->leftJoin('wp_term_relationships', 'tr', 'tr.object_id = vp.ID');
   $query->leftJoin('wp_term_taxonomy', 'td', 'td.term_taxonomy_id = tr.term_taxonomy_id');
+  $query->leftJoin('wp_terms', 'tt', 'tt.term_id = td.term_taxonomy_id');
   //$query->fields('tr', array('term_taxonomy_id'));
   $query->fields('td', array('term_taxonomy_id', 'description'));
+  $query->fields('tt', array('name', 'slug'));
   
   $query->condition('vp.post_status', 'publish');
   $query->condition('vp.post_type', 'post');
