@@ -3500,6 +3500,26 @@ function vr_misc_import_wp_blogPosts() {
   
   foreach ($results as $result) {
     
+    $query = db_select('wp_term_relationships', 'tr')
+        ->fields('tr', array('term_taxonomy_id'));
+    //$query->leftJoin('wp_term_relationships', 'tr', 'tr.object_id = vp.ID');
+    $query->leftJoin('wp_term_taxonomy', 'td', 'td.term_taxonomy_id = tr.term_taxonomy_id');
+    $query->leftJoin('wp_terms', 'tt', 'tt.term_id = td.term_taxonomy_id');
+    //$query->fields('tr', array('term_taxonomy_id'));
+    //$query->fields('td', array('term_taxonomy_id', 'description'));
+    $query->fields('tt', array('name', 'slug'));
+
+    $query->condition('tr.object_id', $result->ID);
+    //$query->condition('vp.post_type', 'post');
+    $query->condition('td.taxonomy', 'post_tag'); // 3 - Features, 4 - News
+    //$query->condition('tr.term_taxonomy_id', 4); // 3 - Features, 4 - News
+
+    $query->orderBy('term_taxonomy_id');
+    //$query->range(0, 20);
+    $results2 = $query->execute()->fetchAllAssoc('term_taxonomy_id');
+
+    dpm($results2);
+    
     $form_state['values'] = array(
       'title' => $result->post_title,
       'post_date' => $result->post_date,
@@ -3510,6 +3530,8 @@ function vr_misc_import_wp_blogPosts() {
       'url_alias' =>  'articles/' . $result->slug . '/' . $result->post_name . '-' . $result->ID,
       'ID' => $result->ID,
     );
+    
+    
     
     $form_state['values']['body']['und'][0]['value'] = str_replace('--', '-', $result->post_content);
     
