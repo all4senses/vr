@@ -3678,7 +3678,7 @@ function vr_misc_createNode_BlogPost($form_state) {
   //return;
   
   
-  dpm($node);
+  dpm($node); 
   
   if ($node = node_submit($node)) {
     node_save($node);
