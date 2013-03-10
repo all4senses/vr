@@ -3495,9 +3495,9 @@ function vr_misc_import_wp_blogPosts() {
 
   foreach ($tags as $key => $tag) {
     $tags[$key]->name = str_replace('&amp;', '&', $tags[$key]->name);
-//    $term = new stdClass();
-//    $term->name = $tag->name;
-//    $term->vid = 1;
+    $term = new stdClass();
+    $term->name = $tag->name;
+    $term->vid = 1;
   }
   dpm($tags);
   
