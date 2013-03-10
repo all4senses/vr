@@ -3491,10 +3491,15 @@ function vr_misc_import_wp_blogPosts() {
   //$query->range(0, 20);
   $tags = $query->execute()->fetchAllAssoc('term_id');
 
-  dpm($tags);
+  //dpm($tags);
 
-  
-  
+  foreach ($tags as $key => $tag) {
+    $tags[$key]->name = str_replace('&amp;', '&', $tags[$key]->name);
+//    $term = new stdClass();
+//    $term->name = $tag->name;
+//    $term->vid = 1;
+  }
+  dpm($tags);
   
   $query = db_select('wp_posts', 'vp')
         ->fields('vp', array('ID', 'post_content', 'post_title', 'post_name', 'post_parent', 'post_date', 'post_modified'));
