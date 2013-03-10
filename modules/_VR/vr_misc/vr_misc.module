@@ -2722,11 +2722,13 @@ function vr_misc_testPage() {
   $out = '<div>Start test...</div>';
 
   
+  vr_misc_import_wp_blogPosts();
+  
   /*
   //vr_misc_import_wp_features();
   //vr_misc_import_wp_equipment();
   
-  //vr_misc_import_wp_blogPosts();
+  
   
   //vr_misc_import_wp_providers();
 
@@ -2794,7 +2796,7 @@ function vr_misc_testPage() {
   }
   */
   
-  $out .= md5('1');
+  
   
   return $out . '<br>End of Test';
 }

@@ -7,7 +7,9 @@
       
       <div id="logo-block">
         <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Rater Home'; ?>" id="logo">VoIP Rater
+          <?php  /*
           <img src="<?php echo '/sites/all/themes/vr/css/images/vr-logo-top.png'; ?>" alt="VoIP Now" title="<?php print 'VoIP Rater Home'; ?>" />
+          */ ?>
         </a>
         
       </div>
