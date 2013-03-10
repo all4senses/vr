@@ -3531,7 +3531,7 @@ function vr_misc_import_wp_blogPosts() {
   //$query->range(0, 20);
   $results = $query->execute()->fetchAllAssoc('ID');
   
-  dpm($results);
+  //dpm($results);
   
   $category_map = array(
     3 => 1, 
