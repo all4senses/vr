@@ -3603,7 +3603,7 @@ function vr_misc_import_wp_blogPosts() {
     
     // Add only one node.
     vr_misc_createNode_BlogPost($form_state);
-    break;
+    //break;
     
     $form_states[] = $form_state['values'];
   }
