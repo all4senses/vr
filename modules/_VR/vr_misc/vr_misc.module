@@ -3603,7 +3603,7 @@ function vr_misc_import_wp_blogPosts() {
     
     // Add only one node.
     vr_misc_createNode_BlogPost($form_state);
-    //break;
+    break;
     
     $form_states[] = $form_state['values'];
   }
@@ -3680,10 +3680,10 @@ function vr_misc_createNode_BlogPost($form_state) {
   
   dpm($node);
   
-//  if ($node = node_submit($node)) {
-//    node_save($node);
-//    drupal_set_message('Saved, Ok!', 'warning');
-//  }
+  if ($node = node_submit($node)) {
+    node_save($node);
+    drupal_set_message('Saved, Ok!', 'warning');
+  }
   
 }
 
