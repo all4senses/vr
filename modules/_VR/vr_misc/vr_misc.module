@@ -3561,7 +3561,15 @@ function vr_misc_import_wp_blogPosts() {
     $tags = $query->execute()->fetchAllAssoc('name');
 
     foreach ($tags as $key => $tag) {
-      $tags[$key]->drupal_tag = $drupal_tags[$key];
+      if (strpos($tags[$key]->name, '&amp;')) {
+        $new_tag_name = str_replace('&amp;', '&', $tags[$key]->name);
+        $tags[$new_tag_name] = $tags[$key];
+        $tags[$new_tag_name]->drupal_tag = $drupal_tags[$new_tag_name];
+        unset($tags[$key]);
+      }
+      else {
+        $tags[$key]->drupal_tag = $drupal_tags[$key];
+      }
     }
     //dpm($results2);
     
