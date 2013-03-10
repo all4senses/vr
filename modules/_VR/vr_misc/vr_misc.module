@@ -3492,8 +3492,10 @@ function vr_misc_import_wp_blogPosts() {
   dpm($results);
   
   $category_map = array(
-    3 => 1, // Features
-    4 => 2, // News
+    3 => 1, 
+    5 => 4, 
+    13 => 2,
+    61 => 3,
   );
   
   foreach ($results as $result) {
@@ -3503,9 +3505,9 @@ function vr_misc_import_wp_blogPosts() {
       'post_date' => $result->post_date,
       'created' => strtotime($result->post_date),
       'changed' => strtotime($result->post_modified),
-      //'category' => $category_map[$result->term_taxonomy_id],
-      'category' => $result->term_taxonomy_id,
-      'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
+      'category' => $category_map[$result->term_taxonomy_id],
+      //'category' => $result->term_taxonomy_id,
+      'url_alias' =>  'articles/' . $result->slug . '/' . $result->post_name . '-' . $result->ID,
       'ID' => $result->ID,
     );
     
