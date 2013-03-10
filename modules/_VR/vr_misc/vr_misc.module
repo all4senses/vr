@@ -3498,6 +3498,7 @@ function vr_misc_import_wp_blogPosts() {
     $term = new stdClass();
     $term->name = $tag->name;
     $term->vid = 1;
+    taxonomy_term_save($term);
   }
   dpm($tags);
   
