@@ -3471,14 +3471,14 @@ function vr_misc_createNode_provider($form_state) {
  */
 function vr_misc_import_wp_blogPosts() { 
   
-  $query = db_select('voip_posts', 'vp')
+  $query = db_select('wp_posts', 'vp')
         ->fields('vp', array('ID', 'post_content', 'post_title', 'post_name', 'post_parent', 'post_date', 'post_modified'));
-  $query->leftJoin('voip_term_relationships', 'tr', 'tr.object_id = vp.ID');
+  $query->leftJoin('wp_term_relationships', 'tr', 'tr.object_id = vp.ID');
   $query->fields('tr', array('term_taxonomy_id'));
   
   $query->condition('vp.post_status', 'publish');
   $query->condition('vp.post_type', 'post');
-  $query->condition('tr.term_taxonomy_id', 4); // 3 - Features, 4 - News
+  //$query->condition('tr.term_taxonomy_id', 4); // 3 - Features, 4 - News
   
   $query->orderBy('ID');
   //$query->range(0, 20);
@@ -3498,7 +3498,8 @@ function vr_misc_import_wp_blogPosts() {
       'post_date' => $result->post_date,
       'created' => strtotime($result->post_date),
       'changed' => strtotime($result->post_modified),
-      'category' => $category_map[$result->term_taxonomy_id],
+      //'category' => $category_map[$result->term_taxonomy_id],
+      'category' => $result->term_taxonomy_id,
       'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
       'ID' => $result->ID,
     );
@@ -3518,9 +3519,11 @@ function vr_misc_import_wp_blogPosts() {
     
     
     // Add only one node.
-    vr_misc_createNode_BlogPost($form_state);
+    //vr_misc_createNode_BlogPost($form_state);
     //break;
   }
+  
+  dpm($form_state['values']);
 }
 
 
