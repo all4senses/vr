@@ -3556,9 +3556,9 @@ function vr_misc_import_wp_blogPosts() {
     $query->condition('td.taxonomy', 'post_tag'); // 3 - Features, 4 - News
     //$query->condition('tr.term_taxonomy_id', 4); // 3 - Features, 4 - News
 
-    $query->orderBy('term_taxonomy_id');
+    $query->orderBy('name');
     //$query->range(0, 20);
-    $tags = $query->execute()->fetchAllAssoc('term_taxonomy_id');
+    $tags = $query->execute()->fetchAllAssoc('name');
 
     foreach ($tags as $key => $tag) {
       $tags[$key]->drupal_tag = $drupal_tags[$key];
