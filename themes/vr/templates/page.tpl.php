@@ -26,7 +26,7 @@
 //        else {
 //          echo '<div id="block-vr-blocks-header-links"><div class="follow-us">Follow Us</div>', vr_blocks_get_headerLinks(), '</div>', render($page['header']); 
 //        }
-      ?>b
+      ?>
     </nav> <!-- /#navigation -->
 
     <?php ////if ($breadcrumb): print $breadcrumb; endif;?>
