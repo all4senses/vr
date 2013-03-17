@@ -47,7 +47,26 @@ function vr_pages_menu() {
     'type' => MENU_CALLBACK,
   );
   
- 
+
+  
+
+ // Blog archive urls.
+  $view = views_get_view('archive');
+  $view->preview('block_blog_summary'/*, $args*/);
+  //dpm($view);
+  foreach ($view->result as $item) {
+    $url = preg_replace('/^(.*)(....)(..)$/', '$1$2/$3', $item->url);
+    $url = str_replace('http://www.voiprater.com/', '', $url);
+    
+    $items[$url] = array(
+      'title' => 'Blog archive on ' . $url,
+      //'description' => 'Blog archive on ' . $url,
+      'page callback' => 'vr_pages_getBlogArchivePage',
+      'page arguments' => array($url),
+      'access arguments' => array('access content'),  
+      'type' => MENU_CALLBACK,
+    );
+  }
   
   return $items;
 }
