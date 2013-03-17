@@ -1615,6 +1615,9 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
               '#title' => 'Hide Web Site',
               '#default_value' => isset($p_data['info']['i_web_hide']) ? $p_data['info']['i_web_hide'] : 0,
             );
+            
+            
+            /*
             $form['data_info']['best_deal_field'] = array(
               '#type' => 'fieldset',
               '#collapsible' => TRUE,
@@ -1659,6 +1662,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
                   '#default_value' => isset($p_data['info']['coupon_field']['link']) ? $p_data['info']['coupon_field']['link'] : '',
                 );
                 
+            */
                 
 //            $form['data_info']['i_email'] = array(
 //              '#type' => 'textfield',
@@ -1746,41 +1750,6 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
               }
       
               
-      
-              
-              
-      $wp_fields = unserialize(WP_FIELDS);
-      
-      $form['wp_fields'] = array(
-        '#type' => 'fieldset',
-        '#title' => 'WP Fields',
-        '#collapsible' => TRUE,
-        '#collapsed' => TRUE,
-        '#tree' => TRUE,
-        '#weight' => 14,
-      );
-      
-            foreach ($wp_fields as $wp_group_title => $wp_group) {
-              
-              $form['wp_fields'][$wp_group_title] = array(
-                '#type' => 'fieldset',
-                '#title' => $wp_group_title,
-                '#collapsible' => TRUE,
-                '#collapsed' => TRUE,
-              );
-              
-                foreach ($wp_group as $wp_key => $wp_title) {
-                  $form['wp_fields'][$wp_group_title][$wp_key] = array(
-                      '#type' => ($wp_group_title == 'Marketing' ? 'textarea' : 'textfield'),
-                      '#title' => $wp_title,
-                      '#default_value' => isset($p_data['wp_fields'][$wp_group_title][$wp_key]) ? $p_data['wp_fields'][$wp_group_title][$wp_key] : '',
-                    );
-                }
-            }
-            
-      
-            
-            
             
       $service_types = unserialize(SERVICE_TYPES);
       $service_descriptions = unserialize(SERVICE_DESCRIPTIONS);
@@ -1800,7 +1769,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
               
               $form['s'][$service_type_key] = array(
                 '#type' => 'fieldset',
-                '#title' => t("$service_type_title serviСЃes"),
+                '#title' => t("$service_type_title services"),
                 '#collapsible' => TRUE,
                 '#collapsed' => TRUE,
                 '#states' => array(
@@ -2714,7 +2683,7 @@ function vr_pages_validateForm_provider(&$form, &$form_state) {
   
   //dpm($form_state['values']['wp_fields']);
   
-  $p_data['wp_fields'] = $form_state['values']['wp_fields'];
+  
   $p_data['info'] = $form_state['values']['data_info'];
   //$p_data['quote'] = $form_state['values']['data_quote'];
   
@@ -2814,9 +2783,10 @@ function vr_pages_validateForm_provider(&$form, &$form_state) {
     $p_data_quick['offers'][] = $form_state['values']['wp_fields']['Marketing']['af_offer2'];
   }
   */
-  $p_data_quick['offers'] = $p_data['info']['offers_field']['offers']['value'];
-  $p_data_quick['best_deal'] = $p_data['info']['best_deal_field']['best_deal']['value'];
-  $p_data_quick['coupon'] = array('offers' => $p_data['info']['coupon_field']['offers'], 'link' => $p_data['info']['coupon_field']['link']);
+  
+//  $p_data_quick['offers'] = $p_data['info']['offers_field']['offers']['value'];
+//  $p_data_quick['best_deal'] = $p_data['info']['best_deal_field']['best_deal']['value'];
+//  $p_data_quick['coupon'] = array('offers' => $p_data['info']['coupon_field']['offers'], 'link' => $p_data['info']['coupon_field']['link']);
 
   
   // Define all provider's
