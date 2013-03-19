@@ -2891,8 +2891,6 @@ function vr_misc_testPage() {
   $out = '<div>Start test...</div>';
 
   
-  node_add_body_field($types['quiz']);
-  
   
   
   vr_misc_import_wp_blogPosts();
@@ -3179,7 +3177,7 @@ function vr_misc_comment_save($comment) {
  */
 function vr_misc_import_wp_blogPosts() { 
   
-  /*
+  
   
   $query = db_select('wp_terms', 'tt')
       ->fields('tt', array('term_id', 'name',	'slug'));
@@ -3198,21 +3196,22 @@ function vr_misc_import_wp_blogPosts() {
 
   foreach ($tags as $key => $tag) {
     $tags[$key]->name = str_replace('&amp;', '&', $tags[$key]->name);
-//    $term = new stdClass();
-//    $term->name = $tag->name;
-//    $term->vid = 1;
-//    taxonomy_term_save($term);
+    $term = new stdClass();
+    $term->name = $tag->name;
+    $term->vid = 1;
+    taxonomy_term_save($term);
   }
   dpm($tags);
-  */
   
+  
+  return;
   
   
   $query = db_select('taxonomy_term_data', 'td')
       ->fields('td', array('tid', 'name',	'vid'));
   $query->condition('vid', 1);
   $drupal_tags = $query->execute()->fetchAllAssoc('name');
-  dpm($drupal_tags);
+  //dpm($drupal_tags);
 
   
   
