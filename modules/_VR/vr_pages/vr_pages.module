@@ -1520,7 +1520,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
             '#type' => 'text_format',
             '#format' => 'full_html',
             '#title' => 'Pricing Structure',
-            '#default_value' => isset($p_data['pricing_structure']['value']) ? $p_data['pricing_structure']['value'] : '',
+            '#default_value' => isset($p_data['pricing_structure']) ? $p_data['pricing_structure'] : '',
             '#weight' => 13,
           );
             
@@ -1528,7 +1528,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
             '#type' => 'text_format',
             '#format' => 'full_html',
             '#title' => 'Customer Service',
-            '#default_value' => isset($p_data['customer_service']['value']) ? $p_data['customer_service']['value'] : '',
+            '#default_value' => isset($p_data['customer_service']) ? $p_data['customer_service'] : '',
             '#weight' => 14,
           );
           
@@ -1536,7 +1536,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
             '#type' => 'text_format',
             '#format' => 'full_html',
             '#title' => 'Available Features',
-            '#default_value' => isset($p_data['available_features']['value']) ? $p_data['available_features']['value'] : '',
+            '#default_value' => isset($p_data['available_features']) ? $p_data['available_features'] : '',
             '#weight' => 15,
           );
       
@@ -2551,9 +2551,9 @@ function vr_pages_validateForm_provider(&$form, &$form_state) {
   
   $p_data['info'] = $form_state['values']['data_info'];
   
-  $p_data['pricing_structure'] = $form_state['values']['pricing_structure'];
-  $p_data['customer_service'] = $form_state['values']['customer_service'];
-  $p_data['available_features'] = $form_state['values']['available_features'];
+  $p_data['pricing_structure'] = $form_state['values']['pricing_structure']['value'];
+  $p_data['customer_service'] = $form_state['values']['customer_service']['value'];
+  $p_data['available_features'] = $form_state['values']['available_features']['value'];
   
   
   
