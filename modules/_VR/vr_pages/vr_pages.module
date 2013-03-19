@@ -1514,7 +1514,31 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
 //            );
       
                 
-                
+            
+            
+          $form['pricing_structure'] = array(
+            '#type' => 'text_format',
+            '#format' => 'full_html',
+            '#title' => 'Pricing Structure',
+            '#default_value' => isset($p_data['pricing_structure']['value']) ? $p_data['pricing_structure']['value'] : '',
+            '#weight' => 13,
+          );
+            
+          $form['customer_service'] = array(
+            '#type' => 'text_format',
+            '#format' => 'full_html',
+            '#title' => 'Customer Service',
+            '#default_value' => isset($p_data['customer_service']['value']) ? $p_data['customer_service']['value'] : '',
+            '#weight' => 14,
+          );
+          
+          $form['available_features'] = array(
+            '#type' => 'text_format',
+            '#format' => 'full_html',
+            '#title' => 'Available Features',
+            '#default_value' => isset($p_data['available_features']['value']) ? $p_data['available_features']['value'] : '',
+            '#weight' => 15,
+          );
       
           // Admin Rate and vote group.
           $rating_options = array('' => FALSE, '20' => 'Horrible', '40' => 'Bad', '60' => 'OK', '80' => 'Good', '100' => 'Excellent');
@@ -1529,7 +1553,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
             '#title' => 'Editor\'s Rating for this VoIP Provider',
             '#collapsible' => TRUE,
             '#collapsed' => TRUE,
-            '#weight' => 13,
+            '#weight' => 17,
           );
 
               $form['ereview']['votes'] = array(
@@ -1604,7 +1628,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         '#collapsible' => TRUE,
         '#collapsed' => TRUE,
         '#tree' => TRUE,
-        '#weight' => 15,
+        '#weight' => 18,
       );
             foreach ($service_types as $service_type_key => $service_type_title) {
               
