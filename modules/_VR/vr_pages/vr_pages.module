@@ -2550,6 +2550,17 @@ function vr_pages_validateForm_provider(&$form, &$form_state) {
   
   
   $p_data['info'] = $form_state['values']['data_info'];
+  
+  $p_data['pricing_structure'] = $form_state['values']['pricing_structure'];
+  $p_data['customer_service'] = $form_state['values']['customer_service'];
+  $p_data['available_features'] = $form_state['values']['available_features'];
+  
+  
+  
+            
+            
+  
+  
   //$p_data['quote'] = $form_state['values']['data_quote'];
   
   
