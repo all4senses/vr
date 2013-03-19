@@ -136,7 +136,7 @@
                 echo '<div class="title">Service Overview</div><div class="text">' . render($content['body']) . '</div>';
                 echo '<div class="title">Pricing Structure</div><div class="text">' . $node->p_data['pricing_structure'] . '</div>';
                 echo '<div class="title">Customer Service</div><div class="text">' . $node->p_data['customer_service'] . '</div>';
-                echo '<div class="title">Available Features</div><div class="text">' . $node->p_data['available_features'] . '</div>';
+                if ($node->p_data['available_features']) { echo '<div class="title">Available Features</div><div class="text">' . $node->p_data['available_features'] . '</div>'; }
                 
                 /*
               ?>
