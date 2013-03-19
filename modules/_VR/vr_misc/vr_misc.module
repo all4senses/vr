@@ -2893,7 +2893,7 @@ function vr_misc_testPage() {
   
   
   
-  vr_misc_import_wp_blogPosts();
+  //vr_misc_import_wp_blogPosts();
   
   /*
   //vr_misc_import_wp_features();
