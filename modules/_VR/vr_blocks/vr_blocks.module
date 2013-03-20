@@ -13,6 +13,7 @@
  * Implements hook_block_info().
  */
 function vr_blocks_block_info() {
+  
   /*
   $blocks['main_menu_om_providers'] = array(
     'info' => 'OM VoIP Providers',
@@ -29,6 +30,12 @@ function vr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   */
+  
+  $blocks['vr_menu_links'] = array(
+    'info' => 'VR Menu Links',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   $blocks['footer_links'] = array(
     'info' => 'Footer links',
     'cache' => DRUPAL_NO_CACHE,
@@ -63,7 +70,14 @@ function vr_blocks_block_info() {
  */
 function vr_blocks_block_view($delta = '') {
   $block = array();
-  switch ($delta) {  
+  switch ($delta) {
+    
+    
+    case 'vr_menu_links':
+      $block['subject'] = 'VR Menu Links';
+      $block['content'] = vr_blocks_get_menuLinks('menu-links');
+      break;
+    
     /*
     case 'main_menu_om_providers':
       $block['subject'] = 'OM VoIP Providers';
@@ -186,6 +200,32 @@ function vr_blocks_get_socialLinks() {
   return $out;
 }
 
+
+
+/**
+ * Returns a themed Footer links.
+ */
+function vr_blocks_get_menuLinks($menu_name) {
+  
+  $cid = 'vr_' . $menu_name;
+//  $cache = cache_get($cid, 'cache');
+//
+//  if ($cache && !empty($cache->data) && $cache->expire > time()) {
+//    $out = $cache->data;
+//  }
+//  else 
+    {
+    $menu = menu_build_tree($menu_name);
+    //$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('vr_misc_submenuSimple_twoColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2012 voiprater.com | All Rights Reserved</div>';
+    
+    ////$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('vr_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2012 voiprater.com | All Rights Reserved</div>';
+    $out = theme('vr_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">© 2012 voiprater.com | All Rights Reserved</div>';
+    
+    cache_set($cid, $out, 'cache', strtotime('+31 day'));
+  } 
+  
+  return $out;
+}
 
 /**
  * Returns a themed Footer links.
