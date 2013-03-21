@@ -1176,7 +1176,10 @@ function vr_pages_buildHome($name = NULL, $data  = NULL) {
   // Get block for Top pick residential providers.
 //  $block_data = array('module' => 'views', 'delta' => 'providers-block_1', 'shadow' => FALSE); 
 //  $out .= vr_blocks_getBlockThemed($block_data);
-  
+
+    
+      $out .= render($seo_welcome_node_view['field_preface_bottom']);
+    
 //  $out .='<div id="bottom-with-latest-articles" class="with-articles preface">';
 //  
 //      $out .= render($seo_welcome_node_view['field_preface_bottom']);
