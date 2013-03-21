@@ -148,6 +148,8 @@ function vr_pager_previous($variables) {
  */
 function vr_pager($variables) {
   
+  dpm($variables);
+  
   // Hide a pager on the home page.
 //  if($_GET['q'] == 'home') {
 //    return NULL;
