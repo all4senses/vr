@@ -4446,12 +4446,14 @@ function vr_misc_views_pre_render(&$view) {
 //    case 'view-taxonomy_term-page_teasers':
 //    case 'view-taxonomy_term-page_taxonomy_hide_results':
       
-      $do_attach_preface = TRUE;
-      break;
-      /*  
       $args = arg();
       $term = taxonomy_term_load($args[2]);
       //dpm($term);
+      
+      $do_attach_preface = TRUE;
+      break;
+      /*  
+      
       if ($term->vocabulary_machine_name == 'categories') {
         switch ($term->name) {
          case 'Features':
