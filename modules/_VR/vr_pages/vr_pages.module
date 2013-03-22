@@ -2805,7 +2805,7 @@ function vr_pages_validateForm_review(&$form, &$form_state) {
 
   
   // Clear hints, if any.
-  $fields_to_clear_hints = array('field_r_fname_temp' => array('hint' => FNAME_HINT, 'set' => 'about_you'), 'field_r_lname_temp' => array('hint' => LNAME_HINT, 'set' => 'about_you', 'title' => t('Last name')), 'field_r_email_temp' => array('hint' => EMAIL_HINT, 'set' => 'about_you'), 'pros' => array('hint' => PROS_HINT, 'set' => 'ureview'), 'cons' => array('hint' => CONS_HINT, 'set' => 'ureview'));
+  $fields_to_clear_hints = array('field_r_fname_temp' => array('hint' => FNAME_HINT, 'set' => 'about_you'), 'field_r_lname_temp' => array('hint' => LNAME_HINT, 'set' => 'about_you', 'title' => t('Last name')), 'field_r_email_temp' => array('hint' => EMAIL_HINT, 'set' => 'about_you')/*, 'pros' => array('hint' => PROS_HINT, 'set' => 'ureview'), 'cons' => array('hint' => CONS_HINT, 'set' => 'ureview')*/);
   foreach ($fields_to_clear_hints as $fname => $fdata) {
    
     if ($form_state['values'][$fname] == t($fdata['hint'])) {
@@ -2857,12 +2857,13 @@ function vr_pages_validateForm_review(&$form, &$form_state) {
   
   
   
-  if (!$form_state['values']['lines']) {
-    form_set_error('lines',t('Please set a numbers of lines'));
-  }
-  else {
+//  if (!$form_state['values']['lines']) {
+//    form_set_error('lines',t('Please set a numbers of lines'));
+//  }
+//  else 
+  {
     // Save several vars in the field
-    $field_r_data = serialize(array('lines' => $form_state['values']['lines'], 'pros' => $form_state['values']['pros'], 'cons' => $form_state['values']['cons'], 'user_ip' => $form_state['values']['user_ip']));
+    $field_r_data = serialize(array(/*'lines' => $form_state['values']['lines'], 'pros' => $form_state['values']['pros'], 'cons' => $form_state['values']['cons'], */'user_ip' => $form_state['values']['user_ip']));
     form_set_value($form['field_r_data'], array('und' => array(0 => array('value' => $field_r_data))), $form_state);
   }
   
@@ -2879,9 +2880,9 @@ function vr_pages_validateForm_review(&$form, &$form_state) {
   }
   
   // If field_ref_provider is choosen as OTHER SP, the field_r_oprovider should be set as well
-  if ($form_state['values']['field_ref_provider']['und'][0]['target_id'] == 41 && !$form_state['values']['field_r_oprovider']['und'][0]['value']) {
-    form_set_error('field_r_oprovider', t('Please write in the name of a Provider'));  
-  }
+//  if ($form_state['values']['field_ref_provider']['und'][0]['target_id'] == 41 && !$form_state['values']['field_r_oprovider']['und'][0]['value']) {
+//    form_set_error('field_r_oprovider', t('Please write in the name of a Provider'));  
+//  }
 
   // Current review data and uid for defining (see below) if the author of this review has already submitted a review for a selected provider.
   $author_uid = isset($form_state['values']['uid']) ? $form_state['values']['uid'] : NULL;
@@ -2910,11 +2911,12 @@ function vr_pages_validateForm_review(&$form, &$form_state) {
   form_set_value($form['field_ratings_oprovider'], array('und' => array(0 => array('value' => serialize($votes)))), $form_state);
     
   // If OTHER SP has been set.
-  if($form_state['values']['field_ref_provider']['und'][0]['target_id'] == 41 && isset($form_state['values']['field_r_oprovider']['und'][0]['value']) && $form_state['values']['field_r_oprovider']['und'][0]['value']) {
-    // Check if author of this review has already submitted a review for a selected provider.
-    $review = vr_misc_userHasSubmittedReview(NULL, $author_uid, $author_email, $form_state['values']['field_r_oprovider']['und'][0]['value'], $current_review_nid);
-  } // End of if($form_state['values']['field_ref_provider']['und'][0]['target_id'] == 41 && isset($form_state['values']['field_r_oprovider']['und'][0]['value']) && $form_state['values']['field_r_oprovider']['und'][0]['value']) {
-  else {
+//  if($form_state['values']['field_ref_provider']['und'][0]['target_id'] == 41 && isset($form_state['values']['field_r_oprovider']['und'][0]['value']) && $form_state['values']['field_r_oprovider']['und'][0]['value']) {
+//    // Check if author of this review has already submitted a review for a selected provider.
+//    $review = vr_misc_userHasSubmittedReview(NULL, $author_uid, $author_email, $form_state['values']['field_r_oprovider']['und'][0]['value'], $current_review_nid);
+//  } // End of if($form_state['values']['field_ref_provider']['und'][0]['target_id'] == 41 && isset($form_state['values']['field_r_oprovider']['und'][0]['value']) && $form_state['values']['field_r_oprovider']['und'][0]['value']) {
+//  else 
+  {
     // Check if author of this review has already submitted a review for a selected provider.
     $review = vr_misc_userHasSubmittedReview($form_state['values']['field_ref_provider']['und'][0]['target_id'], $author_uid, $author_email, NULL, $current_review_nid);
   } // End of Or else reset the the temporary votes field.
