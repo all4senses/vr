@@ -3483,7 +3483,7 @@ VoIP Now Team
     
     
     case 'new_review_admin_notify':
-      $message['subject'] = t('New Provider review for "!provider" has been submitted', array('!provider' => $params['provider_name']));
+      $message['subject'] = t('VR New Provider review for "!provider" has been submitted', array('!provider' => $params['provider_name']));
       $message['body'][] = t('Dear administrator!
 
 A new review for the provider "!provider" just has been submitted. Please approve or discard it at !pending_reviews.
@@ -3501,7 +3501,7 @@ Get VoIP team
     
     
     case 'new_phone_review_admin_notify':
-      $message['subject'] = t('New Phone review for "!phone" has been submitted', array('!phone' => $params['phone_name']));
+      $message['subject'] = t('VR New Phone review for "!phone" has been submitted', array('!phone' => $params['phone_name']));
       $message['body'][] = t('Dear administrator!
 
 A new review for the phone "!phone" just has been submitted. Please approve or discard it at !pending_reviews.
@@ -3517,7 +3517,7 @@ Get VoIP team
     
     
     case 'user_message':
-      $message['subject'] = 'New User message from VR block';
+      $message['subject'] = 'VR New User message from VR block';
       $message['body'][] = 
 'First name: ' . $params['fname'] . '
 

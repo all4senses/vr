@@ -100,7 +100,7 @@
           <!--<div class="right-content">-->
           <div class="review-right">
             
-            <?php if ($content['r_data']['pros'] || $content['r_data']['cons']): ?>
+            <?php /*if ($content['r_data']['pros'] || $content['r_data']['cons']): ?>
               <div class="pros-cons">
                 <?php
                   if ($content['r_data']['pros']) {
@@ -114,7 +114,7 @@
                   }
                 ?>
               </div>
-            <?php endif; ?>
+            <?php endif; */?>
             
             <?php echo '<div property="v:description">' . render($content['body']) . '</div>'; ?>
           </div>
