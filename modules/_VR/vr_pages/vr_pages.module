@@ -1885,7 +1885,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
       //$breadcrumb = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), 'Submit Provider Review' )));
       
       // Set outer fieldset with the main caption for the Submit a Review page.
-      $form['#prefix'] = '<fieldset id="outer-box" class="form-wrapper"><legend><span class="fieldset-legend">' . t('Share Your Feedback - What Do You Think of Your VoIP Provider?') . '</span></legend><div class="fieldset-wrapper" style="display: block;">';
+      $form['#prefix'] = '<fieldset id="outer-box" class="form-wrapper"><legend><span class="fieldset-legend">' . t('Share Your Feedback - What Do You Think of Your Provider?') . '</span></legend><div class="fieldset-wrapper" style="display: block;">';
       $form['#suffix'] = '</div></fieldset>';
       
       //dpm($form);
@@ -1967,21 +1967,22 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         '#weight' => -10,
       );
           $form['provider']['field_ref_provider'] = $form['field_ref_provider'];
-          $form['provider']['field_r_oprovider'] = $form['field_r_oprovider'];
-          unset($form['field_ref_provider'], $form['field_r_oprovider']);
+          //$form['provider']['field_r_oprovider'] = $form['field_r_oprovider'];
+          //unset($form['field_ref_provider'], $form['field_r_oprovider']);
+          unset($form['field_ref_provider']);
       
           $form['field_r_data']['#access'] = FALSE;
           
           
-          $lines_options = array(1 => '1 - 5', 2 => '6 - 10', 3 => '11+');
-          $form['provider']['lines'] = array(
-            '#type' => 'radios',
-            //'#title' => t('How many lines do you have:'),
-            '#options' => $lines_options,
-            '#default_value' => FALSE,
-            '#weight' => 10,
-            '#prefix' => '<div class="label left">' . t('How many lines do you have:') . '</div>',
-          );
+//          $lines_options = array(1 => '1 - 5', 2 => '6 - 10', 3 => '11+');
+//          $form['provider']['lines'] = array(
+//            '#type' => 'radios',
+//            //'#title' => t('How many lines do you have:'),
+//            '#options' => $lines_options,
+//            '#default_value' => FALSE,
+//            '#weight' => 10,
+//            '#prefix' => '<div class="label left">' . t('How many lines do you have:') . '</div>',
+//          );
           
           
       
@@ -2029,18 +2030,18 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
           // just for reference from a below call
           //$form['ureview']['rating_recommend']['#default_value'] = $recommend;
       
-          $form['ureview']['pros'] = array(
-            '#type' => 'textfield',
-            '#title' => t('Pros'),
-            '#default_value' => '',
-            '#attributes' => array('title' => t(PROS_HINT)),
-          );
-          $form['ureview']['cons'] = array(
-            '#type' => 'textfield',
-            '#title' => t('Cons'),
-            '#default_value' => '',
-            '#attributes' => array('title' => t(CONS_HINT)),
-          );
+//          $form['ureview']['pros'] = array(
+//            '#type' => 'textfield',
+//            '#title' => t('Pros'),
+//            '#default_value' => '',
+//            '#attributes' => array('title' => t(PROS_HINT)),
+//          );
+//          $form['ureview']['cons'] = array(
+//            '#type' => 'textfield',
+//            '#title' => t('Cons'),
+//            '#default_value' => '',
+//            '#attributes' => array('title' => t(CONS_HINT)),
+//          );
           
           
           //$form['body']['#weight'] = 2;
@@ -2057,7 +2058,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
           
           
       // Hide helper hidden field (for saving temporary serialized ratings data)
-      $form['field_ratings_oprovider']['#access'] = FALSE;
+//      $form['field_ratings_oprovider']['#access'] = FALSE;
       
       // Hide approvecode field (used for unauthorized user email approve).
       // It should be empty if a user has approved email.
@@ -2121,7 +2122,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         // Set a select of available providers.
         $providers['_none'] = t('- Select a value -');
         vr_misc_getProviders($providers);
-        $providers[41] = t('OTHER SP');
+//        $providers[41] = t('OTHER SP');
         $form['provider']['field_ref_provider']['und']['#options'] = $providers;
         $form['provider']['field_ref_provider']['und']['#default_value'][0] = '_none';
 
@@ -2209,8 +2210,8 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         if (isset($form['field_r_data']['und'][0]['value']['#default_value'])) {
           $other_data = unserialize($form['field_r_data']['und'][0]['value']['#default_value']);
           $form['provider']['lines']['#default_value'] = $other_data['lines'];
-          $form['ureview']['pros']['#default_value'] = $other_data['pros'];
-          $form['ureview']['cons']['#default_value'] = $other_data['cons'];
+//          $form['ureview']['pros']['#default_value'] = $other_data['pros'];
+//          $form['ureview']['cons']['#default_value'] = $other_data['cons'];
           
           $user_ip = isset($other_data['user_ip']) ? $other_data['user_ip'] : 'N/A';
           if ($current_user_is_admin) {
@@ -2248,7 +2249,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
           
           $providers = array();
           vr_misc_getProviders($providers);
-          $providers[41] = t('OTHER SP');
+//          $providers[41] = t('OTHER SP');
           
           $form['provider']['field_ref_provider']['und']['#options'] = $providers;
           $form['provider']['field_ref_provider']['und']['#default_value'][0] = 41;
@@ -2258,7 +2259,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
           // Let's choose the second variant.
           if(!in_array('administrator', $user->roles)) {
             $form['provider']['field_ref_provider']['#access'] = FALSE;
-            $form['provider']['field_r_oprovider']['#access'] = FALSE;  
+//            $form['provider']['field_r_oprovider']['#access'] = FALSE;  
             $form['provider']['provider_title_noedit'] = array(
               '#type' => 'item',
               '#title' => t('Your VoIP Service Provider') . ' (*)',
@@ -2359,13 +2360,13 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
 
         // Add stars widgets to a Rating block
         $module_path . '/js/vr_review_stars.js',
-        'sites/all/libraries/jquery.ui.stars/jquery.ui.stars.min.js',
+        'sites/all/libraries/jquery.plugins/jquery.ui.stars/jquery.ui.stars.min.js',
       );
 
       $form['#attached']['library'][] = array('system', 'ui.widget');
 
       $form['#attached']['css'] = array(
-        'sites/all/libraries/jquery.ui.stars/css/jquery.ui.stars.css',
+        'sites/all/libraries/jquery.plugins/jquery.ui.stars/css/jquery.ui.stars.css',
       );
 
       
