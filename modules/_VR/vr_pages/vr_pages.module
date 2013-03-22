@@ -3625,9 +3625,9 @@ function vr_pages_addProviderReview_form($form, &$form_state, $node) {
     '#attributes' => array('class' => array('review-userblock')),
   );
   
-  $form['user']['caption'] = array(
-    '#markup' => '<div class="caption">' . ($node->userReviews ? 'Submit Your Review:' : 'Be the First to Review!') . '</div>',
-  );
+//  $form['user']['caption'] = array(
+//    '#markup' => '<div class="caption">' . ($node->userReviews ? 'Submit Your Review:' : 'Be the First to Review!') . '</div>',
+//  );
   
   $form['user']['name'] = array(
     '#type' => 'textfield',
