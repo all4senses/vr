@@ -2976,10 +2976,11 @@ function vr_pages_submitForm_review(&$form, &$form_state) {
 //    
     
     // Notify all admins.
-    if ($form_state['values']['field_r_oprovider']['und'][0]['value']) {
-      $provider_name = $form_state['values']['field_r_oprovider']['und'][0]['value'];
-    }
-    else {
+//    if ($form_state['values']['field_r_oprovider']['und'][0]['value']) {
+//      $provider_name = $form_state['values']['field_r_oprovider']['und'][0]['value'];
+//    }
+//    else 
+    {
       $provider_name = $form_state['complete form']['provider']['field_ref_provider']['und']['#options'][$form_state['values']['field_ref_provider']['und'][0]['target_id']];
     }
     
