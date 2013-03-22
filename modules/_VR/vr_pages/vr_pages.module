@@ -1849,7 +1849,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
       
       // Control the editing of review pages.
       
-      /*
+      
        
       // Metatags.
       vr_misc_addMetatag('title', 'Review Your VoIP Provider');
@@ -2377,7 +2377,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
       $form['#validate'][] = 'vr_pages_validateForm_review';
       $form['#submit'][] = 'vr_pages_submitForm_review';
       
-      */
+      
       
     break; // End of Review of provider
     
