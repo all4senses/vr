@@ -3075,7 +3075,7 @@ function vr_pages_node_update($node) {
 function vr_pages_node_presave($node) {
   
   if ($node->type == 'review') {
-    /*
+    
     // Unpublish, if is not approved... and publish if approved.
     $is_approved = (isset($node->field_r_notapproved['und'][0]['value']) && $node->field_r_notapproved['und'][0]['value']) ? 0 : 1;
     if ($is_approved) {
@@ -3168,7 +3168,7 @@ function vr_pages_node_presave($node) {
       $node->field_r_oprovider['und'][0]['value'] = '';
     }
     
-    */
+    
     
   } // End of if ($node->type == 'review') {
  
@@ -3212,7 +3212,7 @@ function vr_pages_node_view($node, $view_mode) {
   switch ($node->type) {
     
     case 'quote':
-      /*
+      
       $node->q_data = unserialize($node->field_q_data['und'][0]['value']);
       
       // Redirect old versions Quote pages to the latest version.
@@ -3220,7 +3220,7 @@ function vr_pages_node_view($node, $view_mode) {
       if (!$user->uid && !strpos($node->title, 'Quote page v3')) {
         drupal_goto('compare-voip-solutions', array(), 301);
       }
-      */
+      
       
       break; // End of quote.
     
