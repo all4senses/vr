@@ -211,8 +211,23 @@
   </div> <!-- main-content -->
   
     
+  <div class="reviews">
+    
+    <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' ', t('User Reviews'); ?></h2>
+    <?php 
+
+      if (isset($node->current_user_has_review)) {
+        echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
+      }
+      else {
+        echo l(t('Submit Your Review'), 'node/add/review'); 
+      }
+
+    ?>
+    
+  </div>
   
-  <?php // /*if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+  <?php /*if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
     <div class="reviews">
       <div class="header">
         <a id="reviews"></a>
@@ -221,12 +236,12 @@
         <!-- <div class="button"> -->
           <?php 
   
-            if (isset($node->current_user_has_review)) {
-              echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
-            }
-            else {
-              echo l(t('Submit Your Review'), 'node/add/review'); 
-            }
+//            if (isset($node->current_user_has_review)) {
+//              echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
+//            }
+//            else {
+//              echo l(t('Submit Your Review'), 'node/add/review'); 
+//            }
 
           ?>
         <!--</div> -->
