@@ -227,7 +227,7 @@
     
   </div>
   
-  <?php /*if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+  <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
     <div class="reviews">
       <div class="header">
         <a id="reviews"></a>
@@ -271,7 +271,7 @@
       ?>
       
     </div>
- <?php endif; */ ?>
+ <?php endif;  ?>
   
 
 <?php if (!$page): ?>
