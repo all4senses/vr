@@ -211,7 +211,7 @@
   </div> <!-- main-content -->
   
     
-  <div class="reviews">
+  
     
     <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' ', t('User Reviews'); ?></h2>
     <?php 
@@ -223,25 +223,26 @@
         echo l(t('Submit Your Review'), 'node/add/review', array('query' => array('id' => $node->nid))); 
       }
 
+      
+      echo $node->addProviderReviewForm;
     ?>
     
-  </div>
+  
   
   <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
     <div class="reviews">
       <div class="header">
         <a id="reviews"></a>
-        <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' ', t('User Reviews'); ?></h2>
         
         <!-- <div class="button"> -->
           <?php 
   
-            if (isset($node->current_user_has_review)) {
-              echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
-            }
-            else {
-              echo l('Submit Your Review', 'node/add/review', array('query' => array('id' => $node->nid))); 
-            }
+//            if (isset($node->current_user_has_review)) {
+//              echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
+//            }
+//            else {
+//              echo l('Submit Your Review', 'node/add/review', array('query' => array('id' => $node->nid))); 
+//            }
 
           ?>
         <!--</div> -->
