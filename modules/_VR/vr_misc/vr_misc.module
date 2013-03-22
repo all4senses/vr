@@ -90,6 +90,7 @@ function vr_misc_menu() {
     'type' => MENU_CALLBACK,
   );
     
+  */
   
   $items['admin/content/reviews-to-approve'] = array(
     'title' => 'Reviews to Approve',
@@ -98,7 +99,7 @@ function vr_misc_menu() {
     'access callback' => 'vr_misc_userIsAdmin',
     'type' => MENU_NORMAL_ITEM,
   );
-  */
+  
   $items['approve/%/%'] = array(
     'title' => 'Approve content',
     'page callback' => 'vr_misc_approveContent',
