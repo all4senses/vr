@@ -4234,7 +4234,7 @@ function vr_misc_userHasSubmittedReview($provider_nid, $user_uid, $user_email = 
         ->fields('n', array('nid', 'title'))
         ->fields('na', array('field_r_notapproved_value'));
   $data->leftJoin('field_data_field_ref_provider', 'rp', "rp.entity_id = n.nid");
-  $data->leftJoin('field_data_field_r_oprovider', 'op', "op.entity_id = n.nid");
+  //$data->leftJoin('field_data_field_r_oprovider', 'op', "op.entity_id = n.nid");
   $data->leftJoin('field_data_field_r_email', 'ue', "ue.entity_id = n.nid");
   $data->leftJoin('field_data_field_r_notapproved', 'na', "na.entity_id = n.nid");
   $data->condition('n.type', 'review')
@@ -4255,9 +4255,9 @@ function vr_misc_userHasSubmittedReview($provider_nid, $user_uid, $user_email = 
   if ($provider_nid) {
     $data->condition('rp.field_ref_provider_target_id', $provider_nid);
   }
-  elseif ($other_provider_title) {
-    $data->condition('op.field_r_oprovider_value', $other_provider_title);
-  }
+//  elseif ($other_provider_title) {
+//    $data->condition('op.field_r_oprovider_value', $other_provider_title);
+//  }
   else {
     // No provider id or title set.
     return FALSE;

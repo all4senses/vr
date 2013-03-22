@@ -2058,7 +2058,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
           
           
       // Hide helper hidden field (for saving temporary serialized ratings data)
-//      $form['field_ratings_oprovider']['#access'] = FALSE;
+      $form['field_ratings_oprovider']['#access'] = FALSE;
       
       // Hide approvecode field (used for unauthorized user email approve).
       // It should be empty if a user has approved email.
