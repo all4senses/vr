@@ -135,7 +135,7 @@
                       //: ( (!isset($content['provider_url']) || !$content['provider_url']) ? '' : '<a rel="nofollow" href="' . $content['provider_url'] . '">Visit <span class="review-provider" property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span></a> <span class="delim">|</span>')
                       : ( (!isset($content['provider_url']) || !$content['provider_url']) ? '' : '<a rel="nofollow" href="' . $content['provider_url'] . '">Visit <span class="review-provider" property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span></a>')
                     ) 
-                    . ' <span class="delim">|</span>' . l('Write a Review', 'node/add/review', array('query' => array('id' => $node->field_ref_provider['und'][0]['target_id'])))
+                    //. ' <span class="delim">|</span>' . l('Write a Review', 'node/add/review', array('query' => array('id' => $node->field_ref_provider['und'][0]['target_id'])))
                   . '</div>'; 
               
               //'<a href="' . $content['provider_url'] . '">' . t('Visit !p', array('!p' => '<span property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span>')) . '</a>'
@@ -168,15 +168,15 @@
         <footer>
 
           <?php 
-            if (isset($content['field_topics'])) {
-              $tags = NULL;
-              foreach (element_children($content['field_topics']) as $key) {
-                $tags .= ($tags ? '<div class="delim">|</div>' : '') . l(t($content['field_topics'][$key]['#title']), 'articles/tags/' . str_replace(' ', '-', drupal_strtolower($content['field_topics'][$key]['#title'])));
-              }
-              if ($tags) {
-                echo '<div class="topics"><div class="title">' . t('TAGS:') . '</div>' . $tags . '</div>';
-              }
-            }
+//            if (isset($content['field_topics'])) {
+//              $tags = NULL;
+//              foreach (element_children($content['field_topics']) as $key) {
+//                $tags .= ($tags ? '<div class="delim">|</div>' : '') . l(t($content['field_topics'][$key]['#title']), 'articles/tags/' . str_replace(' ', '-', drupal_strtolower($content['field_topics'][$key]['#title'])));
+//              }
+//              if ($tags) {
+//                echo '<div class="topics"><div class="title">' . t('TAGS:') . '</div>' . $tags . '</div>';
+//              }
+//            }
             //print render($content['field_topics']); 
             //print render($content['links']);
 
