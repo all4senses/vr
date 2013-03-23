@@ -3891,7 +3891,7 @@ function vr_pages_createNode_providerReview($form_state) {
   $node->body[$node->language][0]['safe_summary'] = '';
   $node->body[$node->language][0]['safe_value'] = check_plain($form_state['values']['review']['value']);
   
-  $user_mail = $user->uid ? $user->mail : $form_state['values']['email'];
+  $user_mail = /*$user->uid ? $user->mail : */$form_state['values']['email'];
   $node->field_r_email[$node->language][0] = array(
     'value' => $user_mail,
     'safe_value' => check_plain($user_mail),
