@@ -3752,7 +3752,7 @@ function vr_pages_addProviderReview_form($form, &$form_state, $node) {
     $module_path . '/js/vr_review_fieldHints.js',
 
     // Add stars widgets to a Rating block
-    $module_path . '/js/vr_phone_review_stars.js',
+    $module_path . '/js/vr_review_stars.js',
     'sites/all/libraries/jquery.plugins/jquery.ui.stars/jquery.ui.stars.min.js',
   );
 
