@@ -2209,7 +2209,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         // Show saved it a hidden field other data
         if (isset($form['field_r_data']['und'][0]['value']['#default_value'])) {
           $other_data = unserialize($form['field_r_data']['und'][0]['value']['#default_value']);
-          $form['provider']['lines']['#default_value'] = $other_data['lines'];
+//          $form['provider']['lines']['#default_value'] = $other_data['lines'];
 //          $form['ureview']['pros']['#default_value'] = $other_data['pros'];
 //          $form['ureview']['cons']['#default_value'] = $other_data['cons'];
           
@@ -2285,12 +2285,14 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
           // Load votes data from a local field_ratings_oprovider, not from Voting api tables.
           if ($form['field_r_notapproved']['und'][0]['value']['#default_value'] || !$form['options']['status']['#default_value']) {
             $saved_ratings = unserialize($form['field_ratings_oprovider']['und'][0]['value']['#default_value']);
-            foreach ($saved_ratings as $tag => $value) {
-              if ($tag == 'recommend') {
-                $recommend = $value;
-                continue;
+            if (!empty($saved_ratings)) {
+              foreach ($saved_ratings as $tag => $value) {
+                if ($tag == 'recommend') {
+                  $recommend = $value;
+                  continue;
+                }
+                $form['ureview']['votes']['rating_' . $tag]['#default_value'] = $value;
               }
-              $form['ureview']['votes']['rating_' . $tag]['#default_value'] = $value;
             }
           }
           else {
@@ -2897,7 +2899,6 @@ function vr_pages_validateForm_review(&$form, &$form_state) {
   
   
   // Prepare votes to save in a temporary field (it may be not used, but just in case and for a code simplifying).
-  //$rating_options = array('features', 'sound', 'rely', 'money', 'service', 'recommend');
   $votes = array();
   foreach ($rating_options as $vote_key => $vote_title) {
     if(isset($form_state['values']['rating_' . $vote_key])) {
@@ -3629,13 +3630,21 @@ function vr_pages_addProviderReview_form($form, &$form_state, $node) {
 //    '#markup' => '<div class="caption">' . ($node->userReviews ? 'Submit Your Review:' : 'Be the First to Review!') . '</div>',
 //  );
   
-  $form['user']['name'] = array(
+  $form['user']['fname'] = array(
     '#type' => 'textfield',
-    '#title' => 'Your Name',
+    '#title' => 'First Name',
     '#default_value' => $user->uid ? $user->field_u_fname['und'][0]['value'] : NULL,
     //'#description' => '',
     '#required' => TRUE,
-    '#attributes' => array('title' => 'Your Name / Nickname'),
+    '#attributes' => array('title' => 'First Name'),
+  );
+  $form['user']['lname'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Last Name',
+    '#default_value' => $user->uid ? $user->field_u_lname['und'][0]['value'] : NULL,
+    //'#description' => '',
+    '#required' => TRUE,
+    '#attributes' => array('title' => 'Last Name'),
   );
   
   $form['user']['email'] = array(
@@ -3656,42 +3665,60 @@ function vr_pages_addProviderReview_form($form, &$form_state, $node) {
 //    );
 //  }
     
-          
-  // Rate and vote group.
-  $rating_options = array('' => FALSE, '20' => 'Horrible', '40' => 'Bad', '60' => 'OK', '80' => 'Good', '100' => 'Excellent');
-  $vote_keys = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE);
-
-  $votes = array();
-
-  $form['ureview'] = array(
-    '#type' => 'container',
-  );
   
-  $form['ureview']['votes'] = array(
-    '#type' => 'container',
-    '#prefix' => '<div class="rate-caption"><div class="col-2">' . t('Click Stars To Start Reviewing') . '</div><div class="col-3">' . t('Rate it') . '</div></div>',
-    //'#tree' => TRUE, 
-  );
-      foreach ($vote_keys as $vote_key => $vote_title) {
-        $form['ureview']['votes']['rating_' . $vote_key] = array(
-          '#type' => 'select',
-          '#options' => $rating_options,
-          '#default_value' => $rating_options[''],
-          '#prefix' => '<div class="vote"><div class="vote-title">' . t($vote_title) . '</div>',
-          '#suffix' => '<div class="choice" id="edit-rating-' . $vote_key . '-choice">Rate it!</div></div>',
-        );
-      }
-
-  $rating_recommend_options = $rating_options = array('100' => 'Yes', '0' => 'No');
-  $form['ureview']['rating_recommend'] = array(
-    '#type' => 'radios',
-    '#options' => $rating_recommend_options,
-    '#default_value' => FALSE,
-    '#prefix' => '<div class="recommend-block"><div class="label left">' . RECOMMEND . '</div>',
-    '#suffix' => '</div>',
-    '#required' => TRUE,
-  );
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      // Rate and vote group.
+      $rating_options = array('' => FALSE, '20' => 'Horrible', '40' => 'Bad', '60' => 'OK', '80' => 'Good', '100' => 'Excellent');
+      $weight = 8;
+     
+      //$vote_keys = array('features', 'sound', 'rely', 'money', 'service');
+      $vote_keys = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, );
+      $votes = array();
+      $form['ureview'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Step 3: Rate and Review Your VoIP Provider'),
+        '#weight' => -4,
+      );
+          
+          $form['ureview']['votes'] = array(
+              '#type' => 'container',
+              '#prefix' => '<div class="rate-caption"><div class="col-2">' . t('Click Stars To Start Reviewing') . '</div><div class="col-3">' . t('Rate it') . '</div></div>',
+          );
+          foreach ($vote_keys as $vote_key => $vote_title) {
+            $form['ureview']['votes']['rating_' . $vote_key] = array(
+              '#type' => 'select',
+              '#options' => $rating_options,
+              '#default_value' => $rating_options[''],
+              '#prefix' => '<div class="vote"><div class="vote-title">' . t($vote_title) . '</div>',
+              '#suffix' => '<div class="choice" id="edit-rating-' . $vote_key . '-choice">Rate it!</div></div>',
+            );
+//            $form['ureview']['votes']['rating_' . $vote_key . '_choice1'] = array(
+//              '#markup' => '<div class="choice" id="edit-rating-' . $vote_key . '-choice">Rate it!</div>',
+//              //'#weight' => $weight++,
+//            );
+          }
+      
+          //$rating_recommend_options = $rating_options = array('' => '- ' . t('Select a value') . ' -', '100' => 'Yes', '0' => 'No');
+          $rating_recommend_options = $rating_options = array('100' => 'Yes', '0' => 'No');
+          $form['ureview']['rating_recommend'] = array(
+              '#type' => 'radios',
+              '#options' => $rating_recommend_options,
+              '#default_value' => FALSE,
+              '#prefix' => '<div class="label left">' . t(RECOMMEND) . '</div>',
+          );
+          
+          
   $form['ureview']['review'] = array(
     '#type' => 'text_format',
     '#title' => 'Your Review',
@@ -3767,7 +3794,7 @@ function vr_pages_addProviderReview_form_validate(&$form, &$form_state) {
   global $user;
   
   // Clear hints, if any.
-  $fields_to_clear_hints = array('name' => array('hint' => 'Your Name'), 'email' => array('hint' => 'Your Email'));
+  $fields_to_clear_hints = array('fname' => array('hint' => 'First Name'), 'lname' => array('hint' => 'Last Name'), 'email' => array('hint' => 'Your Email'));
   foreach ($fields_to_clear_hints as $fname => $fdata) {
    
     if ($form_state['values'][$fname] == $fdata['hint']) {
@@ -3791,13 +3818,15 @@ function vr_pages_addProviderReview_form_validate(&$form, &$form_state) {
 
   // Check if a not logged in user has entered an email which is already is taken with one of our registered user.
   if (!$user->uid && isset($form_state['values']['email']) && $form_state['values']['email']) {
-    if (gv_misc_emailIsRegistered($form_state['values']['email'])) {
+    if (vr_misc_emailIsRegistered($form_state['values']['email'])) {
       form_set_error('email',t('Sorry, an email You have entered is already registered in our system. If it is your email, please !login and proceed with submitting this review as a logged in user.', array('!login' => l('Log in', 'user/login', array('query' => array('destination' => url($_GET['q'])))))));
       return;
     }
   }
 
-  $rating_options = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE, 'recommend' => RECOMMEND_PHONE);
+  
+  //$rating_options = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE, 'recommend' => RECOMMEND_PHONE);
+  $rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'recommend' => RECOMMEND);
   foreach ($rating_options as $rating_option => $rating_option_title) {
     if ($form_state['values']['rating_' . $rating_option] === FALSE) {
       form_set_error($rating_option, t('Please make your choice for "' . $rating_option_title . '"'));
@@ -3869,11 +3898,15 @@ function vr_pages_createNode_providerReview($form_state) {
     'format' => NULL,
   );
   $node->field_r_fname[$node->language][0] = array(
-    'value' => $form_state['values']['name'],
-    'safe_value' => check_plain($form_state['values']['name']),
+    'value' => $form_state['values']['fname'],
+    'safe_value' => check_plain($form_state['values']['fname']),
     'format' => NULL,
   );
-  
+  $node->field_r_lname[$node->language][0] = array(
+    'value' => $form_state['values']['lname'],
+    'safe_value' => check_plain($form_state['values']['lname']),
+    'format' => NULL,
+  );
   $node->field_r_notapproved[$node->language][0]['value'] = 1;
   $node->field_r_rating_overall[$node->language][0]['value'] = NULL;
   $node->field_ref_provider[$node->language][0]['target_id'] = $form_state['values']['provider_nid'];
@@ -3891,21 +3924,32 @@ function vr_pages_createNode_providerReview($form_state) {
   );
   
   
+  
   // Prepare votes to save in a temporary field (it may be not used, but just in case and for a code simplifying).
-  $rating_options = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE, 'recommend' => RECOMMEND_PHONE);
+  //$rating_options = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE, 'recommend' => RECOMMEND_PHONE);
+  $rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'recommend' => RECOMMEND);
   $votes = array();
   foreach ($rating_options as $vote_key => $vote_title) {
     if(isset($form_state['values']['rating_' . $vote_key])) {
       $votes[$vote_key] = $form_state['values']['rating_' . $vote_key];
     }
   }
-  // Save votes to the temporary votes at r_data field.
-  // It maybe reset later on. But just for the sake of a code simplifying.
+  
+  
+  // Save votes to the temporary votes field.
+  // It maybe reset later on (in node_save hook). But just for the sake of a code simplifying.
   // On node_presave it field may be cleared and its data will be pushed to Voting API tables.
-  // OR it its data may remain, if the review is not approved OR it's for not listed provider
+  // OR it its data may remain, if the review is not approved OR it's for not listed provider  
+  $node->field_ratings_oprovider[$node->language][0] = array(
+    'value' => serialize($votes),
+    'safe_value' => check_plain(serialize($votes)),
+    'format' => NULL,
+  );
 
+  
+  
   // Save several vars in the field
-  $field_r_data = serialize(array('saved_ratings' => $votes, 'user_ip' => $form_state['values']['user_ip']));
+  $field_r_data = serialize(array(/*'lines' => $form_state['values']['lines'], 'pros' => $form_state['values']['pros'], 'cons' => $form_state['values']['cons'], */'user_ip' => $form_state['values']['user_ip']));
   
   $node->field_r_data[$node->language][0] = array(
     'value' => $field_r_data,
