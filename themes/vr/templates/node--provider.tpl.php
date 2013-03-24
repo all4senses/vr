@@ -138,10 +138,11 @@
                 echo '<div class="title">Customer Service</div><div class="text">' . $node->p_data['customer_service'] . '</div>';
                 if ($node->p_data['available_features']) { echo '<div class="title">Available Features</div><div class="text">' . $node->p_data['available_features'] . '</div>'; }
                 
-                
-                
                 ?>
-                
+          
+          
+          
+          
            <div class="bottom-clear"></div>
 
               <?php if (isset($content['gv_ratings']) && $content['gv_ratings']): ?>
@@ -168,6 +169,8 @@
           
           
           <?php
+                
+                
                 
                 /*
               ?>
