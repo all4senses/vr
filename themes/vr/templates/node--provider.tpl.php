@@ -147,7 +147,7 @@
 
               <?php if (isset($content['vr_ratings']) && $content['vr_ratings']): ?>
 
-                  <div class="vr_votes"><?php echo '<div class="caption">' . t('Overall Consumer Ratings') . '</div>' . render($content['vr_ratings']); ?></div>
+                  <div class="vr_votes"><?php //echo '<div class="caption">' . t('Overall Consumer Ratings') . '</div>' . render($content['vr_ratings']); ?></div>
                   <div class="overall"> 
                     <div class="text">
                       <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->vr_voters . '</a></div></div>'; ?>
