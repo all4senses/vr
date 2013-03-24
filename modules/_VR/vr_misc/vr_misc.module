@@ -3020,7 +3020,7 @@ function vr_misc_testPage() {
 
 
 function create_old_review($nid, $p_name, $rating, $user_ip) {
-  $out = 'nid ' . $nid . ' => review with ' . $rating . ' stars (' . $user_ip . ')
+  $out = 'nid ' . $nid . ' ' . $p_name .  ' => review with ' . $rating . ' stars (' . $user_ip . ')
     
 <br>';
   
