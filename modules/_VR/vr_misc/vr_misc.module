@@ -3000,16 +3000,16 @@ function vr_misc_testPage() {
   dpm($summarylist);
   
   
-  if($summarylist !== FALSE) {
-	 	for($i = 1; $i <= 5; $i++) {
-      if ($summarylist[$i]) {
-        for($j = 1; $j <= $summarylist[$i]; $j++) {
-          $out .= create_old_review($i);
-        }
-      }
-	 		
-	 	}
-	}
+//  if($summarylist !== FALSE) {
+//	 	for($i = 1; $i <= 5; $i++) {
+//      if ($summarylist[$i]) {
+//        for($j = 1; $j <= $summarylist[$i]; $j++) {
+//          $out .= create_old_review($i);
+//        }
+//      }
+//	 		
+//	 	}
+//	}
 
   
   return $out . '<br>End of Test';
@@ -3031,13 +3031,20 @@ function rating_summary_list($id) {
 	if($summarylist !== FALSE) {
 		$summarylist = array_map("trim", $summarylist);
 	}
-	return $summarylist;
+  
+  foreach ($summarylist as $str) {
+    $summarylist2 = explode('|', $str);
+    
+  }
+  
+	return $summarylist2;
 
 }
 
 function rating_summary_file_path($id) {
  	//return dirname(__FILE__) . '/data/summary_' . $id . '.dat';
-  return '/home/vradmin/public_html/_test/f/old-ratings/summary_' . $id . '.dat';
+  //return '/home/vradmin/public_html/_test/f/old-ratings/summary_' . $id . '.dat';
+  return '/home/vradmin/public_html/_test/f/old-ratings/history_' . $id . '.dat';
 }
 
 
