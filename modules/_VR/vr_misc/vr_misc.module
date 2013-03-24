@@ -2975,9 +2975,22 @@ function vr_misc_testPage() {
   */
   
   
-  $id = 28;
   
-  //dpm(rating_summary_file_path($id));
+  $query = db_select('node', 'n')
+      ->fields('n', array('nid', 'title'));
+  
+  $query->leftJoin('field_data_field_old_id', 'id', 'id.entity_id = n.nid')
+    ->fields('id', array('field_old_id_value'));
+  $query->condition('n.type', 'provider'); 
+  $query->orderBy('id.field_old_id_value');
+  $providers = $query->execute()->fetchAllAssoc('field_old_id_value');
+
+  dpm($providers);
+  
+  
+  
+  
+  $id = 28;
   
   $summarylist = rating_summary_list($id);
   dpm($summarylist);
