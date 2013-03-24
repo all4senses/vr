@@ -3000,10 +3000,19 @@ function vr_misc_testPage() {
   dpm($providers);
   
   
-  $id = 28;
   
-  $summarylist = rating_summary_list($id);
-  dpm($summarylist);
+  foreach ($providers as $old_id => $provider) {
+    foreach ($provider->summarylist as $summarylist) {
+      $out .= create_old_review($provider->nid, $summarylist[1], $summarylist[0]);
+    }
+    $out .= '<br><br>
+      ';
+  }
+  
+//  $id = 28;
+//  
+//  $summarylist = rating_summary_list($id);
+//  dpm($summarylist);
   
   
 //  if($summarylist !== FALSE) {
@@ -3022,8 +3031,8 @@ function vr_misc_testPage() {
 }
 
 
-function create_old_review($rating) {
-  $out = 'review with ' . $rating . ' stars
+function create_old_review($nid, $rating, $user_ip) {
+  $out = 'nid ' . $nid . ' => review with ' . $rating . ' stars (' . $user_ip . ')
     
 <br>';
   return $out;
