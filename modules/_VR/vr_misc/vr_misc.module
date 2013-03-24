@@ -3010,7 +3010,9 @@ function vr_misc_testPage() {
     $out .= '<br><br>
       ';
     
-    break;
+    if ($old_id == 10) {
+      break;
+    }
   }
 
 
