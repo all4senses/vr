@@ -2872,7 +2872,7 @@ function vr_pages_validateForm_review(&$form, &$form_state) {
   
   
   // An Administrator MUST set the real title for the review.
-  if ($current_is_administrator && !$form_state['values']['field_r_notapproved']['und'][0]['value'] && $form_state['values']['title'] == 'Unapproved review') {
+  if ($current_is_administrator && !$form_state['values']['field_r_notapproved']['und'][0]['value'] && strpos($form_state['values']['title'], 'Unapproved review') !== FALSE) {
     form_set_error('title',t('Please set a new title for this review'));
   }
   
@@ -3880,7 +3880,7 @@ function vr_pages_createNode_providerReview($form_state, $uid = 'NA', $not_appro
   $node->type = 'review';
   node_object_prepare($node);
   
-  $node->title = $title ? $title : 'Unapproved review';
+  $node->title = $title ? $title : 'Unapproved review ' . time();
   $node->language = LANGUAGE_NONE;
   $node->uid = ($uid == 'NA') ? $user->uid : $uid;
   $node->status = 0;
@@ -3961,7 +3961,7 @@ function vr_pages_createNode_providerReview($form_state, $uid = 'NA', $not_appro
     'format' => NULL,
   );
   
-  dpm($node);
+  //dpm($node);
   //return;
   
   if ($node = node_submit($node)) {
