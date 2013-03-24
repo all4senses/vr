@@ -3351,19 +3351,20 @@ function vr_pages_node_view($node, $view_mode) {
         $node->vr_voters = isset($counts[0]['value']) ? $counts[0]['value'] : '';
         vr_pages_addRatingsToNodeThemed($node, $votes, $counts);
 
+        dpm|($node->content);
         
         // Get Editor's ratings
-        if (!empty($p_data['ereview']['editor_ratings'])) {
-          $votes_simple_format = $p_data['ereview']['editor_ratings'];
-          // Rebuild the array to the votes api format
-          $votes = array();
-          foreach ($votes_simple_format as $tag => $value) {
-            $votes[] = array('tag' => $tag, 'value' => $value);
-          }
-          $editor = new stdClass;
-          vr_pages_addRatingsToNodeThemed($editor, $votes);
-          $node->editor = $editor;
-        }
+//        if (!empty($p_data['ereview']['editor_ratings'])) {
+//          $votes_simple_format = $p_data['ereview']['editor_ratings'];
+//          // Rebuild the array to the votes api format
+//          $votes = array();
+//          foreach ($votes_simple_format as $tag => $value) {
+//            $votes[] = array('tag' => $tag, 'value' => $value);
+//          }
+//          $editor = new stdClass;
+//          vr_pages_addRatingsToNodeThemed($editor, $votes);
+//          $node->editor = $editor;
+//        }
         
         $node->addProviderReviewForm = render(drupal_get_form('vr_pages_addProviderReview_form', $node));
         
