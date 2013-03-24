@@ -3871,7 +3871,7 @@ function vr_pages_addProviderReview_form_submit(&$form, &$form_state) {
  * @return $form
  *   Return nothing.
  */
-function vr_pages_createNode_providerReview($form_state) {
+function vr_pages_createNode_providerReview($form_state, $uid = 'NA', $not_approved = 'NA') {
   
   global $user;
   
@@ -3881,7 +3881,7 @@ function vr_pages_createNode_providerReview($form_state) {
   
   $node->title = 'Unapproved review';
   $node->language = LANGUAGE_NONE;
-  $node->uid = $user->uid;
+  $node->uid = ($uid == 'NA') ? $user->uid : $uid;
   $node->status = 0;
   $node->promote = 0;
   $node->sticky = 0;
@@ -3908,7 +3908,7 @@ function vr_pages_createNode_providerReview($form_state) {
     'safe_value' => check_plain($form_state['values']['lname']),
     'format' => NULL,
   );
-  $node->field_r_notapproved[$node->language][0]['value'] = 1;
+  $node->field_r_notapproved[$node->language][0]['value'] = ($not_approved == 'NA') ? 1 : $not_approved;
   $node->field_r_rating_overall[$node->language][0]['value'] = NULL;
   $node->field_ref_provider[$node->language][0]['target_id'] = $form_state['values']['provider_nid'];
   

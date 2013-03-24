@@ -2981,6 +2981,8 @@ function vr_misc_testPage() {
   
   $query->leftJoin('field_data_field_old_id', 'id', 'id.entity_id = n.nid');
   $query->fields('id', array('field_old_id_value'));
+  $query->leftJoin('field_data_field_p_name', 'pn', 'pn.entity_id = n.nid');
+  $query->fields('pn', array('field_p_name_value'));
   $query->condition('n.type', 'provider'); 
   $query->orderBy('id.field_old_id_value');
   $providers = $query->execute()->fetchAllAssoc('field_old_id_value');
@@ -3003,39 +3005,49 @@ function vr_misc_testPage() {
   
   foreach ($providers as $old_id => $provider) {
     foreach ($provider->summarylist as $summarylist) {
-      $out .= create_old_review($provider->nid, $summarylist[1], $summarylist[0]);
+      $out .= create_old_review($provider->nid, $provider->field_p_name_value, $summarylist[1], $summarylist[0]);
     }
     $out .= '<br><br>
       ';
+    
+    break;
   }
-  
-//  $id = 28;
-//  
-//  $summarylist = rating_summary_list($id);
-//  dpm($summarylist);
-  
-  
-//  if($summarylist !== FALSE) {
-//	 	for($i = 1; $i <= 5; $i++) {
-//      if ($summarylist[$i]) {
-//        for($j = 1; $j <= $summarylist[$i]; $j++) {
-//          $out .= create_old_review($i);
-//        }
-//      }
-//	 		
-//	 	}
-//	}
+
 
   
   return $out . '<br>End of Test';
 }
 
 
-function create_old_review($nid, $rating, $user_ip) {
+function create_old_review($nid, $p_name, $rating, $user_ip) {
   $out = 'nid ' . $nid . ' => review with ' . $rating . ' stars (' . $user_ip . ')
     
 <br>';
   return $out;
+  
+  $form_state['values'] = array(
+    'review' => array ('value' => ''),
+    'email' => 'n' . $nid . '---' . $user_ip . '@localhost',
+    'fname' => 'Guest',
+    'lname' => '',
+    'provider_nid' => $nid,
+    'field_r_approvecode' => NULL,
+    'provider_name' => $p_name,
+    'user_ip' => $user_ip,
+  );
+  
+  $rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE);
+  foreach ($rating_options as $vote_key => $vote_title) {
+    $form_state['values']['rating_' . $vote_key] = $rating;
+  }
+  
+  $form_state['values']['rating_recommend'] = ($rating > 2) ? 1 : 0;
+  
+  
+  dpm($form_state);
+  //vr_pages_createNode_providerReview($form_state, 0, 0); // 0 - anonymous, 0 - not_approved (that is approved)
+  
+  
 }
 
 
