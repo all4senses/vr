@@ -2204,7 +2204,8 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         
         // Edit a review page.
         
-        
+        // Allow not to set a last name for the editing (by admin!) mode.
+        $form['about_you']['field_r_lname_temp']['#required'] = FALSE;
         
         // Show saved it a hidden field other data
         if (isset($form['field_r_data']['und'][0]['value']['#default_value'])) {
