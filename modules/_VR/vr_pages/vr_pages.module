@@ -1656,7 +1656,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
                   foreach ($service_descriptions as $service_description_key => $service_description_title) {
                     
                     $form['s'][$service_type_key][$service_description_key] = array(
-                      '#type' => 'textfield',
+                      '#type' => ($service_description_key == 'mf') ? 'textarea' : 'textfield',
                       '#title' => t($service_description_title),
                       '#default_value' => isset($p_data['s'][$service_type_key][$service_description_key]) ? $p_data['s'][$service_type_key][$service_description_key] : '',
                                           //$p_data['s']['re']['pti']
