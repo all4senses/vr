@@ -3033,7 +3033,7 @@ function rating_summary_list($id) {
 	}
   
   foreach ($summarylist as $str) {
-    $summarylist2 = explode('|', $str);
+    $summarylist2[] = explode('|', $str);
     
   }
   
