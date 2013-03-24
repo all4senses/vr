@@ -2985,9 +2985,13 @@ function vr_misc_testPage() {
   $query->orderBy('id.field_old_id_value');
   $providers = $query->execute()->fetchAllAssoc('field_old_id_value');
 
+  
+  foreach ($providers as $old_id => $provider) {
+    $providers[$old_id]['summarylist'] = rating_summary_list($old_id);
+  }
+
+  
   dpm($providers);
-  
-  
   
   
   $id = 28;
