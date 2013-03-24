@@ -3034,6 +3034,7 @@ function create_old_review($nid, $p_name, $rating, $user_ip) {
     'field_r_approvecode' => NULL,
     'provider_name' => $p_name,
     'user_ip' => $user_ip,
+    'field_old_review' => TRUE,
   );
   
   $rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE);
@@ -3045,7 +3046,7 @@ function create_old_review($nid, $p_name, $rating, $user_ip) {
   
   
   dpm($form_state);
-  //vr_pages_createNode_providerReview($form_state, 0, 0); // 0 - anonymous, 0 - not_approved (that is approved)
+  vr_pages_createNode_providerReview($form_state, 0, 0); // 0 - anonymous, 0 - not_approved (that is approved)
   
   return $out;
 }
