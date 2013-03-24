@@ -145,7 +145,7 @@
           
            <div class="bottom-clear"></div>
 
-              <?php if (isset($content['gv_ratings']) && $content['gv_ratings']): ?>
+              <?php dpm($content['gv_ratings']); if (isset($content['gv_ratings']) && $content['gv_ratings']): ?>
 
                   <div class="gv_votes"><?php echo '<div class="caption">' . t('Overall Consumer Ratings') . '</div>' . render($content['gv_ratings']); ?></div>
                   <div class="overall"> 
