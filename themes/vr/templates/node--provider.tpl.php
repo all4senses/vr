@@ -48,7 +48,7 @@
               <div class="images">
                 <?php
                 
-                  //dpm($content);
+                  dpm($content);
                   //dpm($node);
                   
                   if (isset($content['field_p_logo'][0]['#item']['uri'])) {
