@@ -3962,7 +3962,7 @@ function vr_pages_createNode_providerReview($form_state, $uid = 'NA', $not_appro
   );
   
   dpm($node);
-  return;
+  //return;
   
   if ($node = node_submit($node)) {
     node_save($node);
