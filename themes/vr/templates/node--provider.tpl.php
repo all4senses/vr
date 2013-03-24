@@ -48,7 +48,7 @@
               <div class="images">
                 <?php
                 
-                  dpm($content);
+                  //dpm($content);
                   //dpm($node);
                   
                   if (isset($content['field_p_logo'][0]['#item']['uri'])) {
@@ -145,24 +145,24 @@
           
            <div class="bottom-clear"></div>
 
-              <?php dpm($content['gv_ratings']); if (isset($content['gv_ratings']) && $content['gv_ratings']): ?>
+              <?php if (isset($content['vr_ratings']) && $content['vr_ratings']): ?>
 
-                  <div class="gv_votes"><?php echo '<div class="caption">' . t('Overall Consumer Ratings') . '</div>' . render($content['gv_ratings']); ?></div>
+                  <div class="vr_votes"><?php echo '<div class="caption">' . t('Overall Consumer Ratings') . '</div>' . render($content['vr_ratings']); ?></div>
                   <div class="overall"> 
                     <div class="text">
-                      <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->gv_voters . '</a></div></div>'; ?>
-                      <?php //echo render($content['gv_recommend']); ?>
-                      <?php echo '<div class="recommend"><div class="title">' . t('Would recommend') . ': </div><div class="data">' . $node->gv_recommend . '% of Users' . '</div></div>'; ?>
+                      <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->vr_voters . '</a></div></div>'; ?>
+                      <?php //echo render($content['vr_recommend']); ?>
+                      <?php echo '<div class="recommend"><div class="title">' . t('Would recommend') . ': </div><div class="data">' . $node->vr_recommend . '% of Users' . '</div></div>'; ?>
                       <div class="overall title"><?php $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . ' ' . t('Overall Rated:'); ?></div>
                     </div>
                     <div class="star-big">
-                      <?php echo /*render($content['gv_rating_overall'])*/ '<div class="count" content="' . $node->gv_rating_overall . '" property="v:rating">' . $node->gv_rating_overall . '</div>' . '<div class="descr">' . t('Out of 5 stars') . '</div>'; ?>
+                      <?php echo /*render($content['vr_rating_overall'])*/ '<div class="count" content="' . $node->vr_rating_overall . '" property="v:rating">' . $node->vr_rating_overall . '</div>' . '<div class="descr">' . t('Out of 5 stars') . '</div>'; ?>
                     </div>
                   </div>
               
               <? else: ?>
                   <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/sites/default/files/writeareview.png" /></a>'; ?>
-              <?php endif; // end of if ($page && isset($content['gv_ratings']) && $content['gv_ratings']): ?>
+              <?php endif; // end of if ($page && isset($content['vr_ratings']) && $content['vr_ratings']): ?>
               
               <div class="bottom-clear"></div>
           

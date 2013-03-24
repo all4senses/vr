@@ -3351,7 +3351,7 @@ function vr_pages_node_view($node, $view_mode) {
         $node->vr_voters = isset($counts[0]['value']) ? $counts[0]['value'] : '';
         vr_pages_addRatingsToNodeThemed($node, $votes, $counts);
 
-        dpm($node->content);
+        //dpm($node->content);
         
         // Get Editor's ratings
 //        if (!empty($p_data['ereview']['editor_ratings'])) {
