@@ -3000,7 +3000,8 @@ function rating_summary_list($id) {
 }
 
 function rating_summary_file_path($id) {
- 	return dirname(__FILE__) . '/data/summary_' . $id . '.dat';
+ 	//return dirname(__FILE__) . '/data/summary_' . $id . '.dat';
+  return '/home/vradmin/public_html/_test/f/old-ratings/summary_' . $id . '.dat';
 }
 
 
