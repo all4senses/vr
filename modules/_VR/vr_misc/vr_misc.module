@@ -2982,10 +2982,29 @@ function vr_misc_testPage() {
   $summarylist = rating_summary_list($id);
   dpm($summarylist);
   
+  
+  if($summarylist !== FALSE) {
+	 	for($i = 1; $i <= 5; $i++) {
+      if ($summarylist[$i]) {
+        for($j = 1; $j <= $summarylist[$i]; $j++) {
+          $out .= create_old_review($i);
+        }
+      }
+	 		
+	 	}
+	}
+
+  
   return $out . '<br>End of Test';
 }
 
 
+function create_old_review($rating) {
+  $out = 'review with ' . $rating . ' stars
+    
+<br>';
+  return $out;
+}
 
 
 function rating_summary_list($id) {
