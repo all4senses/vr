@@ -2977,10 +2977,10 @@ function vr_misc_testPage() {
   
   $id = 28;
   
-  dpm(rating_summary_file_path($id));
+  //dpm(rating_summary_file_path($id));
   
-  //$summarylist = rating_summary_list($id);
-  //dpm($summarylist);
+  $summarylist = rating_summary_list($id);
+  dpm($summarylist);
   
   return $out . '<br>End of Test';
 }
