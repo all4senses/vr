@@ -3023,7 +3023,7 @@ function create_old_review($nid, $p_name, $rating, $user_ip) {
   $out = 'nid ' . $nid . ' => review with ' . $rating . ' stars (' . $user_ip . ')
     
 <br>';
-  //return $out;
+  
   
   $form_state['values'] = array(
     'review' => array ('value' => ''),
@@ -3038,16 +3038,16 @@ function create_old_review($nid, $p_name, $rating, $user_ip) {
   
   $rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE);
   foreach ($rating_options as $vote_key => $vote_title) {
-    $form_state['values']['rating_' . $vote_key] = $rating;
+    $form_state['values']['rating_' . $vote_key] = $rating * 20;
   }
   
-  $form_state['values']['rating_recommend'] = ($rating > 2) ? 1 : 0;
+  $form_state['values']['rating_recommend'] = ($rating > 2) ? 100 : 0;
   
   
   dpm($form_state);
   //vr_pages_createNode_providerReview($form_state, 0, 0); // 0 - anonymous, 0 - not_approved (that is approved)
   
-  
+  return $out;
 }
 
 
