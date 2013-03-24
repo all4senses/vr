@@ -151,9 +151,9 @@
                     <?php 
                       ////echo '<div class="caption">' . t('Overall Consumer Ratings') . '</div>' . render($content['vr_ratings']); 
                     
-                      $out = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+                      $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
 
-                      $out = '<div class="rating_overall">' . $out . ' <div class="count">(' . number_format( (0.05 * $node->vr_rating_overall), 1 ) . ')</div>';
+                      echo '<div class="rating_overall">' . $stars_overall . ' <div class="count">(' . number_format( (0.05 * $node->vr_rating_overall), 1 ) . ')</div>';
 
       
       
