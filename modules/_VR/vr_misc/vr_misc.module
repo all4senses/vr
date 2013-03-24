@@ -3023,7 +3023,7 @@ function create_old_review($nid, $p_name, $rating, $user_ip) {
   $out = 'nid ' . $nid . ' => review with ' . $rating . ' stars (' . $user_ip . ')
     
 <br>';
-  return $out;
+  //return $out;
   
   $form_state['values'] = array(
     'review' => array ('value' => ''),
