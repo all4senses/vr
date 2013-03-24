@@ -2987,7 +2987,13 @@ function vr_misc_testPage() {
 
   
   foreach ($providers as $old_id => $provider) {
-    $providers[$old_id]->summarylist = rating_summary_list($old_id);
+    $summarylist = rating_summary_list($old_id);
+    if ($summarylist !== FALSE) {
+      $providers[$old_id]->summarylist = rating_summary_list($old_id);
+    }
+    else {
+      unset($providers[$old_id]);
+    }
   }
 
   
@@ -3032,9 +3038,12 @@ function rating_summary_list($id) {
 		$summarylist = array_map("trim", $summarylist);
 	}
   
-  foreach ($summarylist as $str) {
-    $summarylist2[] = explode('|', $str);
-    
+  $summarylist2 = FALSE;
+  
+  if (!empty($summarylist)) {
+    foreach ($summarylist as $str) {
+      $summarylist2[] = explode('|', $str);
+    }
   }
   
 	return $summarylist2;
