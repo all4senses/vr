@@ -153,7 +153,7 @@
                     
                       $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
 
-                      echo '<div class="rating_overall">' . $stars_overall . ' <div class="count">(' . number_format( (0.05 * $node->vr_rating_overall), 1 ) . ')</div>';
+                      echo '<div class="rating_overall">' . $stars_overall . ' <div class="count">(' . $node->vr_rating_overall . ')</div>';
 
       
       
