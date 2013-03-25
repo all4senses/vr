@@ -5260,6 +5260,13 @@ function vr_misc_getProviderQuickData($target, $data) {
       return $out;
       
       
+    case 'main_features':
+      
+      //dpm($data); 
+      $all_data_quick = vr_misc_getProvidersDataQuick();
+      //dpm($all_data_quick);
+      
+      return isset($all_data_quick[$data['data']->nid][$data['service_type']]['mf']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['mf'] : '';
       
       
       
