@@ -373,11 +373,13 @@ function vr_misc_goToExternalUrl2() {
 
   $args = arg();
   
-  if ($args[1] == 'providers' && !empty($args[2])) {
+  //if ($args[1] == 'providers' && !empty($args[2])) 
+  {
     
     $query = db_select('url_alias', 'a')
         ->fields('a', array('source'));
-    $query->condition('a.alias', $args[1] .  '/' . $args[2]);
+    //$query->condition('a.alias', $args[1] .  '/' . $args[2]);
+    $query->condition('a.alias', $args[1]);
     $node_id = str_replace('node/', '', $query->execute()->fetchField());
 
     $query = db_select('field_data_field_p_data_quick', 'pd');
