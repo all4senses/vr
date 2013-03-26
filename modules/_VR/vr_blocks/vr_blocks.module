@@ -60,7 +60,13 @@ function vr_blocks_block_info() {
     'info' => 'Send a message and Newsletter Sign Up',
     'cache' => DRUPAL_NO_CACHE,
   );
-  */    
+  */
+  
+  $blocks['recomended_sites'] = array(
+    'info' => 'Recomended sites',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   return $blocks;
 }
 
@@ -118,6 +124,15 @@ function vr_blocks_block_view($delta = '') {
       $block['content'] = drupal_get_form('vr_misc_sendMessageAndNewsletterSubscribe_form');
       break;
     */
+    
+    
+    
+    case 'recomended_sites':
+      $block['subject'] = 'Recomended sites';
+      $block['content'] = vr_blocks_get_recommendedSites_block();
+      break;
+    
+    
   }
 
   return $block;
@@ -140,6 +155,17 @@ function vr_blocks_block_configure($delta = '') {
     );
     
   }
+  elseif ($delta == 'recomended_sites') {
+    
+    $recommendedSites_block = unserialize(variable_get('vr_recommendedSites_block', NULL));
+    
+    $form['vr_body'] = array(
+      '#type' => 'text_format', 
+      '#title' => t('Body'),
+      '#default_value' => $recommendedSites_block['vr_body'], 
+    );
+    
+  }
   
   return $form;
 }
@@ -153,8 +179,25 @@ function vr_blocks_block_save($delta = '', $edit = array()) {
   if ($delta == 'weekly_video') {
     variable_set('vr_weekly_video_block', $edit['youtube_video_id']);
   }
-  
+  elseif ($delta == 'recomended_sites') {
+    $recommendedSites_block['vr_body'] = $edit['vr_body'];
+    variable_set('vr_recommendedSites_block', serialize($recommendedSites_block));
+  }
 }
+
+
+/**
+ * Returns a weekly Video block.
+ */
+function vr_blocks_get_recommendedSites_block() {
+  
+  $recommendedSites_block = unserialize(variable_get('vr_recommendedSites_block', NULL));
+  
+  $out = '<div class="body">' . $recommendedSites_block['vr_body'] . '</body>';
+
+  return $out;
+}
+
 
 /**
  * Returns a block blog archive list months.
