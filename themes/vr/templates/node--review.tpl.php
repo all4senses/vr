@@ -126,20 +126,61 @@
             <!--<span class="delim">|</span> -->
             <?php 
             
-              echo '<div class="rlinks">' 
-                  . (
-                      $page || $full_title 
-                      ? 
-                        ( (!isset($node->field_ref_provider['und'][0]['target_id']) || !$node->field_ref_provider['und'][0]['target_id'] ) ? '' : '<a href="' . url('node/' . $node->field_ref_provider['und'][0]['target_id']) . '">View All <span class="review-provider">' . (isset($node->field_r_provider_name[0]['value']) ? $node->field_r_provider_name[0]['value'] : $node->field_r_provider_name['und'][0]['value'] ) . '</span> Reviews</a> <span class="delim">|</span>')
-                      //. ( (!isset($content['provider_url']) || !$content['provider_url']) ? '' : '<a rel="nofollow" href="' . $content['provider_url'] . '"> <span class="review-provider">Visit <span property="v:itemreviewed">' . (isset($node->field_r_provider_name[0]['value']) ? $node->field_r_provider_name[0]['value'] : $node->field_r_provider_name['und'][0]['value'] ) . '</span></span></a> <span class="delim">|</span>')
-                      . ( (!isset($content['provider_url']) || !$content['provider_url']) ? '' : '<a rel="nofollow" href="' . $content['provider_url'] . '"> <span class="review-provider">Visit <span property="v:itemreviewed">' . (isset($node->field_r_provider_name[0]['value']) ? $node->field_r_provider_name[0]['value'] : $node->field_r_provider_name['und'][0]['value'] ) . '</span></span></a>')
+            /*
+              $provider_url = (!isset($content['provider_url']) || !$content['provider_url']) ? '' : $content['provider_url'];
+              $provider_name = isset($node->field_r_provider_name[0]['value']) ? $node->field_r_provider_name[0]['value'] : $node->field_r_provider_name['und'][0]['value'];
                       
-                      //: ( (!isset($content['provider_url']) || !$content['provider_url']) ? '' : '<a rel="nofollow" href="' . $content['provider_url'] . '">Visit <span class="review-provider" property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span></a> <span class="delim">|</span>')
-                      : ( (!isset($content['provider_url']) || !$content['provider_url']) ? '' : '<a rel="nofollow" href="' . $content['provider_url'] . '">Visit <span class="review-provider" property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span></a>')
-                    ) 
+              echo '<div class="rlinks">';
+
+                      if ($page || $full_title) {
+                        echo ( !$provider_name ? '' : '<a href="' . url('node/' . $node->field_ref_provider['und'][0]['target_id']) . '">View All <span class="review-provider">' . $provider_name . '</span> Reviews</a> <span class="delim">|</span>')
+                           . ( !$provider_url ? '' : '<a rel="nofollow" href="' . $provider_url . '"> <span class="review-provider">Visit <span property="v:itemreviewed">' . $provider_name . '</span></span></a>');
+                      }
+                      else {
+                        echo ( !$provider_url ? '' : '<a rel="nofollow" href="' . $provider_url . '">Visit <span class="review-provider" property="v:itemreviewed">' . $provider_name . '</span></a>');
+                      }
+
                     //. ' <span class="delim">|</span>' . l('Write a Review', 'node/add/review', array('query' => array('id' => $node->field_ref_provider['und'][0]['target_id'])))
-                  . '</div>'; 
+                echo '</div>'; 
+
+                */
+                
+                
+            
+            
+              echo '<div class="rlinks">';
               
+                      $provider_url = (!isset($content['provider_url']) || !$content['provider_url']) ? '' : $content['provider_url'];
+                      $provider_name = isset($node->field_r_provider_name[0]['value']) ? $node->field_r_provider_name[0]['value'] : $node->field_r_provider_name['und'][0]['value'];
+                      
+                      if($page || $full_title) {
+                        
+                        echo ( (!isset($node->field_ref_provider['und'][0]['target_id']) || !$node->field_ref_provider['und'][0]['target_id'] ) ? '' : '<a href="' . url('node/' . $node->field_ref_provider['und'][0]['target_id']) . '"><span class="review-provider">' . $provider_name . '</span> Reviews</a> <span class="delim">|</span>')
+                      
+                          //. ( !$provider_url ? '' : '<a rel="nofollow" href="' . $provider_url . '"> <span class="review-provider">Visit <span property="v:itemreviewed">' . $provider_name . '</span></span></a>');
+                      
+                        /////. ( !$provider_url ? '' : '<a rel="nofollow" target="_blank" href="/goto?t=provider&n=' . urlencode($provider_name) . '"> <span class="review-provider">Visit <span property="v:itemreviewed">' . $provider_name . '</span></span></a>');
+                        . ( !$provider_url ? '' : gv_misc_getTrackingUrl('<span class="review-provider">Visit <span property="v:itemreviewed">' . $provider_name . '</span></span>', NULL, $node->field_ref_provider['und'][0]['target_id']));
+                        
+
+                      }
+                      else {
+
+                        ///echo !$provider_url ? '' : '<a rel="nofollow" href="' . $provider_url . '">Visit <span class="review-provider" property="v:itemreviewed">' . $provider_name . '</span></a>';
+
+                        ////echo !$provider_url ? '' : '<a rel="nofollow" target="_blank" href="/goto?t=provider&n=' . urlencode($provider_name) . '" >Visit <span class="review-provider" property="v:itemreviewed">' . $provider_name . '</span></a>';
+                        echo !$provider_url ? '' : gv_misc_getTrackingUrl('Visit <span class="review-provider" property="v:itemreviewed">' . $provider_name . '</span>', NULL, $node->field_ref_provider['und'][0]['target_id']);
+                        
+                        
+                      }
+                      
+                  echo '',// ' <span class="delim">|</span>' . l('Write a Review', 'node/add/review', array('query' => array('id' => $node->field_ref_provider['und'][0]['target_id']))),
+                   '</div>'; 
+                  
+                  
+                  
+                
+                
               //'<a href="' . $content['provider_url'] . '">' . t('Visit !p', array('!p' => '<span property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span>')) . '</a>'
               //
               //'<a href="' . url('node/' . $node->field_ref_provider['und'][0]['target_id']) . '">' . t('View All !p Reviews', array('!p' => '<span property="v:itemreviewed">' . $node->field_r_provider_name['und'][0]['safe_value'] . '</span>')) . '</a>'
