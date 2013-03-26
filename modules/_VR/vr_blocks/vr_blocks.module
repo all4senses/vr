@@ -67,6 +67,21 @@ function vr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
+  $query = db_select('field_data_field_preface_bottom', 'pb')
+    ->fields('pb', array('entity_id'));
+  $query->condition('pb.delta', 0);
+  $query->condition('pb.field_preface_bottom_value', 0, '>');
+
+  $prefaces_v_bottoms = $query->execute()->fetchAllAssoc('entity_id');
+
+  dpm($prefaces_v_bottoms);
+
+//    foreach ($prefaces_v_bottoms) {
+//      
+//    }
+  
+
+  
   return $blocks;
 }
 
@@ -132,6 +147,16 @@ function vr_blocks_block_view($delta = '') {
       $block['content'] = vr_blocks_get_recommendedSites_block();
       break;
     
+    
+    
+    
+    
+    
+      
+//    case 'b_provider_p_bottom':
+//      $block['subject'] = 'Bottom section of Business providers page preface';
+//      $block['content'] = vr_misc_getPrefaceBottomSection('page-compare-business-voip-providers');
+//      break;
     
   }
 
