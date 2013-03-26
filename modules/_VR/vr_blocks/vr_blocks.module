@@ -192,8 +192,8 @@ function vr_blocks_block_save($delta = '', $edit = array()) {
 function vr_blocks_get_recommendedSites_block() {
   
   $recommendedSites_block = unserialize(variable_get('vr_recommendedSites_block', NULL));
-  dpm($recommendedSites_block);
-  $out = '<div class="body">' . render($recommendedSites_block['vr_body']) . '</body>';
+  //dpm($recommendedSites_block);
+  $out = '<div class="body">' . $recommendedSites_block['vr_body']['value'] . '</body>';
 
   return $out;
 }
