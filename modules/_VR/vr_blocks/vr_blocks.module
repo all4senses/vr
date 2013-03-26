@@ -78,7 +78,7 @@ function vr_blocks_block_info() {
   $prefaces_v_bottoms = $query->execute()->fetchAllAssoc('entity_id');
 
   dpm($prefaces_v_bottoms);
-
+ 
 //    foreach ($prefaces_v_bottoms) {
 //      
 //    }
