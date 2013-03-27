@@ -1132,8 +1132,13 @@ function vr_misc_getPrefaceMainSection($key) {
  * Get prefaces bottom section rendered.
  *
  */
-function vr_misc_getPrefaceBottomSection($key) {
-  $node = vr_misc_getPrefaceByKey($key);
+function vr_misc_getPrefaceBottomSection($key, $nid = NULL) {
+  if ($nid) {
+    $node = node_load($nid);
+  }
+  else {
+    $node = vr_misc_getPrefaceByKey($key);
+  }
   $node_view = node_view($node, 'full');
 
   return render($node_view['field_preface_bottom']);
