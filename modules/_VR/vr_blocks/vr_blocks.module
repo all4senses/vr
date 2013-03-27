@@ -80,7 +80,7 @@ function vr_blocks_block_info() {
   $prefaces_v_bottoms = $query->execute()->fetchAllAssoc('entity_id');
 
   variable_set('vr_prefaces_w_bottoms', serialize($prefaces_v_bottoms));
-  dpm($prefaces_v_bottoms);
+  //dpm($prefaces_v_bottoms);
   
   
  
@@ -166,7 +166,7 @@ function vr_blocks_block_view($delta = '') {
     default:
       
       $prefaces_v_bottoms = unserialize(variable_get('vr_prefaces_w_bottoms'));
-      dpm($prefaces_v_bottoms);
+      //dpm($prefaces_v_bottoms);
  
       foreach ($prefaces_v_bottoms as $prefaces_v_bottom) {
 
