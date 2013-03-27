@@ -161,8 +161,8 @@
         echo render($page['footer']);
         
         //echo vr_blocks_getBlockThemed(array('module' => 'vr_blocks', 'delta' => 'send_msg_n_subscribe', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
-        echo vr_blocks_getBlockThemed(array('module' => 'vr_blocks', 'delta' => 'social_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
-        echo vr_blocks_getBlockThemed(array('module' => 'vr_blocks', 'delta' => 'footer_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
+        //echo vr_blocks_getBlockThemed(array('module' => 'vr_blocks', 'delta' => 'social_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
+        echo vr_blocks_getBlockThemed(array('module' => 'vr_blocks', 'delta' => 'footer_menu', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
         
         //echo '<div id="block-vr-blocks-follow-links"><div class="follow-us">Follow Us</div>', vr_blocks_get_headerLinks(), '</div>';
       ?>
