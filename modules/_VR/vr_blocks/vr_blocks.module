@@ -75,7 +75,7 @@ function vr_blocks_block_info() {
   $query->fields('pk', array('field_preface_key_value'));
   $query->condition('pb.delta', 0);
   $query->condition('pb.field_preface_bottom_value', 1, '>=');
-  //$query->isNotNull('pk.field_preface_key_value');
+  $query->isNotNull('pk.field_preface_key_value');
   
   $prefaces_v_bottoms = $query->execute()->fetchAllAssoc('entity_id');
 
