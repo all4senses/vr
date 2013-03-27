@@ -334,7 +334,7 @@ function vr_blocks_get_footerLinks() {
 //  }
 //  else 
     {
-    $menu = menu_build_tree('menu-footer-links');
+    $menu = menu_build_tree('menu-footer-menu');
     //$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('vr_misc_submenuSimple_twoColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2012 voiprater.com | All Rights Reserved</div>';
     
     ////$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('vr_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2012 voiprater.com | All Rights Reserved</div>';
