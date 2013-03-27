@@ -171,7 +171,7 @@ function vr_blocks_block_view($delta = '') {
       foreach ($prefaces_v_bottoms as $prefaces_v_bottom) {
 
         if ($delta == 'bottom_of_' . $prefaces_v_bottom->field_preface_key_value) {
-          $block['subject'] = 'Bottom of ' . $prefaces_v_bottom->field_preface_key_value;
+          $block['subject'] = '';//'Bottom of ' . $prefaces_v_bottom->field_preface_key_value;
           $block['content'] = vr_misc_getPrefaceBottomSection(NULL, $prefaces_v_bottom->entity_id);
         }
         
