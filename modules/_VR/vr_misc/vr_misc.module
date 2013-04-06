@@ -423,7 +423,7 @@ function vr_misc_goToExternalUrl2() {
               ))
               ->execute();
             
-            drupal_goto( (strpos($url, 'http') !== FALSE ? $url : 'http://' . $url), array('external' => TRUE));
+            drupal_goto( (strpos($url, 'http') !== FALSE ? $url : 'http://' . $url), array('external' => TRUE), 301);
         }
      
     
@@ -492,7 +492,7 @@ function vr_misc_goToExternalUrl() {
               ))
               ->execute();
             
-            drupal_goto( (strpos($url, 'http') !== FALSE ? $url : 'http://' . $url), array('external' => TRUE));
+            drupal_goto( (strpos($url, 'http') !== FALSE ? $url : 'http://' . $url), array('external' => TRUE), 301);
         }
         
         //break;
