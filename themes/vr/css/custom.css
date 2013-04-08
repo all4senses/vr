@@ -1,4 +1,4 @@
-body{-webkit-text-size-adjust: none; min-width: 1150px; position: relative;}
+body{background: url("images/body-back.jpg") repeat-x scroll 0 0 #ededed; -webkit-text-size-adjust: none; min-width: 1150px; position: relative;}
 
 /*body, #c-top, #all-content-wrapper, #footer{width: 100%; display: table;}*/
 
