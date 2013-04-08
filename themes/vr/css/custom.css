@@ -72,7 +72,7 @@ input.blur, textarea.blur,
 
 #header{padding-top: 20px; z-index: 4;}
 #header #logo-block {background: #e16e00; height: 140px; width: 1090px; margin: auto; border-radius: 10px; overflow: hidden;}
-#header #logo-block #logo{height: 105px; width: 1090px; background: url("images/logo-header.jpg") no-repeat scroll 0 0 #365ab7; margin: 0;}
+#header #logo-block #logo{height: 105px; width: 1090px; background: url("images/logo-header.jpg") no-repeat scroll 0 0 #365ab7; margin: 0; float: none; display: block;}
 #header #header-caption{margin: 5px auto 0 auto; text-align: center; color: white; font-family: arial; font-size: 20px;}
 
 
