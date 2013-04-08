@@ -70,7 +70,10 @@ input.blur, textarea.blur,
 #header, #navigation, #all-content, #footer-inside{width: 1100px; margin: auto;}
 #footer-inside{position: relative; text-align: center; /*height: 353px;*/}
 
-#header{padding-top: 95px; z-index: 4;}
+#header{padding-top: 20px; z-index: 4;}
+#header #logo-block {background: #e16e00; height: 140px; width: 1090px; margin: auto; border-radius: 10px; overflow: hidden;}
+#header #logo-block #logo{height: 105px; width: 1090px; background: url("images/logo-header.jpg") no-repeat scroll 0 0 #365ab7;}
+#header #header-caption{margin: auto; text-align: center; color: white; font-family: arial; font-size: 20px;}
 
 
 /* Search block */
@@ -87,9 +90,6 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 #block-search-form input.form-submit{background: url("/sites/all/themes/vr/css/images/search-button.png") no-repeat scroll 0 0 transparent; color: white; border: none; font-size: 12px; height: 25px; display: block; margin: 0 0 0 6px; width: 57px; cursor: pointer;}
 
 
-
-#header #logo-block{}
-#header #header-caption{}
 
 
 #itexpo{background: url("images/Get-Voip-Mock-Banner.png") no-repeat scroll 0 0 transparent; position: absolute; top: 40px; right: 0; width: 350px; height: 40px;}
