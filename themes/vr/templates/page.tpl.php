@@ -3,15 +3,11 @@
     <header id="header" role="banner" class="clearfix">
 
     <nav id="navigation" role="navigation" class="clearfix">
-      <div id="header-menu-back"></div>
+      
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Rater Home'; ?>" id="logo">VoIP Rater
-          <?php  /*
-          <img src="<?php echo '/sites/all/themes/vr/css/images/vr-logo-top.png'; ?>" alt="VoIP Now" title="<?php print 'VoIP Rater Home'; ?>" />
-          */ ?>
-        </a>
-        
+        <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Rater Home'; ?>" id="logo">VoIP Rater</a>
+        <div id="header-caption">2013 Best VoIP Provider Reviews. VoIP Service Ratings and Discount Codes</div>  
       </div>
       
       <?php 
