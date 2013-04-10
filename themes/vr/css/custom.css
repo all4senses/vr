@@ -604,7 +604,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 
 .sidebar .block .content a,
-.sidebar .block .content .views-row a{background: url("images/circle-arrow-right.png") no-repeat 0 5px; color: #959597; font-size: 15px; display: block; width: 205px; margin: 0 0 5px 15px; text-indent: 27px;}
+.sidebar .block .content .views-row a{background: url("images/circle-arrow-right.png") no-repeat 0 3px; color: #959597; font-size: 15px; display: block; width: 205px; margin: 0 0 5px 15px; text-indent: 27px;}
 
 
 .sidebar #block-views-articles-block-1 .views-row-last a{border: none;}
@@ -633,7 +633,7 @@ body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 
 .sidebar #block-views-articles-block-1 .content,
-.sidebar .block .content{padding: 10px 5px 0 5px; background: white; border-radius: 10px; overflow: hidden; box-shadow: inset -1px 1px 10px 1px lightgray;}
+.sidebar .block .content{padding: 10px 5px 5px 5px; background: white; border-radius: 10px; overflow: hidden; box-shadow: inset -1px 1px 10px 1px lightgray;}
 
 
 
