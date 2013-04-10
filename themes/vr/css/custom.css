@@ -370,7 +370,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margin: 0 0 5px 0; padding: 10px 0 5px 0;}
 
 h1.preface,
-h2.preface{font-size: 18px; font-weight: bold; line-height: 18px; margin: 0; padding: 0 0 5px 0;}
+h2.preface{margin:0;}
 
 
 
@@ -549,7 +549,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 .sidebar .top-line{background: url("images/sprite-0.png") no-repeat scroll 0 -2px transparent; height: 5px; margin: 12px 0 10px; width: 100%;}
 
-.sidebar .block{overflow: hidden; margin: 12px; position: relative; z-index: 1;}
+.sidebar .block{overflow: hidden; margin: 12px 12px 20px 12px; position: relative; z-index: 1;}
 
 /*.sidebar .block-title{margin: 0; padding: 15px 7px 15px 10px; font-size: 16px; font-weight: bold; text-transform: capitalize; line-height: 18px;}*/
 
@@ -1130,7 +1130,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 /*.front h1, .attachment-before h1{line-height: 18px; color: black; font-size: 18px; font-weight: bold; margin: 0; border: medium none; padding: 0 10px 0 5px;}*/
 
-h1.preface{color: gray; font-size: 18px; font-weight: bold; line-height: 25px; margin: 0 0 -20px 0; width: 830px; background: url("images/title-back.png") no-repeat 0 0 transparent; height: 60px; position: relative; left: -45px; text-indent: 50px; padding: 7px 0 0 0;}
+h1.preface{color: #365ab7; font-size: 38px; line-height: normal;}
 .front h1.preface{margin-top: 10px;}
 
 

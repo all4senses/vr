@@ -466,6 +466,18 @@ function vr_html_head_alter(&$head_elements) {
 //      }
     }
   }
+  
+  // Add a OG:Description metatag
+  $head_elements['metatag_og_description'] = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+        'property' => 'og:description',
+        'content' => $head_elements['metatag_description']['#value'],
+    ),
+  );
+  
+  
   //dpm($head_elements);
   
 }
