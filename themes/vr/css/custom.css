@@ -439,6 +439,8 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 
 #all-content .view-providers tr.even td{background: yellow;}
 #all-content .view-providers tr.odd td{background: red;}
+#all-content .view-providers tr td.views-field-php {border-radius: 15px 0 0 15px;}
+#all-content .view-providers tr td.views-field-php-3 {border-radius: 0 15px 15px 0;}
 
 
 /* Providers directory*/
