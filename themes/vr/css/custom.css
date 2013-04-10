@@ -11,6 +11,9 @@ body.two-sidebars #main {float: left; margin: 0 0 0 195px; padding: 0; width: 66
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
+h3 a {color: #e16e00 !important;}
+h3 a:hover {text-decoration: underline;}
+
 #c-top{background: url("images/body-back.jpg") repeat-x scroll 0 0 #ededed; padding: 10px 0 0 0;}
 .header{margin: auto; position: relative; width: 1100px;}
 
