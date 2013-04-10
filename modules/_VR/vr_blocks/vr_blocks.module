@@ -36,6 +36,18 @@ function vr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
+  $blocks['vr_main_submenu_reviews'] = array(
+    'info' => 'Main submenu VoIP Reviews',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  $blocks['vr_main_submenu_resources'] = array(
+    'info' => 'Main submenu VoIP Resources',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+     
+      
+  
   $blocks['footer_links'] = array(
     'info' => 'Footer links',
     'cache' => DRUPAL_NO_CACHE,
@@ -111,6 +123,18 @@ function vr_blocks_block_view($delta = '') {
       $block['subject'] = 'VR Menu Links';
       $block['content'] = vr_blocks_get_menuLinks('menu-links');
       break;
+    
+    case 'vr_main_submenu_reviews':
+      $block['subject'] = 'Main submenu VoIP Reviews';
+      $block['content'] = vr_blocks_get_MainMenuSumbenu_byTitle('VoIP Reviews');
+      break;
+    
+
+    case 'vr_main_submenu_resources':
+      $block['subject'] = 'Main submenu VoIP Resources';
+      $block['content'] = vr_blocks_get_MainMenuSumbenu_byTitle('VoIP Resources');
+      break;
+
     
     /*
     case 'main_menu_om_providers':
@@ -345,6 +369,17 @@ function vr_blocks_get_footerLinks() {
   
   return $out;
 }
+
+
+
+/**
+ * Get block for the main menu submenu by top menu item title.
+ */
+function vr_blocks_get_MainMenuSumbenu_byTitle($submenu_title) {
+  $submenu = vr_blocks_getSubmenuByTitle('main-menu', $submenu_title);
+  return theme('vr_misc_submenuSimple', array('submenu' => $submenu, 'class' => 'block'));
+}
+
 
 
 /**
