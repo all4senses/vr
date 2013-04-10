@@ -404,7 +404,7 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 .view-display-id-page_chart_providers table,
 .view-providers table{margin-bottom: 0; border-radius: 10px 10px 0 0; overflow: hidden;}
 
-.view-providers table tbody{border: 3px solid lightgray; border-right: 5px solid lightgray;}
+.view-providers table tbody{border: 2px solid lightgray; border-right: 3px solid lightgray;}
 
 
 
