@@ -125,13 +125,13 @@ function vr_blocks_block_view($delta = '') {
       break;
     
     case 'vr_main_submenu_reviews':
-      $block['subject'] = 'Main submenu VoIP Reviews';
+      $block['subject'] = 'VoIP Reviews';
       $block['content'] = vr_blocks_get_MainMenuSumbenu_byTitle('VoIP Reviews');
       break;
     
 
     case 'vr_main_submenu_resources':
-      $block['subject'] = 'Main submenu VoIP Resources';
+      $block['subject'] = 'VoIP Resources';
       $block['content'] = vr_blocks_get_MainMenuSumbenu_byTitle('VoIP Resources');
       break;
 
