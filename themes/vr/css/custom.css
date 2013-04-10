@@ -5,13 +5,28 @@ body{background: url("images/body-back.jpg") repeat-x scroll 0 0 #ededed; -webki
 /* Three columns layout */
 body.two-sidebars #sidebar-first {float: left; margin: 0 0 0 -857px; padding: 0; width: 180px;}
 body.two-sidebars #main {float: left; margin: 0 0 0 195px; padding: 0; width: 663px;}
-/* Two columns layout */
-body.one-sidebar.sidebar-second #main {background: white; padding: 5px 10px 10px 10px; width: 825px;}
+
+
+
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
 #c-top{/*background: url("images/top-back.png") repeat-x scroll 0 0 #2581c6; height: 115px;*/}
 .header{margin: auto; position: relative; width: 1100px;}
+
+/*Same but without a line (from shadow) below the highlight region */
+#all-content-wrapper{overflow: hidden;}
+
+#all-content{background: white; margin: 0 auto 40px auto; padding: 0 0 0 0; width: 1100px; border: 1px solid lightgray; border-top: none; border-radius: 0 0 10px 10px;}
+
+
+#highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 1100px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
+
+/* Two columns layout */
+body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 780px;}
+
+/* Reset those data for separate quote pages */
+body.sidebar-second.node-type-quote #main{margin: 0; padding: 0;}
 
 
 /* Make caption narrower */
@@ -70,8 +85,9 @@ input.blur, textarea.blur,
 #header, #navigation, #all-content, #footer-inside{width: 1100px; margin: auto;}
 #footer-inside{position: relative; text-align: center; /*height: 353px;*/}
 
-#header{margin-top: 10px; z-index: 4;}
-#header #logo-block {background: #e16e00; height: 140px; width: 1090px; margin: auto; border-radius: 10px; overflow: hidden;}
+#header{margin-top: 10px; border: 1px solid lightgray; border-bottom: none; border-radius: 10px 10px 0 0; padding: 5px 0 0 0; margin: 30px auto 0 auto;}
+
+#header #logo-block {background: #e16e00; height: 135px; width: 1090px; margin: auto; border-radius: 10px; overflow: hidden;}
 #header #logo-block #logo{height: 105px; width: 1090px; background: url("images/logo-header.jpg") no-repeat scroll 0 0 #365ab7; margin: 0; float: none; display: block; text-indent: -9999px;}
 #header #header-caption{margin: 5px auto 0 auto; text-align: center; color: white; font-family: arial; font-size: 20px;}
 
@@ -578,8 +594,6 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 
 /* New style blocks */
-
-#all-content{background: white; box-shadow: 0 0 0px #DDD,0 20px 7px black;}
 
 body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 290px; margin: 0;}
 body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
@@ -1459,23 +1473,6 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 /* Body content for admin pages */
 .node-type-admin-page .field-name-body table{margin: 0;}
 .node-type-admin-page .field-name-body table td{vertical-align: top;}
-
-
-
-
-
-/*Same but without a line (from shadow) below the highlight region */
-#all-content-wrapper{overflow: hidden;}
-#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 1100px; box-shadow: 0px 10px 60px #DDDDDD, 0 0px 47px #f3f3f3; margin-bottom: 40px;}
-#highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 1100px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
-
-
-body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 780px;}
-
-/* Old sidebar style*/
-
-/* Reset those data for separate quote pages */
-body.sidebar-second.node-type-quote #main{margin: 0; padding: 0;}
 
 
 /* Sitemap page */
