@@ -45,7 +45,11 @@ function vr_blocks_block_info() {
     'info' => 'Main submenu VoIP Resources',
     'cache' => DRUPAL_NO_CACHE,
   );
-     
+  
+  $blocks['vr_main_submenu_articles'] = array(
+    'info' => 'Main submenu VoIP Articles',
+    'cache' => DRUPAL_NO_CACHE,
+  );
       
   
   $blocks['footer_links'] = array(
@@ -133,6 +137,11 @@ function vr_blocks_block_view($delta = '') {
     case 'vr_main_submenu_resources':
       $block['subject'] = 'VoIP Resources';
       $block['content'] = vr_blocks_get_MainMenuSumbenu_byTitle('VoIP Resources');
+      break;
+
+    case 'vr_main_submenu_articles':
+      $block['subject'] = 'VoIP Articles';
+      $block['content'] = vr_blocks_get_MainMenuSumbenu_byTitle('VoIP Articles');
       break;
 
     
