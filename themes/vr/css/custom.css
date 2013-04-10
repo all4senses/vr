@@ -838,7 +838,7 @@ margin-top: 100px;
 
 .node-type-provider-type .float.share,
 .node-type-preface .float.share,
-.front .float.share{margin-top: 180px;}
+.front .float.share{/*margin-top: 180px;*/}
 
 .share .main{width: 410px; float: right;}
 .IN-widget{float: left; margin-right: 13px;}
