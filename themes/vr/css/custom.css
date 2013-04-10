@@ -402,15 +402,17 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
 
 .view-display-id-page_chart_providers table,
-.view-providers table{margin-bottom: 0;}
+.view-providers table{margin-bottom: 0; border-radius: 10px 10px 0 0; overflow: hidden;}
+
+
 
 .view-display-id-page_chart_providers th,
-.view-providers th{background: #f3f8fb; color: #b8b8b8; height: 45px; text-align: center; font-size: 14px; font-weight: bold; padding: 0 5px; text-transform: uppercase;}
+.view-providers th{color: white; height: 45px; text-align: center; font-size: 16px; padding: 0 5px; /*text-transform: uppercase;*/}
 
 
 
 .view-display-id-page_chart_providers th a,
-.view-providers th a{color: white; display: block; font-size: 14px; font-weight: bold;}
+.view-providers th a{color: white; display: block; font-size: 16px;}
 
 
 .view-display-id-page_chart_providers .view-providers td,
@@ -418,8 +420,11 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 #all-content .view-providers td, 
 #all-content .view-providers td.active{background: transparent; padding: 5px 5px 8px; border-right: 1px solid #f4f4f4; text-align: center;}
 
-.view-display-id-page_chart_providers thead tr,
-.view-providers thead tr{border-bottom: 3px solid lightgray;}
+
+
+.view-providers thead{background: #365ab7;}
+
+.view-display-id-page_chart_providers thead tr{border-bottom: 3px solid lightgray;}
 
 .view-display-id-page_chart_providers tr,
 .view-providers tr{border-bottom: 1px solid lightgray;}
@@ -432,6 +437,8 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 .view-providers tr.odd{background: transparent;}
 
 
+.view-providers tr.even td{background: yellow;}
+.view-providers tr.odd td{background: red;}
 
 
 /* Providers directory*/
