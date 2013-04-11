@@ -1558,10 +1558,10 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 #block-vr-blocks-request-quote-v1 #up .img{background: url("/sites/all/themes/vr/css/images/sprite-0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 285px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 255px;}
 #block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper .step{height: 285px;}
 
-#block-vr-blocks-request-quote-v1 .step#questions_section .quote-pic {background: url("/sites/all/themes/vr/css/images/quote-phone.png") no-repeat scroll 0 0 transparent; width: 270px; height: 190px;}
+#block-vr-blocks-request-quote-v1 .step#questions_section .quote-pic {background: url("/sites/all/themes/vr/css/images/quote-pic-globe.png") no-repeat scroll 0 0 transparent; width: 95px; height: 100px; float: right;}
 
 #block-vr-blocks-request-quote-v1 .left{float: left; margin: 15px 10px 0 0;}
 #block-vr-blocks-request-quote-v1 .step#personal_data .left{margin: 5px;}
@@ -1595,8 +1595,8 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 .protected{background: url(/sites/all/themes/vr/css/images/sprite-0.png) no-repeat scroll 0 -17px white; bottom: 40px; height: 19px; right: 22px; position: absolute; width: 85px;}
 
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation{bottom: 0; left: 18px;}
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/quote-btn-back.jpg) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 210px; color: white; padding: 6px 0 20px; border-radius: 5px; height: 30px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation{bottom: 40px; left: 18px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/quote-button-green-back.jpg) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 120px; color: white; padding: 6px 0 20px; border-radius: 5px; height: 30px;}
 #block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #back{position: absolute; left: 5px; background: none; border: none; color: lightgray; font-size: 11px; bottom: 40px;}
 
 
