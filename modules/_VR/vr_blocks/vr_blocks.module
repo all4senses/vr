@@ -176,7 +176,7 @@ function vr_blocks_block_view($delta = '') {
       break; 
     */
     case 'request_quote_v1':
-      $block['subject'] = 'Request a quote block v1 (for a side bar 2 steps)';
+      $block['subject'] = 'Get FREE VoIP Quotes';
       $block['content'] = vr_blocks_get_requestQuote_block_v1();
       break;
     /*
