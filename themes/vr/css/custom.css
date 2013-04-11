@@ -86,7 +86,7 @@ input.blur, textarea.blur,
 
 
 #header, #navigation, #all-content, #footer-inside{width: 1100px; margin: auto;}
-#footer-inside{position: relative; text-align: center; /*height: 353px;*/}
+
 
 #header{margin-top: 10px; border: 1px solid lightgray; border-bottom: none; border-radius: 10px 10px 0 0; padding: 5px 0 0 0; margin: 30px auto 0 auto;}
 
@@ -157,7 +157,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 #footer .menu a{color: white; font-size: 14px;}
 #footer .menu li{margin: 2px 2px 0 2px;}
 
-#footer .c{color: gray; font-size: 12px; /*position: absolute; top: 395px; left: 455px;*/}
+#footer .c{color: white; font-size: 12px; float: left; margin: 20px;}
 
 
 #footer #sitelock{margin: auto;}
@@ -1789,9 +1789,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 .social-links .RSS {background: url("images/social.png") no-repeat -110px -96px transparent;}
 
 
-/*#block-vr_blocks-footer_links {position: absolute; left: 840px; top: 110px;}*/
-
-#block-vr_blocks-footer_links {overflow: hidden; display: block; clear: both; margin: auto; width: 500px;}
+#block-vr_blocks-footer_links {overflow: hidden; float: right; margin: 10px 20px 0 0; color: #a5bcf6;}
 
 #block-vr_blocks-footer_links .title a{font-size: 13px; color: white; position: relative; top: -5px;}
 
@@ -1799,9 +1797,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-vr_blocks-footer_links .vr {position: relative; overflow: hidden; margin: 10px 0 10px;}
 #block-vr_blocks-footer_links .col-2 {position: absolute; top: 0; left: 150px; width: 120px;}
-#block-vr_blocks-footer_links a {color: #aaaaaa; font-size: 13px;}
+#block-vr_blocks-footer_links a {color: #a5bcf6; font-size: 13px; text-transform: capitalize; margin: 0 5px;}
 #block-vr_blocks-footer_links a:hover {color: white; text-decoration: underline;}
-#block-vr_blocks-footer_links .om-links a {margin-bottom: 8px; display: block;}
+
 
 
 .types-block.VoIP.Equipment {margin-top: 5px;}

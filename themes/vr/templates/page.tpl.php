@@ -153,7 +153,7 @@
 
       <!--<div id="in-touch"></div> -->
 
-      <div class="c">© 2004-2013 VoIP Rater.com</div>
+      <div class="c">© 2004-2013 VoIP Rater</div>
       
       <?php 
         echo render($page['footer']);
