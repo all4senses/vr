@@ -1553,8 +1553,8 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 #up .caption{font-size: 14px; font-weight: bold; text-align: center; margin: 0 0 0px 0;}
 #block-vr-blocks-request-quote-v1 #up .text{font-size: 15px; color: gray; background: white; border-radius: 10px; box-shadow: inset -1px 1px 10px 1px lightgray; padding: 10px 0;}
 
-#block-vr-blocks-request-quote-v1 #up .text li{margin-left: 10px; margin: 0 0 7px 10px;}
-#block-vr-blocks-request-quote-v1 #up .text .guide-text{margin-left: 10px;}
+#block-vr-blocks-request-quote-v1 #up .text li{background: url("images/circle-arrow-right.png") no-repeat 0 3px; text-indent: 25px; margin-left: 10px; margin: 0 0 7px 10px;}
+#block-vr-blocks-request-quote-v1 #up .text .guide-text{margin-left: 10px; background: url("images/circle-arrow-right.png") no-repeat 0 3px; padding-left: 25px;}
 
 #block-vr-blocks-request-quote-v1 #up .img{background: url("/sites/all/themes/vr/css/images/sprite-0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
 
