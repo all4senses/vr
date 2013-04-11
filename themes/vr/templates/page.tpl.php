@@ -153,6 +153,8 @@
 
       <!--<div id="in-touch"></div> -->
 
+      <div class="c">© 2004-2013 VoIP Rater.com</div>
+      
       <?php 
         echo render($page['footer']);
         
@@ -163,7 +165,7 @@
         //echo '<div id="block-vr-blocks-follow-links"><div class="follow-us">Follow Us</div>', vr_blocks_get_headerLinks(), '</div>';
       ?>
       
-      <div class="c">Copyright © 2004-2013 voiprater.com | All rights reserved.</div>
+      
     </div>
   </footer> <!-- /#footer -->
 
