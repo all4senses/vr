@@ -1608,7 +1608,7 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 #block-vr-blocks-request-quote-v1 .results{margin: 0px auto; height: auto; width: 250px; padding-top: 20px; color: white;}
 #block-vr-blocks-request-quote-v1 .results .quote-final p{font-size: 12px; margin: 0; line-height: 18px;}
-#block-vr-blocks-request-quote-v1 .guide{background: url("/sites/all/themes/vr/css/images/quote-guide.jpg") no-repeat scroll 0 0 transparent; width: 70px; height: 90px; float: left;}
+#block-vr-blocks-request-quote-v1 .guide{background: url("/sites/all/themes/vr/css/images/quote-guide.jpg") no-repeat scroll 0 0 transparent; width: 70px; height: 80px; float: left;}
 #block-vr-blocks-request-quote-v1 .results .guide{color: white; font-size: 14px; width: 200px; background: none; text-indent: 0;}
 #block-vr-blocks-request-quote-v1 .results .guide img{width: 80px; padding: 0 63px; margin: 5px 0 0 0;}
 
