@@ -1797,7 +1797,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-vr_blocks-footer_links .vr {position: relative; overflow: hidden; margin: 10px 0 10px;}
 #block-vr_blocks-footer_links .col-2 {position: absolute; top: 0; left: 150px; width: 120px;}
-#block-vr_blocks-footer_links a {color: #a5bcf6; font-size: 13px; text-transform: capitalize; margin: 0 5px;}
+#block-vr_blocks-footer_links a {color: #a5bcf6; font-size: 13px; text-transform: uppercase; margin: 0 5px;}
 #block-vr_blocks-footer_links a:hover {color: white; text-decoration: underline;}
 
 
