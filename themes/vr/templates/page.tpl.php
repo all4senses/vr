@@ -13,15 +13,11 @@
       <?php 
           global $user;
 
-//        if ($user->uid == 1) {
-          echo /*'<a id="itexpo" href="http://www.voiprater.com/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
+          echo render($page['header']); 
           
-          echo vr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), TRUE, '+31 day', ($user->uid ? '_logged' : NULL));
-          
-//        }
-//        else {
-//          echo '<div id="block-vr-blocks-header-links"><div class="follow-us">Follow Us</div>', vr_blocks_get_headerLinks(), '</div>', render($page['header']); 
-//        }
+          if (in_array('administrator', $user->roles) || in_array('writer', $user->roles)) {
+            echo '<a id="e" title="Edit content..." href="/admin/content-vr">e</a>';
+          }
       ?>
     </nav> <!-- /#navigation -->
 
