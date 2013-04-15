@@ -1467,7 +1467,7 @@ function vr_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $body_full_markup = preg_replace('/<img[^>]+>/i', '', $body_full_markup);
     
     // Set No image for externally linked image.
-    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'www.voiprater.com')) || !file_exists(str_replace('http://www.voiprater.com/', '', $main_image['src']))) {
+    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'www.voiprater.com')) || (!file_exists(str_replace('http://www.voiprater.com/', '', $main_image['src'])) && !file_exists(str_replace('http://test.voiprater.com/', '', $main_image['src'])))  ) {
       $found_image = FALSE;
       //dpm($main_image);
     }
