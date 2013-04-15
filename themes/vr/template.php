@@ -604,7 +604,7 @@ function vr_process_page(&$variables) {
 //        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Articles', 'articles'), l('Library', 'about-voip-services'), $variables['node']->title )));
 //        break;
       case 'blog_post':
-        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('News', 'articles'), $variables['node']->title )));
+        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Articles', 'articles'), $variables['node']->title )));
         break;
 //      case 'news_post':
 //        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Articles', 'articles'), l('News', 'news'), $variables['node']->title )));
