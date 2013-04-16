@@ -92,7 +92,9 @@ input.blur, textarea.blur,
 
 #header #logo-block {background: #e16e00; height: 135px; width: 1090px; margin: auto; border-radius: 10px; overflow: hidden;}
 #header #logo-block #logo{height: 105px; width: 1090px; background: url("images/logo-header.jpg") no-repeat scroll 0 0 #365ab7; margin: 0; float: none; display: block; text-indent: -9999px;}
-#header #header-caption{margin: 5px auto 0 auto; text-align: center; color: white; font-family: arial; font-size: 20px;}
+
+/*#header #header-caption{margin: 5px auto 0 auto; text-align: center; color: white; font-family: arial; font-size: 20px;}*/
+#header #header-caption{color: orange; font-family: arial; font-size: 12px; position: absolute; top: -49px; left: 345px;}
 
 
 /* Search block */
@@ -181,7 +183,7 @@ div.error{border: none;}
 
 
 ul.vr{margin-left: 0px; padding-left: 10px;}
-.block.block-om-maximenu{left: 0; position: absolute; top: 75px; z-index: 10;}
+.block.block-om-maximenu{left: 18px; position: absolute; top: 105px; z-index: 10;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
@@ -191,11 +193,11 @@ ul.vr{margin-left: 0px; padding-left: 10px;}
 
 
 /* set constant position for om submenu block*/
-.om-maximenu.om-maximenu-block ul.om-menu {width: 960px; margin-left: 140px;}
+.om-maximenu.om-maximenu-block ul.om-menu {width: 1090px;}
 
 .om-maximenu ul.om-menu li.om-leaf{top: -2px;}
 
-#om-menu-main-om-menu li.om-leaf{position: relative; background: url("images/menu-devisor.jpg") no-repeat scroll right 7px transparent; height: 42px; z-index: 400; /*padding: 0 43px 0 38px;*/}
+#om-menu-main-om-menu li.om-leaf{position: relative; /*background: url("images/menu-devisor.jpg") no-repeat scroll right 7px transparent;*/ height: 42px; z-index: 400; /*padding: 0 43px 0 38px;*/}
 #om-menu-main-om-menu li.om-leaf.first{padding-left: 0;}
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
@@ -209,7 +211,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 35px 10px; font-size: 15px; color: lightgray;}
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 10px 10px 10px; font-size: 14px; color: white;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 .om-maximenu ul.om-menu li.om-leaf:hover om-link, 
