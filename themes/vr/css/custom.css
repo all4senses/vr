@@ -219,7 +219,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 
 #om-menu-main-om-menu li.om-leaf:hover a.om-link
 /*.om-leaf a:hover */
-{background: url("/sites/all/themes/vr/css/images/main-menu-hover.png") repeat-x 0 6px; height: 28px !important; overflow: hidden; position: relative; left: -2px;}
+{/*background: url("/sites/all/themes/vr/css/images/main-menu-hover.png") repeat-x 0 6px;*/ height: 28px !important; overflow: hidden; position: relative; /*left: -2px;*/ color: /*#365ab7*/lightgray;}
 
 
 
