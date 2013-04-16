@@ -599,7 +599,8 @@ function vr_blocks_get_requestQuote_block_v1() {
   $out = '
    <div id="up">
       <!--<div class="guide"></div>-->
-      <img src="/sites/all/themes/vr/css/images/voipguide.png" />
+      <!--<img src="/sites/all/themes/vr/css/images/voipguide.png" />-->
+      <img src="/sites/all/themes/vr/css/images/quote-pic-globe.png" />
       <div class="text">
         <ul>
           <li>No Contracts & Easy Setup</li>
@@ -659,7 +660,7 @@ function vr_blocks_get_requestQuote_block_v1() {
 
                             <div class="bottom-clear"></div>
                             
-                            <div class="quote-pic"></div>
+                            <!--<div class="quote-pic"></div>-->
                               
                             <!--<div id="on_error"></div>-->
 
