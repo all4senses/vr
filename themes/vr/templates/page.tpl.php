@@ -15,9 +15,11 @@
 
           echo render($page['header']); 
           
-          if (in_array('administrator', $user->roles) || in_array('writer', $user->roles)) {
-            echo '<a id="e" title="Edit content..." href="/admin/content-vr">e</a>';
-          }
+          echo vr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), TRUE, '+31 day', ($user->uid ? '_logged' : NULL));
+          
+//          if (in_array('administrator', $user->roles) || in_array('writer', $user->roles)) {
+//            echo '<a id="e" title="Edit content..." href="/admin/content-vr">e</a>';
+//          }
       ?>
     </nav> <!-- /#navigation -->
 
