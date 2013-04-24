@@ -604,12 +604,12 @@ function vr_blocks_get_requestQuote_block_v1() {
    <div id="up">
       <!--<div class="guide"></div>-->
       <!--<img src="/sites/all/themes/vr/css/images/voipguide.png" />-->
-      <img src="/sites/all/themes/vr/css/images/quote-pic-globe.png" />
+      <!--<img src="/sites/all/themes/vr/css/images/quote-pic-globe.png" />-->
       <div class="text">
         <ul>
           <li>No Contracts & Easy Setup</li>
           <li>Enterprise Phone Sytems</li>
-          <li>Unlimited Calling & Faxing</li>
+          <li class="last">Unlimited Calling & Faxing</li>
         </ul>
         <div class="guide-text">Plus a <strong>FREE</strong> VoIP Guide with Request</div>
       </div>
