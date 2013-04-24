@@ -238,7 +238,7 @@ function vr_misc_flush_caches() {
   
   // Remove all minified files from jsmin-vr folder.
   // Uncomment in case ov changing any js
-  /*
+  
   $dir = 'f/jsmin-vr';
   $objects = scandir($dir);
   foreach ($objects as $object) {
@@ -247,7 +247,7 @@ function vr_misc_flush_caches() {
     }
   }
   variable_del('vr_minified_js');
- */ 
+ 
   
   // Recalculate the reviews amount.
 //  $query = db_select('votingapi_vote', 'v');
