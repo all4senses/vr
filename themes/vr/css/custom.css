@@ -267,7 +267,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 #requestQuoteFormWrapper .step{position: relative; font-size: 14px; height: 272px; overflow: hidden; border-radius: 0;}
 #requestQuoteFormWrapper .step#personal_info{padding-right: 7px;}
          
-#requestQuoteFormWrapper .ui-corner-all{border-radius: 0;}
+/*#requestQuoteFormWrapper .ui-corner-all{border-radius: 0;}*/
 
 
 #requestQuoteFormWrapper #data{position: absolute;}
@@ -630,10 +630,14 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 /* New style blocks */
 
-body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 290px; margin: 0;}
-body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
+/*body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 290px; margin: 0;}*/
+body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 0; width: 290px; margin: 10px 0 0 0;}
 
-.region-sidebar-second {background: #365ab7; border-radius: 10px; padding: 1px 0; margin: 0 5px 5px 0;}
+/*body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}*/
+
+
+/*.region-sidebar-second {background: #365ab7; border-radius: 10px; padding: 1px 0; margin: 0 5px 5px 0;}*/
+.region-sidebar-second {border-radius: 10px; padding: 0; margin: 0 5px 5px 0;}
 
 .sidebar .top-line{display: none; background: none; height: 0; margin: 0;}
 
@@ -1545,8 +1549,11 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 
 /* Request a Quote block V1 */
-#block-vr-blocks-request-quote-v1 h3{padding: 0 0 5px 0; color: white; width: 180px;}
-#block-vr-blocks-request-quote-v1 .content{background: none; padding: 0; border: none; box-shadow: none;}
+/*#block-vr-blocks-request-quote-v1 h3{padding: 0 0 5px 0; color: white; width: 180px;}*/
+#block-vr-blocks-request-quote-v1 h3{padding: 0 0 5px 0; color: white; width: 285px; background: url("images/q-header.png") no-repeat -10px 0 #f9f9f9; height: 65px; display: block; border-radius: 10px 10px 0 0; text-indent: -9999px;}
+
+/*#block-vr-blocks-request-quote-v1 .content{background: none; padding: 0; border: none; box-shadow: none;}*/
+#block-vr-blocks-request-quote-v1 .content{padding: 0; border: none; box-shadow: none; background: #f9f9f9; border-radius: 0;}
 
 
 #highlighted #block-vr-blocks-request-quote-v1 .inside{background: transparent; border: medium none; padding: 0;}
@@ -1558,10 +1565,16 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 #up{font-size: 17px; line-height: 18px;}
 #block-vr-blocks-request-quote-v1 #up img{width: 60px; position: absolute; top: -2px; right: 20px;}
 #block-vr-blocks-request-quote-v1 #up .caption{font-size: 14px; font-weight: bold; text-align: center; margin: 0 0 0px 0;}
-#block-vr-blocks-request-quote-v1 #up .text{font-size: 15px; color: gray; background: white; border-radius: 10px; box-shadow: inset -1px 1px 10px 1px lightgray; padding: 18px 0 10px;}
 
-#block-vr-blocks-request-quote-v1 #up .text li{background: url("images/arrow-triangle-right.png") no-repeat 0 3px; text-indent: 15px; margin: 0 0 7px 15px;}
-#block-vr-blocks-request-quote-v1 #up .text .guide-text{margin-left: 15px; background: url("images/arrow-triangle-right.png") no-repeat 0 3px; padding-left: 15px;}
+/*#block-vr-blocks-request-quote-v1 #up .text{font-size: 15px; color: gray; background: white; border-radius: 10px; box-shadow: inset -1px 1px 10px 1px lightgray; padding: 18px 0 10px;}*/
+#block-vr-blocks-request-quote-v1 #up .text{font-size: 15px; color: gray;}
+
+/*#block-vr-blocks-request-quote-v1 #up .text li{background: url("images/arrow-triangle-right.png") no-repeat 0 3px; text-indent: 15px; margin: 0 0 7px 15px;}*/
+#block-vr-blocks-request-quote-v1 #up .text li{background: url("images/arrow-triangle-right-orange.png") no-repeat 0 3px; text-indent: 15px; margin: 0 20px 7px 20px; color: #a1a1a1; border-bottom: 1px solid orange; padding: 0 0 3px 0;}
+#block-vr-blocks-request-quote-v1 #up .text li.last {border: none;}
+
+/*#block-vr-blocks-request-quote-v1 #up .text .guide-text{margin-left: 15px; background: url("images/arrow-triangle-right.png") no-repeat 0 3px; padding-left: 15px;}*/
+#block-vr-blocks-request-quote-v1 #up .text .guide-text{background: url("images/q-guide-back.png") no-repeat -8px 0; padding: 7px 40px 0; display: block; height: 62px; color: white; text-align: center;}
 
 #block-vr-blocks-request-quote-v1 #up .img{background: url("/sites/all/themes/vr/css/images/sprite-0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
 
@@ -1592,8 +1605,11 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 .label_before{float: none; margin-left: 0; margin-bottom: 0;}
 #block-vr-blocks-request-quote-v1 .wrapper.phone .label_before{margin-bottom: 2px;}
 
-#block-vr-blocks-request-quote-v1 .question{color: #fabe84; text-transform: uppercase; margin-bottom: 5px;}
+/*#block-vr-blocks-request-quote-v1 .question{color: #fabe84; text-transform: uppercase; margin-bottom: 5px;}*/
+#block-vr-blocks-request-quote-v1 .question{color: #a1a1a1; margin: 5px 0 0 15px;}
 
+#block-vr-blocks-request-quote-v1 .ui-selectmenu {color: red; border-radius: 10px;}
+#block-vr-blocks-request-quote-v1 .content a, #block-vr-blocks-request-quote-v1 .content .views-row a{background: none;}
 
 #block-vr-blocks-request-quote-v1 .multipartForm .step-notice {display: none; bottom: 0; font-size: 12px; left: 5px; line-height: 15px; position: absolute; text-align: right; width: 80px; color: gray;}
 
