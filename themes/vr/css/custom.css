@@ -578,7 +578,8 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 .sidebar .top-line{background: url("images/sprite-0.png") no-repeat scroll 0 -2px transparent; height: 5px; margin: 12px 0 10px; width: 100%;}
 
-.sidebar .block{overflow: hidden; margin: 12px 12px 20px 12px; position: relative; z-index: 1;}
+/*.sidebar .block{overflow: hidden; margin: 12px 12px 20px 12px; position: relative; z-index: 1;}*/
+.sidebar .block{overflow: hidden; margin: 0 0 20px 0; position: relative; z-index: 1;}
 
 /*.sidebar .block-title{margin: 0; padding: 15px 7px 15px 10px; font-size: 16px; font-weight: bold; text-transform: capitalize; line-height: 18px;}*/
 
