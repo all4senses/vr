@@ -1630,7 +1630,7 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 #block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/q-btn.png) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 125px; color: white; margin: 0 auto 12px 0; display: block; height: 35px;}
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next input[value="Get Quotes"] {margin-left: 60px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation input[value="Get Quotes"]#next {margin-left: 60px;}
 /*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation input[value="Get Quotes"] {margin-bottom: 50px;}*/
 
 #block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #back{position: absolute; left: 5px; background: none; border: none; color: lightgray; font-size: 11px; bottom: 42px;}
