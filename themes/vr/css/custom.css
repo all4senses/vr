@@ -1610,7 +1610,7 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 /*#block-vr-blocks-request-quote-v1 .question{color: #fabe84; text-transform: uppercase; margin-bottom: 5px;}*/
 #block-vr-blocks-request-quote-v1 .question{color: #a1a1a1; margin: 5px 0 0 15px;}
 
-#block-vr-blocks-request-quote-v1 .ui-selectmenu {color: red; border-radius: 10px;}
+#block-vr-blocks-request-quote-v1 .ui-selectmenu {border-radius: 7px;}
 #block-vr-blocks-request-quote-v1 .content a, #block-vr-blocks-request-quote-v1 .content .views-row a{background: none;}
 
 #block-vr-blocks-request-quote-v1 .multipartForm .step-notice {display: none; bottom: 0; font-size: 12px; left: 5px; line-height: 15px; position: absolute; text-align: right; width: 80px; color: gray;}
