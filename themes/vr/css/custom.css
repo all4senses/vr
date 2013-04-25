@@ -1624,7 +1624,7 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation{bottom: 0; left: 18px;}
 
 /*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/quote-button-green-back.jpg) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 120px; color: white; padding: 6px 0 20px; border-radius: 5px; height: 30px;}*/
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/quote-button-green-back.jpg) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 120px; color: white; padding: 6px 0 20px; border-radius: 5px; height: 30px; margin-bottom: 10px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/quote-button-green-back.jpg) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 120px; color: white; padding: 6px 0 20px; border-radius: 5px; height: 30px; margin-bottom: 5px;}
 
 /*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation input[value="Get Quotes"] {margin-bottom: 50px;}*/
 
