@@ -1579,8 +1579,10 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 #block-vr-blocks-request-quote-v1 #up .img{background: url("/sites/all/themes/vr/css/images/sprite-0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 255px;}
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper .step{height: 285px;}
+
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 225px;}
+/*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 255px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper .step{height: 285px;}*/
 
 #block-vr-blocks-request-quote-v1 .step#questions_section .quote-pic {background: url("/sites/all/themes/vr/css/images/quote-pic-globe.png") no-repeat scroll 0 0 transparent; width: 95px; height: 100px; float: right;}
 
@@ -1595,12 +1597,16 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 .right .str2{font-size: 9px;font-style: italic; position: absolute; color: white; top: 90px; right: 28px; width: 70px;}
 
 #block-vr-blocks-request-quote-v1 .wrapper{font-size: 12px; margin: 7px 0; overflow: hidden;}
+#block-vr-blocks-request-quote-v1 #questions_section .wrapper {margin: 0;}
+#block-vr-blocks-request-quote-v1 #personal_data .wrapper {margin: 3px 0;}
+
 
 /*#block-vr-blocks-request-quote-v1 .wrapper input{float: left; text-align: left; width: 248px; height: 18px; margin: 1px 0 2px 20px; padding: 1px 0 1px 10px; font-size: 12px; border-radius: 3px; background: white;} */
 #block-vr-blocks-request-quote-v1 .wrapper input{float: left; text-align: left; width: 235px; height: 18px; margin: 1px 0 2px 20px; padding: 2px 0 2px 10px; font-size: 12px; border-radius: 3px; background: white;} 
 #block-vr-blocks-request-quote-v1 .wrapper input.error {border: 1px solid red;}
 
-#block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 15px;}
+/*#block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 15px;}*/
+#block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 3px;}
 
 /*#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 100%;}*/
 #block-vr-blocks-request-quote-v1 .wrapper.top select{width: 250px;}
@@ -1633,7 +1639,7 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation input[value="Get Quotes"]#next {margin-left: 60px;}
 /*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation input[value="Get Quotes"] {margin-bottom: 50px;}*/
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #back{position: absolute; left: 5px; background: none; border: none; color: lightgray; font-size: 11px; bottom: 42px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #back{position: absolute; left: 5px; background: none; border: none; color: lightgray; font-size: 11px; bottom: 47px;}
 
 
 #block-vr-blocks-request-quote-v1 .results{margin: 0px auto; height: auto; width: 250px; padding-top: 20px; color: white;}
