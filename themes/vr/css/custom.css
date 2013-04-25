@@ -1601,7 +1601,8 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 #block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 25px;}
 
-#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 100%;}
+/*#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 100%;}*/
+#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 250px;}
 
 #block-vr-blocks-request-quote-v1 .label_before{float: none; margin-left: 0; margin-bottom: 0;}
 #block-vr-blocks-request-quote-v1 .wrapper.phone .label_before{margin-bottom: 2px;}
