@@ -1594,12 +1594,12 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 #block-vr-blocks-request-quote-v1 .right img{width: 110px;}
 #block-vr-blocks-request-quote-v1 .right .str2{font-size: 9px;font-style: italic; position: absolute; color: white; top: 90px; right: 28px; width: 70px;}
 
-#block-vr-blocks-request-quote-v1 .wrapper{font-size: 12px; margin: 7px 0; overflow: hidden;}
+#block-vr-blocks-request-quote-v1 .wrapper{font-size: 12px; margin: 7px 0 0 20px; overflow: hidden;}
 
-#block-vr-blocks-request-quote-v1 .wrapper input{float: left; text-align: left; width: 248px; height: 18px; margin: 1px 0 2px 00px; padding: 1px 0 1px 10px; font-size: 12px; border-radius: 3px; background: white;} 
+#block-vr-blocks-request-quote-v1 .wrapper input{float: left; text-align: left; width: /*248*/235px; height: 18px; margin: 1px 0 2px 00px; padding: 1px 0 1px 10px; font-size: 12px; border-radius: 3px; background: white;} 
 #block-vr-blocks-request-quote-v1 .wrapper input.error {border: 1px solid red;}
 
-#block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 25px;}
+#block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 15px;}
 
 /*#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 100%;}*/
 #block-vr-blocks-request-quote-v1 .wrapper.top select{width: 250px;}
@@ -1615,7 +1615,8 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 #block-vr-blocks-request-quote-v1 .multipartForm .step-notice {display: none; bottom: 0; font-size: 12px; left: 5px; line-height: 15px; position: absolute; text-align: right; width: 80px; color: gray;}
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper label.error{background: #365ab7; bottom: 90px; font-size: 10px; font-weight: normal; left: 0px; color: red;}
+/*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper label.error{background: #365ab7; bottom: 90px; font-size: 10px; font-weight: normal; left: 0px; color: red;}*/
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper label.error{background: #f9f9f9; bottom: 90px; font-size: 10px; font-weight: normal; left: 22px; color: red;}
 
 #block-vr-blocks-request-quote-v1 .protected{background: url(/sites/all/themes/vr/css/images/sprite-0.png) no-repeat scroll 0 -17px white; bottom: 40px; height: 19px; right: 22px; position: absolute; width: 85px;}
 
