@@ -7,6 +7,14 @@
           //style:'popup', 
           maxHeight: 300
   			});
+        
+        
+        
+        $('.ui-selectmenu').click(function(){
+          console.log('click!');
+        });
+        
+        
        
         $('input[name="referrer"]').val(document.referrer);
         $('input[name="url"]').val(document.URL);
