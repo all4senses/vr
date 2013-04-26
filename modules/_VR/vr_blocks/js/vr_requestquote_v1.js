@@ -12,6 +12,7 @@
         
         $('.ui-selectmenu').click(function(){
           console.log('click!');
+          return false;
         });
         
         
