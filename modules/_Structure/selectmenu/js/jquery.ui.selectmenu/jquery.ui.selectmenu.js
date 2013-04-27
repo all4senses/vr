@@ -860,7 +860,7 @@ $.widget("ui.selectmenu", {
     console.log(_offset);
     console.log(o.positionOptions.offset);
     
-    _offset = 50;
+    _offset = "50 0 0 0";
     
 		this.listWrap
 			.removeAttr('style')
