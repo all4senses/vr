@@ -563,7 +563,8 @@ $.widget("ui.selectmenu", {
 				// center overflow and avoid flickering
 				this.list
 					.css("left", -5000)
-					.scrollTop( this.list.scrollTop() + selected.position().top - this.list.outerHeight()/2 + selected.outerHeight()/2 )
+					//.scrollTop( this.list.scrollTop() + selected.position().top - this.list.outerHeight()/2 + selected.outerHeight()/2 )
+          .scrollTop( this.list.scrollTop() + selected.position().top - this.list.outerHeight()/2 + selected.height()/2 )
 					.css("left","auto");
 			}
 
