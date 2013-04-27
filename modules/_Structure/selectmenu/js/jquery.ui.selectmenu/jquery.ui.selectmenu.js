@@ -564,7 +564,6 @@ $.widget("ui.selectmenu", {
 				this.list
 					.css("left", -5000)
 					.scrollTop( this.list.scrollTop() + selected.position().top - this.list.outerHeight()/2 + selected.outerHeight()/2 )
-          //.scrollTop( this.list.scrollTop() + selected.position().top - this.list.height()/2 + selected.height()/2 + 150)
 					.css("left","auto");
 			}
 
@@ -854,19 +853,10 @@ $.widget("ui.selectmenu", {
 		// if its a pop-up we need to calculate the position of the selected li
 		if ( o.style == "popup" && !o.positionOptions.offset ) {
 			var selected = this._selectedOptionLi();
-			//var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
-      var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2 - 20);
+			var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
 		}
     
-    //console.log(_offset);
-    console.log(o);
-    console.log(this);
-    console.log(this.newelement);
-    
     console.log(this.newelement[0].offsetTop);
-    this.newelement[0].offsetTop = 0;
-    console.log(this.newelement[0].offsetTop);
-    //_offset = "0 -20";
     
 		this.listWrap
 			.removeAttr('style')
@@ -877,7 +867,7 @@ $.widget("ui.selectmenu", {
 				my: o.positionOptions.my,
 				at: o.positionOptions.at,
 				offset: o.positionOptions.offset || _offset,
-				collision: 'fit' //o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
+				collision: o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
 			});
 	}
 });
