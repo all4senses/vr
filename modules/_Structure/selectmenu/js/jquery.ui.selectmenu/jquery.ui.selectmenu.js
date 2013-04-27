@@ -856,7 +856,7 @@ $.widget("ui.selectmenu", {
 			var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
 		}
     
-    console.log(this.newelement[0].offsetTop);
+    console.log(this.newelement);
     this.newelement[0].offsetTop = 0;
     
 		this.listWrap
