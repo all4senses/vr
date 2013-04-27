@@ -1180,7 +1180,7 @@ function vr_pages_buildHome($name = NULL, $data  = NULL) {
   $out .= vr_blocks_getBlockThemed($block_data);
  
   // Get block for Top pick residential providers.
-  $block_data = array('module' => 'views', 'delta' => 'providers-block_top_bu_providers_table', 'shadow' => FALSE); 
+  $block_data = array('module' => 'views', 'delta' => 'providers-block_top_re_providers_table', 'shadow' => FALSE); 
   $out .= vr_blocks_getBlockThemed($block_data);
 
     
