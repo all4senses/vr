@@ -1740,3 +1740,4 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #e:hover {color: white; text-decoration: underline;}
 
 .ui-selectmenu-menu{margin: -20px 0 0 0 !important;}
+.ui-selectmenu{height: 40px;}
