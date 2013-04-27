@@ -855,27 +855,6 @@ $.widget("ui.selectmenu", {
 			var selected = this._selectedOptionLi();
 			var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
 		}
-    
-    
-    var selected = this._selectedOptionLi();
-    //var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
-    
-    _offset = "0 -15";
-    
-    console.log(selected);
-    console.log('this.list.offset().top = ' + this.list.offset().top);
-    console.log('selected.offset().top = ' + selected.offset().top);
-    console.log('this.newelement.outerHeight() = ' + this.newelement.outerHeight());
-    console.log('selected.outerHeight() = ' + selected.outerHeight());
-    
-    console.log('this.newelement.height() = ' + this.newelement.height());
-    console.log('selected.height() = ' + selected.height());
-    
-    
-    console.log(_offset);
-    console.log(this.newelement);
-    //this.newelement[0].offsetTop = 0;
-    
 		this.listWrap
 			.removeAttr('style')
 			.zIndex( this.element.zIndex() + 1 )
@@ -885,7 +864,7 @@ $.widget("ui.selectmenu", {
 				my: o.positionOptions.my,
 				at: o.positionOptions.at,
 				offset: o.positionOptions.offset || _offset,
-				collision: 'none' //o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
+				collision: o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
 			});
 	}
 });
