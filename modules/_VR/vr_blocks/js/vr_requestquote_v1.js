@@ -3,10 +3,10 @@
   Drupal.behaviors.vr_requestquote_block_v1 = {
     attach: function (context, settings) {
        
-        $('#requestQuoteFormWrapper select').selectmenu({
-          //style:'popup', 
-          maxHeight: 300
-  			});
+//        $('#requestQuoteFormWrapper select').selectmenu({
+//          //style:'popup', 
+//          maxHeight: 300
+//  			});
 //        
 //        $('.ui-selectmenu').click(function(){
 //          console.log('click!');
