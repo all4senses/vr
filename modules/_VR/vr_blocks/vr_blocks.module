@@ -590,9 +590,11 @@ function vr_blocks_get_requestQuote_block_v1() {
   drupal_add_js($path_to_custom_js . 'jquery.form.js');
   drupal_add_js($path_to_custom_js . 'jquery.validate.js');
   drupal_add_js($path_to_custom_js . 'jquery.form.wizard-min.js');
+
   
+  drupal_get_path('module', 'selectmenu') . '/js/jquery.ui.selectmenu';
 //  drupal_add_js('sites/all/libraries/jquery.plugins/ui/jquery.ui.selectmenu.js');
-//  drupal_add_css('sites/all/libraries/jquery.plugins/ui/themes/base/jquery.ui.selectmenu.css');
+  drupal_add_css('sites/all/libraries/jquery.plugins/ui/themes/base/jquery.ui.selectmenu.css');
   
   
   
