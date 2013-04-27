@@ -17,8 +17,7 @@ $.widget("ui.selectmenu", {
 		style: 'dropdown',
 		positionOptions: {
 			my: "left top",
-			//at: "left bottom",
-      at: "left top",
+			at: "left bottom",
 			offset: null
 		},
 		width: null,
@@ -874,7 +873,7 @@ $.widget("ui.selectmenu", {
 				my: o.positionOptions.my,
 				at: o.positionOptions.at,
 				offset: o.positionOptions.offset || _offset,
-				collision: o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
+				collision: 'fit' //o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
 			});
 	}
 });
