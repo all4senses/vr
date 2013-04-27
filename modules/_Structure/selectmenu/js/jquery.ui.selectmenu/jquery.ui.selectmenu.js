@@ -564,7 +564,7 @@ $.widget("ui.selectmenu", {
 				this.list
 					.css("left", -5000)
 					//.scrollTop( this.list.scrollTop() + selected.position().top - this.list.outerHeight()/2 + selected.outerHeight()/2 )
-          .scrollTop( this.list.scrollTop() + selected.position().top - this.list.outerHeight()/2 + selected.height()/2 )
+          .scrollTop( this.list.scrollTop() + selected.position().top - this.list.height()/2 + selected.height()/2 )
 					.css("left","auto");
 			}
 
