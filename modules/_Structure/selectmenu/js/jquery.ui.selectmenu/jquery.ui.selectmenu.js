@@ -858,6 +858,9 @@ $.widget("ui.selectmenu", {
       var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2 - 20);
 		}
     console.log(_offset);
+    console.log(o.positionOptions.offset);
+    
+    
 		this.listWrap
 			.removeAttr('style')
 			.zIndex( this.element.zIndex() + 1 )
