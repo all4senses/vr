@@ -855,7 +855,7 @@ $.widget("ui.selectmenu", {
 		if ( o.style == "popup" && !o.positionOptions.offset ) {
 			var selected = this._selectedOptionLi();
 			//var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
-      var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.height() + selected.height() ) / 2);
+      var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2 - 20);
 		}
 		this.listWrap
 			.removeAttr('style')
