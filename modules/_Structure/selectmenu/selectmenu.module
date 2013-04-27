@@ -95,7 +95,7 @@ function _selectmenu_add_libs() {
     //drupal_add_css($libs_loc . '/jquery.ui.selectmenu.css');
 
     drupal_add_js(array('selectmenu' => $settings), 'setting');
-    //drupal_add_js(drupal_get_path('module', 'selectmenu') . '/js/selectmenu.js');
+    drupal_add_js(drupal_get_path('module', 'selectmenu') . '/js/selectmenu.js');
   }
 }
 
