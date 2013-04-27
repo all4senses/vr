@@ -857,6 +857,7 @@ $.widget("ui.selectmenu", {
 		}
     
     console.log(this.newelement[0].offsetTop);
+    this.newelement[0].offsetTop -= 15;
     
 		this.listWrap
 			.removeAttr('style')
