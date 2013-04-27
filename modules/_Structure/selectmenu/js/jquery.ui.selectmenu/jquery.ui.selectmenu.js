@@ -857,7 +857,7 @@ $.widget("ui.selectmenu", {
 		}
     
     console.log(this.newelement);
-    this.newelement[0].offsetTop = 0;
+    //this.newelement[0].offsetTop = 0;
     
 		this.listWrap
 			.removeAttr('style')
@@ -868,7 +868,7 @@ $.widget("ui.selectmenu", {
 				my: o.positionOptions.my,
 				at: o.positionOptions.at,
 				offset: o.positionOptions.offset || _offset,
-				collision: 'fit' //o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
+				collision: 'none' //o.positionOptions.collision || (o.style == "popup" ? 'fit' :'flip')
 			});
 	}
 });
