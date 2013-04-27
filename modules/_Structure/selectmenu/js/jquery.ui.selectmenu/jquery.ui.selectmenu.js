@@ -863,6 +863,9 @@ $.widget("ui.selectmenu", {
     console.log(this);
     console.log(this.newelement);
     
+    console.log(this.newelement[0].offsetTop);
+    this.newelement[0].offsetTop = 0;
+    console.log(this.newelement[0].offsetTop);
     //_offset = "0 -20";
     
 		this.listWrap
