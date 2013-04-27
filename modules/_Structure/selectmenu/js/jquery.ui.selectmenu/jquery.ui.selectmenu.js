@@ -17,7 +17,8 @@ $.widget("ui.selectmenu", {
 		style: 'dropdown',
 		positionOptions: {
 			my: "left top",
-			at: "left bottom",
+			//at: "left bottom",
+      at: "left top",
 			offset: null
 		},
 		width: null,
@@ -857,11 +858,12 @@ $.widget("ui.selectmenu", {
 			//var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
       var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2 - 20);
 		}
-    console.log(_offset);
+    
+    //console.log(_offset);
     console.log(o);
     console.log(this);
     
-    _offset = "0 -20";
+    //_offset = "0 -20";
     
 		this.listWrap
 			.removeAttr('style')
