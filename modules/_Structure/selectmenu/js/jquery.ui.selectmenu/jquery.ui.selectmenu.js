@@ -860,6 +860,7 @@ $.widget("ui.selectmenu", {
     var selected = this._selectedOptionLi();
     //var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
     
+    _offset = "0 -15";
     
     console.log(selected);
     console.log('this.list.offset().top = ' + this.list.offset().top);
