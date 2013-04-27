@@ -861,6 +861,7 @@ $.widget("ui.selectmenu", {
     //console.log(_offset);
     console.log(o);
     console.log(this);
+    console.log(this.newelement);
     
     //_offset = "0 -20";
     
