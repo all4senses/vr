@@ -858,7 +858,18 @@ $.widget("ui.selectmenu", {
     
     
     var selected = this._selectedOptionLi();
-    var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
+    //var _offset = "0 " + ( this.list.offset().top  - selected.offset().top - ( this.newelement.outerHeight() + selected.outerHeight() ) / 2);
+    
+    
+    console.log(selected);
+    console.log('this.list.offset().top = ' + this.list.offset().top);
+    console.log('selected.offset().top = ' + selected.offset().top);
+    console.log('this.newelement.outerHeight() = ' + this.newelement.outerHeight());
+    console.log('selected.outerHeight() = ' + selected.outerHeight());
+    
+    console.log('this.newelement.height() = ' + this.newelement.height());
+    console.log('selected.height() = ' + selected.height());
+    
     
     console.log(_offset);
     console.log(this.newelement);
