@@ -1398,7 +1398,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
       $form['field_p_data']['#access'] = FALSE;
       ////$form['field_p_fees_save']['#access'] = FALSE;
       $form['field_p_data_quick']['#access'] = FALSE;
-      ////$form['field_old_id']['#access'] = FALSE;
+      $form['field_old_id']['#access'] = FALSE;
       
       
       // Fix a summary height.
@@ -1407,7 +1407,7 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
       if (trim($form['body']['und'][0]['summary']['#default_value']) == '<br />') {
         $form['body']['und'][0]['summary']['#default_value'] = '';
       }
-      $form['body']['#weight'] = 8;
+      $form['body']['#weight'] = 5;
       // Doesn't work.
       //$form['body']['und'][0]['summary']['#format'] = 'plain_text';
       // Doesn't work.
