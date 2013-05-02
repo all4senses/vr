@@ -967,7 +967,7 @@ margin-top: 100px;
 .node-type-provider .ui-tabs .ui-tabs-panel{border: 1px solid lightgray;}
 
 .node-type-provider .ui-state-default.ui-tabs-selected, .node-type-provider .ui-state-default.ui-tabs-selected.ui-state-hover{background: none; border: 1px solid lightgray;}
-.node-type-provider .ui-state-default{background: #f3fbf8; border: none; font-size: 14px;}
+.node-type-provider .ui-state-default{background: #f3fbf8; /*border: none;*/ font-size: 14px;}
 .node-type-provider .ui-state-default.ui-state-hover{background: #f3fbf8; border: 1px solif lightgray;}
 
 .node-type-provider .ui-state-default a {color: gray; font-weight: 600;}
