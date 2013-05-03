@@ -1458,7 +1458,7 @@ font-size: 15px;
 #block-vr-blocks-request-quote-v1 .right .str2{font-size: 9px;font-style: italic; position: absolute; color: white; top: 90px; right: 28px; width: 70px;}
 
 #block-vr-blocks-request-quote-v1 .wrapper{font-size: 12px; margin: 7px 0; overflow: hidden;}
-#block-vr-blocks-request-quote-v1 #questions_section .wrapper {margin: 0;}
+#block-vr-blocks-request-quote-v1 #questions_section .wrapper {margin: 0 0 5px 3px;}
 #block-vr-blocks-request-quote-v1 #personal_data .wrapper {margin: 3px 0;}
 
 
@@ -1478,8 +1478,10 @@ font-size: 15px;
 /*#block-vr-blocks-request-quote-v1 .question{color: #fabe84; text-transform: uppercase; margin-bottom: 5px;}*/
 #block-vr-blocks-request-quote-v1 .question{color: #a1a1a1; margin: 0 0 2px 15px; font-weight: bold;}
 
-#block-vr-blocks-request-quote-v1 .ui-selectmenu {/*.border-radius: 7px;*/ border-radius: 3px; height: 18px; padding: 0 0 7px 0; margin-bottom: 8px; background: white !important;}
-#block-vr-blocks-request-quote-v1 .ui-selectmenu:hover{text-decoration: none; color: black;}
+#block-vr-blocks-request-quote-v1 .ui-selectmenu {border-radius: 3px; height: 15px; padding: 0 0 6px 0; margin-bottom: 8px; background: white !important; font-size: 12px; font-family: arial;}
+
+#block-vr-blocks-request-quote-v1 a.ui-selectmenu {padding: 4PX 0 3px 0;}
+#block-vr-blocks-request-quote-v1 a.ui-selectmenu:hover{text-decoration: none; color: black;}
 
 #block-vr-blocks-request-quote-v1 .content a, #block-vr-blocks-request-quote-v1 .content .views-row a{background: none; text-indent: 0;}
 
