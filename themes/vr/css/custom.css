@@ -1743,5 +1743,5 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #e {position: absolute; right: 20px; top: 116px; color: #0b75b6;}
 #e:hover {color: white; text-decoration: underline;}
 
-.ui-selectmenu-menu li a, .ui-selectmenu-status {padding: 0px 10px; text-align: center; font-size: 12px;}
+.ui-selectmenu-menu li a, .ui-selectmenu-status {padding: 0px 10px; font-size: 12px;}
 .ui-selectmenu-open {border: 1px solid lightgray; border-radius: 5px;}
