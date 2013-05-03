@@ -1458,8 +1458,12 @@ font-size: 15px;
 #block-vr-blocks-request-quote-v1 .right .str2{font-size: 9px;font-style: italic; position: absolute; color: white; top: 90px; right: 28px; width: 70px;}
 
 #block-vr-blocks-request-quote-v1 .wrapper{font-size: 12px; margin: 7px 0; overflow: hidden;}
-#block-vr-blocks-request-quote-v1 #questions_section .wrapper {margin: 0 0 5px 3px;}
+
+#block-vr-blocks-request-quote-v1 #questions_section .wrapper {margin: 0 0 5px 40px/*3px*/;}
+#block-vr-blocks-request-quote-v1 #questions_section .wrapper.top.first {margin-top: 10px;}
+
 #block-vr-blocks-request-quote-v1 #personal_data .wrapper {margin: 3px 0;}
+
 
 
 /*#block-vr-blocks-request-quote-v1 .wrapper input{float: left; text-align: left; width: 248px; height: 18px; margin: 1px 0 2px 20px; padding: 1px 0 1px 10px; font-size: 12px; border-radius: 3px; background: white;} */
@@ -1470,7 +1474,7 @@ font-size: 15px;
 #block-vr-blocks-request-quote-v1 #personal_data .wrapper.first{margin-top: 3px;}
 
 /*#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 100%;}*/
-#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 250px;}
+#block-vr-blocks-request-quote-v1 .wrapper.top select{width: 175px;} /*250*/
 
 #block-vr-blocks-request-quote-v1 .label_before{float: none; margin-left: 0; margin-bottom: 0;}
 #block-vr-blocks-request-quote-v1 .wrapper.phone .label_before{margin-bottom: 2px;}
