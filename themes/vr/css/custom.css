@@ -933,7 +933,7 @@ margin-top: 100px;
 
 .node-type-provider #main .main-content h1{color: white; font-size: 28px; margin: 0; width: 830px; background: url("images/p_sprite_1.png") no-repeat 0 0 transparent; height: 65px; padding: 12px 0 0 20px;}
 
-.node-type-provider #write-revew-header{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat -300px -352px transparent; }
+.node-type-provider #write-revew-header{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat 0 -78px transparent; height: 230px;}
 
 
 .block-views h2{}
@@ -968,7 +968,7 @@ margin-top: 100px;
 
 .node-type-provider .ui-widget-content{border: none;}
 .node-type-provider .ui-widget-header{border: none; background: none;}
-.node-type-provider .ui-tabs .ui-tabs-panel{border: 1px solid lightgray;}
+.node-type-provider .ui-tabs .ui-tabs-panel{border: 1px solid lightgray; padding: 10px;}
 
 .node-type-provider .ui-state-default.ui-tabs-selected, .node-type-provider .ui-state-default.ui-tabs-selected.ui-state-hover{background: none; border: 1px solid lightgray;}
 .node-type-provider .ui-state-default{background: #f3fbf8; /*border: none;*/ font-size: 14px;}
