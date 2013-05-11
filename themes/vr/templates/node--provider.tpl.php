@@ -178,14 +178,14 @@
               
                   
                   
-                  <?php echo 'Reviews...'; ?>
+                  <?php echo '<div>Reviews...</div>'; ?>
                 </div>
                 
                 
                 
                 
                 <div id="tabs-3">
-                  <?php echo 'Write Review...'; ?>
+                  <?php echo '<div>Write Review...<.div>'; ?>
                 </div>
                 
                 
@@ -217,17 +217,6 @@
           
         </div> <!-- content -->
 
-        
-        
-      <?php if ($page): ?>
-    
-        <!--
-        <footer>
-        </footer>
-        -->
-        
-      <?php endif; ?>
-        
       
 
   </div> <!-- main-content -->
@@ -237,15 +226,6 @@
     
     <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' ', t('User Reviews'); ?></h2>
     <?php 
-
-//      if (isset($node->current_user_has_review)) {
-//        echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
-//      }
-//      else {
-//        echo l(t('Submit Your Review'), 'node/add/review', array('query' => array('id' => $node->nid))); 
-//      }
-
-      
       echo $node->addProviderReviewForm;
     ?>
     
@@ -255,41 +235,10 @@
     <div class="reviews">
       <div class="header">
         <a id="reviews"></a>
-        
-        <!-- <div class="button"> -->
-          <?php 
-  
-//            if (isset($node->current_user_has_review)) {
-//              echo l(t('Your Review'), $node->current_user_has_review, array('attributes' => array('title' => t('You have already submitted a review for this provider: "' . $node->current_user_has_review_title . '"')))); 
-//            }
-//            else {
-//              echo l('Submit Your Review', 'node/add/review', array('query' => array('id' => $node->nid))); 
-//            }
-
-          ?>
-        <!--</div> -->
       </div>
 
       
       <?php 
-        // Hide Sort be Select element.
-        //<div class="form-item form-type-select form-item-sort-by">
-        ////$content['reviews_entity_view_1'] = preg_replace('/(.*<div.*views-widget-sort-by.*\")(>.*)/', "$1 style=" . '"display: none;"' . "$2", $content['reviews_entity_view_1']);
-      
-      
-//      <div class="views-exposed-widget views-widget-sort-order">
-//        <div class="form-item form-type-select form-item-sort-order">
-//          <label for="edit-sort-order">Order </label>
-//          <select class="form-select" name="sort_order" id="edit-sort-order"><option value="ASC">Asc</option><option selected="selected" value="DESC">Desc</option></select>
-//        </div>
-//      </div>
-    
-//        if (strpos($content['reviews_entity_view_1'], '<option selected="selected" value="created">Post date</option>')) {
-//          $content['reviews_entity_view_1'] = preg_replace('/(.*<option value="ASC">)(.*)(<.*)/', "$1xxx$3", $content['reviews_entity_view_1']);
-//        }
-//        else {
-//          $content['reviews_entity_view_1'] = preg_replace('/(.*<option value="ASC">)(.*)(<.*)/', "$1yyy$3", $content['reviews_entity_view_1']);
-//        }
         echo render($content['reviews_entity_view_1']); 
       ?>
       
