@@ -185,7 +185,10 @@
                 
                 
                 <div id="tabs-3">
-                  <?php echo 'Write Review...'; ?>
+                  <?php 
+                    echo 'Write Review...'; 
+                    echo $node->addProviderReviewForm;
+                  ?>
                 </div>
                 
                 
@@ -235,7 +238,7 @@
     
   
     
-    <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' ', t('User Reviews'); ?></h2>
+
     <?php 
 
 //      if (isset($node->current_user_has_review)) {
@@ -246,7 +249,7 @@
 //      }
 
       
-      echo $node->addProviderReviewForm;
+      
     ?>
     
   
