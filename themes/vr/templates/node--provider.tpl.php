@@ -179,8 +179,7 @@
                   <?php endif; // end of if ($page && isset($content['vr_ratings']) && $content['vr_ratings']): ?>
               
                 
-                  
-                  <?php echo '<div>Reviews...</div>'; ?>
+                  <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' User Reviews' ?></h2>
                   <div class="bottom-clear"></div>
                   
                 </div>
@@ -189,7 +188,13 @@
                 
                 
                 <div id="tabs-3">
-                  <?php echo '<div>Write Review...</div>'; ?>
+                  <?php 
+                  
+                    echo '<div>Write Review...</div>'; 
+                    echo $node->addProviderReviewForm;
+                  
+                  ?>
+                  
                   <div class="bottom-clear"></div>
                 </div>
                 
@@ -226,13 +231,6 @@
 
   </div> <!-- main-content -->
   
-    
-  
-    
-    <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' ', t('User Reviews'); ?></h2>
-    <?php 
-      echo $node->addProviderReviewForm;
-    ?>
     
   
   
