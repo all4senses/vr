@@ -110,12 +110,12 @@
 
                   
               <?php
-                echo '<div id="overview" class="text">', render($content['body']), '</div>';
-                echo '<div id="pricing" class="text">' . $node->p_data['pricing_structure'];
+                echo '<div id="overview" class="text">', render($content['body']);
+                
                 if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                  echo '<div class="site">' , vr_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) , '</div>';
-                }
-                echo '</div><div class="bottom-clear"></div>';
+                    echo '<div class="site">' , vr_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) , '</div>';
+                  }  
+                echo '</div><div id="pricing" class="text">' . $node->p_data['pricing_structure'] . '</div><div class="bottom-clear"></div>';
                 
                 //echo '<div class="title">Customer Service</div><div class="text">' . $node->p_data['customer_service'] . '</div>';
                 
