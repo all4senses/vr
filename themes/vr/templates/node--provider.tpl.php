@@ -162,22 +162,7 @@
                       echo '<div class="rating_overall">' . $stars_overall . ' <div class="count">(' . $node->vr_rating_overall . ')</div>';
                     ?>
                   </div>
-                  <div class="overall">
-                    <div class="text">
-                      <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->vr_voters . '</a></div></div>'; ?>
-                      <?php echo '<div class="recommend"><div class="title">' . t('Would recommend') . ': </div><div class="data">' . $node->vr_recommend . '% of Users' . '</div></div>'; ?>
-                      <div class="overall title"><?php $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . ' ' . t('Overall Rated:'); ?></div>
-                    </div>
-                    <div class="star-big">
-                      <?php echo '<div class="count" content="' . $node->vr_rating_overall . '" property="v:rating">' . $node->vr_rating_overall . '</div>' . '<div class="descr">' . t('Out of 5 stars') . '</div>'; ?>
-                    </div>
-                  </div>
-              
-                  <? else: ?>
-                      <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a>'; ?>
-                  <?php endif; // end of if ($page && isset($content['vr_ratings']) && $content['vr_ratings']): ?>
-              
-                  
+                
                   
                   <?php echo '<div>Reviews...</div>'; ?>
                   <div class="bottom-clear"></div>
