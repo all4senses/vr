@@ -59,7 +59,7 @@
                 <div id="organization" typeof="Organization">
                   
                   <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . '</span>')); ?></div>
-                  <div><?php echo '<div class="title">' . t('Headquarters') . ':</div><div property="v:address">' . $node->p_data['info']['i_heads'] . '</span>'; ?></div>
+                  <div><?php echo '<div class="title">' . t('Headquarters') . ':</div><div property="v:address">' . $node->p_data['info']['i_heads'] . '</div>'; ?></div>
                   <div><?php echo '<div class="title">' . t('Founded In') . ':</div>' . $node->p_data['info']['i_founded']; ?></div>
                   <div><?php echo '<div class="title">' . t('Service Availability') . ':</div>' . $node->p_data['info']['i_availability']; ?></div>
                   <div>
