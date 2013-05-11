@@ -935,7 +935,7 @@ margin-top: 100px;
 
 .node-type-provider #write-revew-header{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat 0 -78px transparent; height: 230px;}
 
-.node-type-provider input#edit-submit--2{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: auto;}
+.node-type-provider input#edit-submit--2{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: auto; cursor: pointer;}
 
 
 /* Chart Featured providers, Coupons */
