@@ -180,6 +180,22 @@
               
                 
                   <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' User Reviews' ?></h2>
+                  
+                    <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+                        <div class="reviews">
+                          <div class="header">
+                            <a id="reviews"></a>
+                          </div>
+
+
+                          <?php 
+                            echo render($content['reviews_entity_view_1']); 
+                          ?>
+
+                        </div>
+                    <?php endif;  ?>
+
+                  
                   <div class="bottom-clear"></div>
                   
                 </div>
@@ -191,7 +207,7 @@
                   <?php 
                   
                     echo '<div>Write Review...</div>'; 
-                    //echo $node->addProviderReviewForm;
+                    echo $node->addProviderReviewForm;
                   
                   ?>
                   
@@ -234,19 +250,7 @@
     
   
   
-  <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
-    <div class="reviews">
-      <div class="header">
-        <a id="reviews"></a>
-      </div>
 
-      
-      <?php 
-        echo render($content['reviews_entity_view_1']); 
-      ?>
-      
-    </div>
- <?php endif;  ?>
   
 
 <?php if (!$page): ?>
