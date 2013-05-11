@@ -191,7 +191,7 @@
                   <?php 
                   
                     echo '<div>Write Review...</div>'; 
-                    echo $node->addProviderReviewForm;
+                    //echo $node->addProviderReviewForm;
                   
                   ?>
                   
