@@ -119,7 +119,7 @@
                 
                 //echo '<div class="title">Customer Service</div><div class="text">' . $node->p_data['customer_service'] . '</div>';
                 
-                if ($node->p_data['available_features']) { echo '<div class="title">Available Features</div><div class="text">' . $node->p_data['available_features'] . '</div>'; }
+                
                 
                 ?>
           
@@ -158,41 +158,36 @@
               <div class="bottom-clear"></div>
           
           
-          
-          <?php
-                
-                
-                
-                /*
-              ?>
                       
               <div class="data tabs">
                 
                 
                 
                 <ul>
-                  <li><a href="#tabs-1"><?php echo 'Review'; ?></a></li>
                   <?php 
-//                    if (!empty($features)) {
-//                      echo '<li><a href="#tabs-2">Quick Stats</a></li>
-//                            <li><a href="#tabs-3">List Features</a></li>';
-//                    }
+                    if ($node->p_data['available_features']) { 
+                      echo '<a href="#tabs-1">Available Features</a></li>'; 
+                    } 
                   ?>
+                  <li><a href="#tabs-2"><?php echo 'User Reviews & Ratings'; ?></a></li>
+                  <li><a href="#tabs-2"><?php echo 'Write Review'; ?></a></li>
                 </ul>
-                <div id="tabs-1">
-                  <?php echo render($content['body']); ?>
-                </div>
+                
+                
                 <?php 
-//                    if (!empty($features)) {
-//                      echo '<div id="tabs-2"><div>', $quick_stats_out, '<div><span class="title">Plans:</span> ',  $plans, '</div></div></div>',
-//                           //'<div id="tabs-3"><div class="title">List of Features Available on ' , $node->field_p_name['und'][0]['value'], '</div>', $features_out, '</div>';
-//                           '<div id="tabs-3">', $features_out, '</div>';
-//                    }
-                ?>
+                    if ($node->p_data['available_features']) { 
+                      echo '<div id="tabs-1">' . $node->p_data['available_features'] . '</div>'; 
+                    } 
+                  ?>
+                <div id="tabs-2">
+                  <?php echo 'Reviews...'; ?>
+                </div>
+                <div id="tabs-3">
+                  <?php echo 'Write Review...'; ?>
+                </div>
                 
                 
-                
-              </div> <?php */ // End of <div class="data tabs"> ?>
+              </div> <?php  // End of <div class="data tabs"> ?>
               
           <?php echo render($content['metatags']); //vr_misc_renderMetatags_newOrder($content['metatags']);?>
           
