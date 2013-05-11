@@ -923,9 +923,8 @@ margin-top: 100px;
 .node-type-provider .info .logo{margin: 0 auto 30px auto; width: 200px;}
 .node-type-provider .info .image{margin: auto; width: 200px;}
 
-.node-type-provider .site {text-align: center;}
-
-.node-type-provider .site a {background: url(/sites/all/themes/vr/css/images/visit-site-btn.png) no-repeat 0 0 transparent; text-indent: -9999px;color: black; display: block; width: 103px; height: 25px; margin: auto; }
+.node-type-provider .site a {background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat -300px -352px transparent; text-indent: 30px; color: blue; float: right; font-weight: bold; padding: 5px 0;}
+.node-type-provider .site a:hover {text-decoration: underline;}
 
 .pros-and-cons{margin: 0 0 0 315px;}
 .pros-and-cons .title {font-weight: bold;}
@@ -960,6 +959,7 @@ margin-top: 100px;
 #basic-info .title{margin-right: 10px; font-weight: bold;}
 
 #basic-info .logo {background: white; margin: 20px;}
+#basic-info .logo a{margin: auto; width: 180px; display: block;}
 
 #basic-info #organization{margin: 0 20px 20px 20px; background: white; padding: 10px;}
 

@@ -115,10 +115,10 @@
                 if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
                     echo '<div class="site">' , vr_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) , '</div>';
                   }  
-                echo '</div><div class="bottom-clear"></div>';
+                echo '</div><div class="text">' . $node->p_data['pricing_structure'] . '</div><div class="bottom-clear"></div>';
                 
-                echo '<div class="title">Pricing Structure</div><div class="text">' . $node->p_data['pricing_structure'] . '</div>';
-                echo '<div class="title">Customer Service</div><div class="text">' . $node->p_data['customer_service'] . '</div>';
+                //echo '<div class="title">Customer Service</div><div class="text">' . $node->p_data['customer_service'] . '</div>';
+                
                 if ($node->p_data['available_features']) { echo '<div class="title">Available Features</div><div class="text">' . $node->p_data['available_features'] . '</div>'; }
                 
                 ?>
@@ -201,7 +201,7 @@
               
               
               
-          <?php else: ?> <!-- if ($page): -->
+          <?php else: ?> <!-- if !$page -->
           
                 <?php
                   if (isset($content['field_p_logo'][0]['#item']['uri'])) {
