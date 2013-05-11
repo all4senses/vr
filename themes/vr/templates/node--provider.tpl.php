@@ -156,6 +156,13 @@
                 
                   <?php if (isset($content['vr_ratings']) && $content['vr_ratings']): ?>
 
+                      <div class="vr_votes">
+                        <?php 
+                          $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+                          echo '<div class="rating_overall">' . $stars_overall . ' <div class="count">(' . $node->vr_rating_overall . ')</div></div>';
+                        ?>
+                      </div>
+                  
                       <div class="overall">
                         <div class="text">
                           <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->vr_voters . '</a></div></div>'; ?>
