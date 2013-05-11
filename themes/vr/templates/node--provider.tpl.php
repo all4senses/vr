@@ -126,7 +126,7 @@
           
           
           
-           <div class="bottom-clear"></div>
+           
 
           
                       
@@ -147,7 +147,8 @@
                 
                 <?php 
                     if ($node->p_data['available_features']) { 
-                      echo '<div id="tabs-1">' . $node->p_data['available_features'] . '</div>'; 
+                      echo '<div id="tabs-1">' . $node->p_data['available_features'] . '<div class="bottom-clear"></div></div>'; 
+                      
                     } 
                   ?>
                 
@@ -179,6 +180,8 @@
                   
                   
                   <?php echo '<div>Reviews...</div>'; ?>
+                  <div class="bottom-clear"></div>
+                  
                 </div>
                 
                 
@@ -186,6 +189,7 @@
                 
                 <div id="tabs-3">
                   <?php echo '<div>Write Review...<.div>'; ?>
+                  <div class="bottom-clear"></div>
                 </div>
                 
                 
