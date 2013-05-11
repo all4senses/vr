@@ -3703,8 +3703,7 @@ function vr_pages_addProviderReview_form($form, &$form_state, $node) {
       $vote_keys = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, );
       $votes = array();
       $form['ureview'] = array(
-        '#type' => 'fieldset',
-        '#title' => t('Step 3: Rate and Review Your VoIP Provider'),
+        '#type' => 'container',
         '#weight' => -4,
       );
           
@@ -3720,13 +3719,8 @@ function vr_pages_addProviderReview_form($form, &$form_state, $node) {
               '#prefix' => '<div class="vote"><div class="vote-title">' . t($vote_title) . '</div>',
               '#suffix' => '<div class="choice" id="edit-rating-' . $vote_key . '-choice">Rate it!</div></div>',
             );
-//            $form['ureview']['votes']['rating_' . $vote_key . '_choice1'] = array(
-//              '#markup' => '<div class="choice" id="edit-rating-' . $vote_key . '-choice">Rate it!</div>',
-//              //'#weight' => $weight++,
-//            );
           }
       
-          //$rating_recommend_options = $rating_options = array('' => '- ' . t('Select a value') . ' -', '100' => 'Yes', '0' => 'No');
           $rating_recommend_options = $rating_options = array('100' => 'Yes', '0' => 'No');
           $form['ureview']['rating_recommend'] = array(
               '#type' => 'radios',
