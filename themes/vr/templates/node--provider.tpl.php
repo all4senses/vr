@@ -166,11 +166,11 @@
                 <ul>
                   <?php 
                     if ($node->p_data['available_features']) { 
-                      echo '<a href="#tabs-1">Available Features</a></li>'; 
+                      echo '<li><a href="#tabs-1">Available Features</a></li>'; 
                     } 
                   ?>
                   <li><a href="#tabs-2"><?php echo 'User Reviews & Ratings'; ?></a></li>
-                  <li><a href="#tabs-2"><?php echo 'Write Review'; ?></a></li>
+                  <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li>
                 </ul>
                 
                 
