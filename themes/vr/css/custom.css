@@ -956,9 +956,12 @@ margin-top: 100px;
 .node-type-provider #main .main-content{padding: 0;}
 .node-type-provider #main .main-content .content{border:none; margin-top: 0; padding: 0;}
 
-#basic-info{float: left; margin-left: 40px; width: 300px; font-size: 15px;}
+#basic-info{float: left; width: 270px; font-size: 15px; background: #e7e7e7; margin: 0 20px 0 0;}
 #basic-info .title{margin-right: 10px; font-weight: bold;}
 
+#basic-info .logo {background: white; margin: 20px;}
+
+#basic-info #organization{margin: 0 20px 20px 20px; background: white; padding: 10px;}
 
 .node-type-provider .field-name-body h3 {font-weight: bold; border-bottom: 2px solid lightgray; margin-bottom: 5px;}
 
