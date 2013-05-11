@@ -157,8 +157,9 @@
                 
                 <?php 
                     if ($node->p_data['available_features']) { 
-                      echo '<div id="tabs-1">' . $node->p_data['available_features'] . '<div class="bottom-clear"></div></div>'; 
-                      
+                      echo '<div id="tabs-1">' 
+                        //. $node->p_data['available_features'] 
+                        . '<div class="bottom-clear"></div></div>'; 
                     } 
                 ?>
                 
