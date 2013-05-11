@@ -110,7 +110,8 @@
 
                   
               <?php
-                echo '<div class="text">', render($content['body']);
+                echo '<div id="overview" class="text">', render($content['body']), '<div class="bottom-clear"></div>';
+                
                 if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
                     echo '<div class="site">' , vr_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) , '</div>';
                   }  
