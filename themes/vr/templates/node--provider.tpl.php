@@ -165,7 +165,7 @@
                 
                 
                 <div id="tabs-3">
-                  <?php echo '<div>Write Review...<.div>'; ?>
+                  <?php echo '<div>Write Review...</div>'; ?>
                   <div class="bottom-clear"></div>
                 </div>
                 
