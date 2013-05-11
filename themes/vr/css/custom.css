@@ -932,7 +932,7 @@ margin-top: 100px;
 .pros-and-cons .text {font-size: 11px; line-height: 17px; margin-bottom: 10px; border-bottom: 1px solid lightgray;}
 
 
-.node-type-provider #main .main-content h1{float: left; color: gray; font-size: 18px; font-weight: bold; line-height: 25px; margin: 0; width: 830px; background: url("images/p-title-back.png") no-repeat 0 0 transparent; height: 60px; position: relative; left: -45px; text-indent: 50px; padding: 7px 0 0 0;}
+.node-type-provider #main .main-content h1{color: white; font-size: 28px; font-weight: bold; margin: 0; width: 830px; background: url("images/p_sprite_1.png") no-repeat 0 0 transparent; height: 65px; padding: 12px 0 0 20px;}
 
 
 
