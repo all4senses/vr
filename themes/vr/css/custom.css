@@ -1042,7 +1042,9 @@ margin-top: 100px;
 #write-revew-header .voters .title,
 #write-revew-header .recommend .title{float: left; margin-right: 10px;}
 
-
+#write-revew-header .rating_overall {position: absolute; width: 240px; top: 20px; color: white; right: 10px;}
+#write-revew-header .rating_overall .title{margin-right: 10px;}
+#write-revew-header .rating_overall .fivestar{margin-top: 2px;}
 
 
 
