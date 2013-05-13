@@ -211,7 +211,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 16px 10px 16px; font-size: 12px; color: white;}
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 18px 10px 18px; font-size: 12px; color: white;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 .om-maximenu ul.om-menu li.om-leaf:hover om-link, 
