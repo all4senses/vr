@@ -933,9 +933,9 @@ margin-top: 100px;
 
 .node-type-provider #main .main-content h1{color: white; font-size: 28px; margin: 0; width: 830px; background: url("images/p_sprite_1.png") no-repeat 0 0 transparent; height: 65px; padding: 12px 0 0 20px;}
 
-.node-type-provider #write-revew-header{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat 0 -78px transparent; height: 230px;}
+.node-type-provider #write-revew-header{background: url("images/p_sprite_1.png") no-repeat 0 -78px transparent; height: 230px; position: relative;}
 
-.node-type-provider input#edit-submit--2{background: url(/sites/all/themes/vr/css/images/p_sprite_1.png) no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: auto; cursor: pointer;}
+.node-type-provider input#edit-submit--2{background: url("images/p_sprite_1.png") no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: auto; cursor: pointer;}
 
 
 /* Chart Featured providers, Coupons */
@@ -1021,7 +1021,7 @@ margin-top: 100px;
 
 .vr_vote .fivestar{float: right; margin-right: 10px; padding: 6px 0 5px;}
 
-.node-type-provider .overall{margin-left: 325px; position: relative;}
+.node-type-provider .overall{margin-left: 325px;}
 .node-type-provider .overall .text{float: left; width: 290px; /*margin-top: 90px;*/}
 .node-type-provider .overall .voters{margin-bottom: 5px;}
 .node-type-provider .overall .text .title{float: left; margin-right: 10px; font-weight: bold;}
@@ -1029,6 +1029,11 @@ margin-top: 100px;
 .star-big .count{font-size: 35px; font-weight: bold; left: 39px; position: absolute; top: 30px;}
 .star-big .descr{font-size: 12px; font-weight: bold; left: 35px; line-height: 13px; position: absolute; text-align: center; top: 73px; width: 60px;}
 
+
+#write-revew-header .voters {position: absolute; top: 170px; color: black; width: 200px; left: 310px;}
+#write-revew-header .voters .count,
+#write-revew-header .recommend .data {color: white;}
+#write-revew-header .recommend {position: absolute; top: 195px; color: black; left: 265px; width: 300px;}
 
 
 
