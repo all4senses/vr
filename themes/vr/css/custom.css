@@ -1046,7 +1046,7 @@ margin-top: 100px;
 #write-revew-header .rating_overall .title{margin-right: 10px; float: left; font-weight: normal !important;}
 #write-revew-header .rating_overall .fivestar{margin-top: 2px;}
 
-
+.node-type-provider .ui-tabs-panel {border-radius: 10px; background: #e8e8e8;}
 
 .bottom-clear{clear: both; display: block;}
 .node-type-provider .shadow{height: 45px;}
