@@ -1031,9 +1031,16 @@ margin-top: 100px;
 
 
 #write-revew-header .voters {position: absolute; top: 170px; color: black; width: 200px; left: 310px;}
+
+
+
+
 #write-revew-header .voters .count,
 #write-revew-header .recommend .data {color: white;}
 #write-revew-header .recommend {position: absolute; top: 195px; color: black; left: 265px; width: 300px;}
+
+#write-revew-header .voters .title,
+#write-revew-header .recommend .title{float: left; margin-right: 10px;}
 
 
 
