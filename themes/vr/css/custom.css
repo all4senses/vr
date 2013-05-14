@@ -981,7 +981,7 @@ margin-top: 100px;
 .node-type-provider #tabs-2 span.title, .node-type-provider #tabs-3 span.title{font-weight: bold;}
 */
 
-.node-type-provider .ui-tabs-panel {border-radius: 10px; background: #e8e8e8;}
+.node-type-provider .ui-tabs-panel {border-radius: 10px; background: #e8e8e8; box-shadow: 0px -3px 8px -1px gray; z-index: 10; position: relative;}
 
 .node-type-provider .ui-tabs .ui-tabs-nav li {border-radius: 10px 10px 0 0; background: lightgray; padding: 0 20px;}
 .node-type-provider .ui-tabs .ui-tabs-nav li.ui-state-hover {background: #e7e7e7; border: none;}
