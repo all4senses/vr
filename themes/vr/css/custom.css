@@ -997,12 +997,16 @@ margin-top: 100px;
 .node-type-provider .rate-caption {background: #e7e7e7; padding: 5px 0 5px 210px; width: 250px; margin: 0 0 0 130px; border-radius: 5px 5px 0 0;}
 .node-type-provider #edit-votes {width: 440px !important; background: #e7e7e7; padding: 0 10px 10px 10px; margin: 0 0 10px 130px; overflow: hidden; border-radius: 0 0 5px 5px;}
 
-.node-type-provider .text-format-wrapper {margin: 0 0 10px 25px;}
+.node-type-provider .text-format-wrapper {margin: 0 0 10px 25px !important;}
 .node-type-provider .form-type-textarea{width: 665px;}
 .node-type-provider .text-format-wrapper textarea{height: 90px; background: #e7e7e7; border: none; padding: 10px;}
 
-.node-type-provider .review-userblock {padding: 10px; background: white;}
-.node-type-provider .review-userblock label {float: left;}
+.node-type-provider .review-userblock {padding: 20px 10px 5px 10px; background: white; margin: 0 0 0 10px; border-radius: 10px 10px 0 0; width: 695px;}
+.node-type-provider .review-userblock label {float: left; margin: 0 0 0 100px;}
+
+.node-type-provider .form-actions {background: white; width: 715px; margin: 0 auto 10px; padding: 0 0 20px 0; border-radius: 0 0 10px 10px;}
+
+
 
 .data.tabs{/*clear: both; */margin-bottom: 10px; margin-top: 30px;}
 .data.tabs #tabs-1, .data.tabs #tabs-2{font-size: 15px;}
