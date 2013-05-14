@@ -3964,7 +3964,9 @@ function theme_vr_misc_image(array $variables) {
   // Add dimensions only for anonymous.
   global $user;
   if (/*!$user->uid &&*/ !$variables['width']) {
-    $size = getimagesize($variables['path']);
+    $path = explode('?', $variables['path']);
+    $path = $path[0];
+    $size = getimagesize($path);
     $image = theme('image', array('width' => $size[0], 'height' => $size[1], 'path' => $variables['path'], 'alt' =>  $variables['alt'], 'title' => $variables['title'] ));  
   }
   else {
@@ -5132,7 +5134,7 @@ function vr_misc_getProviderQuickData($target, $data) {
     case 'name_n_logo_chart':
     
       $all_data_quick = vr_misc_getProvidersDataQuick();
-      dpm($all_data_quick);
+      //dpm($all_data_quick);
       $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
