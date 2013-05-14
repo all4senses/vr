@@ -3025,8 +3025,9 @@ function vr_misc_testPage() {
   */
 
 
-  $path = 'http://test.voiprater.com/f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png';
+  $path = 'http://test.voiprater.com/f/styles/logo_provider_chart_main/public/p/logos/Virtual%20PBX.gif';
   $path = str_replace(array('http://test.voiprater.com/', 'http://www.voiprater.com/'), '', $path);
+  $path = str_replace('%20', ' ', $path);
   
   $size = getimagesize($path);
   dpm($size);
