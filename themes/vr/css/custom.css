@@ -1048,6 +1048,10 @@ margin-top: 100px;
 
 .node-type-provider .ui-tabs-panel {border-radius: 10px; background: #e8e8e8;}
 
+.node-type-provider .ui-tabs .ui-tabs-nav li {border-radius: 10px 10px 0 0; background: lightgray;}
+.node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected {background: gray;}
+.node-type-provider .ui-tabs .ui-tabs-nav li a{color: white;}
+
 .bottom-clear{clear: both; display: block;}
 .node-type-provider .shadow{height: 45px;}
 
