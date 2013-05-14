@@ -5064,7 +5064,7 @@ function vr_misc_getProviderQuickData($target, $data) {
     case 'logo_chart_iframe':
     
       $all_data_quick = vr_misc_getProvidersDataQuick();
-      dpm($all_data_quick);
+      //dpm($all_data_quick);
       $out = '';
       
       //dpm($all_data_quick[$data['data']->nid]);
@@ -5132,6 +5132,7 @@ function vr_misc_getProviderQuickData($target, $data) {
     case 'name_n_logo_chart':
     
       $all_data_quick = vr_misc_getProvidersDataQuick();
+      dpm($all_data_quick);
       $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
