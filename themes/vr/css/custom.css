@@ -1011,7 +1011,7 @@ margin-top: 100px;
 .node-type-provider .form-actions {background: white; width: 715px; margin: 0 auto 10px; padding: 0 0 20px 0; border-radius: 0 0 10px 10px;}
 
 
-.node-type-provider #overvoew, #pricing {color: gray;}
+.node-type-provider #overview, #pricing {color: gray;}
 
 #pricing div {padding: 0 !important;}
 #pricing table {width: 100% !important; margin-top: 10px !important;}
