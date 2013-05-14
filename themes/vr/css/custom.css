@@ -995,7 +995,7 @@ margin-top: 100px;
 .node-type-provider #edit-ureview {background: white; width: 715px; border-radius: 10px; margin: 20px auto; padding: 10px 0;}
 
 .node-type-provider .rate-caption {background: #e7e7e7; padding: 5px 0 5px 210px; width: 250px; margin: 0 0 0 130px; border-radius: 5px 5px 0 0;}
-.node-type-provider .edit-votes {width: 440px !important; background: #e7e7e7; padding: 0 10px 10px 10px; margin: 0 0 10px 130px; overflow: hidden; border-radius: 0 0 5px 5px;}
+.node-type-provider #edit-votes {width: 440px !important; background: #e7e7e7; padding: 0 10px 10px 10px; margin: 0 0 10px 130px; overflow: hidden; border-radius: 0 0 5px 5px;}
 
 
 
