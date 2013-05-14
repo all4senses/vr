@@ -933,7 +933,7 @@ margin-top: 100px;
 
 .node-type-provider #main .main-content h1{color: white; font-size: 28px; margin: 0; width: 830px; background: url("images/p_sprite_1.png") no-repeat 0 0 transparent; height: 65px; padding: 12px 0 0 20px;}
 
-.node-type-provider #write-revew-header{background: url("images/p_sprite_1.png") no-repeat 0 -78px transparent; height: 230px; position: relative;}
+.node-type-provider #write-revew-header{background: url("images/p_sprite_1.png") no-repeat -8px -78px transparent; height: 230px; position: relative;}
 
 .node-type-provider input#edit-submit--2{background: url("images/p_sprite_1.png") no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: 0 0 0 220px; cursor: pointer;}
 
