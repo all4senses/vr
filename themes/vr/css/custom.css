@@ -1011,6 +1011,19 @@ margin-top: 100px;
 .node-type-provider .form-actions {background: white; width: 715px; margin: 0 auto 10px; padding: 0 0 20px 0; border-radius: 0 0 10px 10px;}
 
 
+#pricing div {padding: 0 !important;}
+#pricing table {width: 100% !important; margin-top: 10px !important;}
+
+#pricing tbody tr {border: 10px solid #ede6de; border-bottom: none; border-top: none; background: #f2ede7; color: gray;}
+#pricing tr:nth-child(odd) {background: #dedede !important;}
+#pricing tbody tr:first-child {height: 50px; background: #748fd7 !important; border: 10px solid #456bd2; border-bottom: none;}
+
+#pricing tbody td {padding: 10px;}
+#pricing tbody tr:first-child td {color: white;}
+
+#pricing tbody tr:first-child td {color: white;}
+
+
 
 .data.tabs{/*clear: both; */margin-bottom: 10px; margin-top: 30px;}
 .data.tabs #tabs-1, .data.tabs #tabs-2{font-size: 15px;}
