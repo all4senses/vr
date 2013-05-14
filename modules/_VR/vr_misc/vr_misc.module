@@ -3025,14 +3025,17 @@ function vr_misc_testPage() {
   */
 
 
-  $size = getimagesize('http://test.voiprater.com/f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
+  $path = 'http://test.voiprater.com/f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png';
+  $path = str_replace(array('http://test.voiprater.com/', 'http://www.voiprater.com/'), '', $path);
+  
+  $size = getimagesize($path);
   dpm($size);
   
-  $size = getimagesize('/f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
-  dpm($size);
-  
-  $size = getimagesize('f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
-  dpm($size);
+//  $size = getimagesize('/f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
+//  dpm($size);
+//  
+//  $size = getimagesize('f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
+//  dpm($size);
   
   return $out . '<br>End of Test';
 }
