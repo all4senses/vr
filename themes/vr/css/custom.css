@@ -968,17 +968,25 @@ margin-top: 100px;
 
 .node-type-provider .ui-widget-content{border: none;}
 .node-type-provider .ui-widget-header{border: none; background: none;}
+/*
 .node-type-provider .ui-tabs .ui-tabs-panel{border: 1px solid lightgray; padding: 10px;}
 
-.node-type-provider .ui-state-default.ui-tabs-selected, .node-type-provider .ui-state-default.ui-tabs-selected.ui-state-hover{background: none; border: 1px solid lightgray;}
-.node-type-provider .ui-state-default{background: #f3fbf8; /*border: none;*/ font-size: 14px;}
+
+.node-type-provider .ui-state-default{background: #f3fbf8; font-size: 14px;}
 .node-type-provider .ui-state-default.ui-state-hover{background: #f3fbf8; border: 1px solif lightgray;}
 
 .node-type-provider .ui-state-default a {color: gray; font-weight: 600;}
 
 .node-type-provider #tabs-2, .node-type-provider #tabs-3 {font-size: 14px; color: gray;}
 .node-type-provider #tabs-2 span.title, .node-type-provider #tabs-3 span.title{font-weight: bold;}
+*/
 
+.node-type-provider .ui-tabs-panel {border-radius: 10px; background: #e8e8e8;}
+
+.node-type-provider .ui-tabs .ui-tabs-nav li {border-radius: 10px 10px 0 0; background: lightgray;}
+.node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected, 
+.node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected.ui-state-hover {background: gray;}
+.node-type-provider .ui-tabs .ui-tabs-nav li a{color: white;}
 
 
 .data.tabs{/*clear: both; */margin-bottom: 10px; margin-top: 30px;}
@@ -1045,12 +1053,6 @@ margin-top: 100px;
 #write-revew-header .rating_overall {position: absolute; width: 240px; top: 20px; color: white; right: 10px;}
 #write-revew-header .rating_overall .title{margin-right: 10px; float: left; font-weight: normal !important;}
 #write-revew-header .rating_overall .fivestar{margin-top: 2px;}
-
-.node-type-provider .ui-tabs-panel {border-radius: 10px; background: #e8e8e8;}
-
-.node-type-provider .ui-tabs .ui-tabs-nav li {border-radius: 10px 10px 0 0; background: lightgray;}
-.node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected {background: gray;}
-.node-type-provider .ui-tabs .ui-tabs-nav li a{color: white;}
 
 .bottom-clear{clear: both; display: block;}
 .node-type-provider .shadow{height: 45px;}
