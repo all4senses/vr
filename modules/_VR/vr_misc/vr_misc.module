@@ -3031,6 +3031,9 @@ function vr_misc_testPage() {
   $size = getimagesize('/f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
   dpm($size);
   
+  $size = getimagesize('f/styles/logo_provider_chart_main/public/p/logos/logo_8x8.png');
+  dpm($size);
+  
   return $out . '<br>End of Test';
 }
 
