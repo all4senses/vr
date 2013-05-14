@@ -3979,7 +3979,7 @@ function theme_vr_misc_image(array $variables) {
   if (/*!$user->uid &&*/ !$variables['width']) {
     $path = explode('?', $variables['path']);
     $path = $path[0];
-    $size = getimagesize($path);
+    $size = getimagesize(str_replace(array('http://test.voiprater.com/', 'http://www.voiprater.com/'), '', $path));
     $image = theme('image', array('width' => $size[0], 'height' => $size[1], 'path' => $variables['path'], 'alt' =>  $variables['alt'], 'title' => $variables['title'] ));  
   }
   else {
