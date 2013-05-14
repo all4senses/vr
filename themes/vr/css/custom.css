@@ -986,7 +986,7 @@ margin-top: 100px;
 .node-type-provider .ui-tabs .ui-tabs-nav li {border-radius: 10px 10px 0 0; background: #e8e8e8; padding: 0 20px;}
 .node-type-provider .ui-tabs .ui-tabs-nav li.ui-state-hover {background: lightgray; border: none;}
 .node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected, 
-.node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected.ui-state-hover {background: gray;}
+.node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected.ui-state-hover {background: gray; cursor: pointer;}
 .node-type-provider .ui-tabs .ui-tabs-nav li a{color: gray;}
 
 .node-type-provider .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, 
