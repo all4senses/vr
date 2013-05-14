@@ -1021,7 +1021,7 @@ margin-top: 100px;
 #pricing tbody td {padding: 10px;}
 #pricing tbody tr:first-child td {color: white;}
 
-#pricing tbody tr:first-child td {color: white;}
+#pricing tbody tr:last-child {border-bottom: 10px solid #ede6de;}
 
 
 
