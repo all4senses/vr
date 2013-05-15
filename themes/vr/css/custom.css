@@ -1103,7 +1103,8 @@ margin-top: 100px;
 #write-revew-header .voters.NA {left: 275px;}
 #write-revew-header .recommend.NA {left: 276px;}
 
-.node-type-provider #main .reviews .main-content {width: 730px;}
+.node-type-provider .reviews {overflow: hidden; background: white; padding: 10px; border-radius: 10px;}
+.node-type-provider #main .reviews .main-content {width: 710px;}
 
 
 
