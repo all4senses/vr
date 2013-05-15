@@ -172,7 +172,7 @@
                           <div class="vr_votes">
                             <?php 
                               $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
-                              echo '<div class="rating_overall">' . $stars_overall . ' <div class="count">(' . $node->vr_rating_overall . ')</div></div>';
+                              echo '<div class="rating_overall"><span class="title">Rating: ' . $node->vr_rating_overall . ' out of 5</span>' . $stars_overall . '</div>';
                             ?>
                           </div>
 
