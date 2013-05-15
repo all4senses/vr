@@ -1061,6 +1061,10 @@ margin-top: 100px;
 .vr_votes .caption{background: none repeat scroll 0 0 #478AFD; color: white; font-weight: bold; padding: 7px 0 6px 10px;}
 .vr_votes .caption span{float: left; margin-right: 10px;}
 .vr_votes .data{padding: 0 0 0px 0; border: 1px solid gray; border-top: none;}
+
+
+
+
 .vr_vote{clear: both; height: 30px;}
 .vr_vote .title{padding: 3px 0 3px 10px; float: left;}
 .vr_vote.even{background: #e9e9e9;}
@@ -1071,6 +1075,9 @@ margin-top: 100px;
 .node-type-provider .overall .text{float: left; width: 290px; /*margin-top: 90px;*/}
 .node-type-provider .overall .voters{margin-bottom: 5px;}
 .node-type-provider .overall .text .title{float: left; margin-right: 10px; font-weight: bold;}
+
+
+
 .star-big{float: right; width: 140px; background: url("images/star-big.png") no-repeat; height: 150px; margin-top: 40px; position: relative;}
 .star-big .count{font-size: 35px; font-weight: bold; left: 39px; position: absolute; top: 30px;}
 .star-big .descr{font-size: 12px; font-weight: bold; left: 35px; line-height: 13px; position: absolute; text-align: center; top: 73px; width: 60px;}
@@ -1080,16 +1087,16 @@ margin-top: 100px;
 
 
 
+.node-type-provider .votes_overall .title {float: left; margin-right: 10px;}
 
 #write-revew-header .voters .count,
 #write-revew-header .recommend .data {color: white;}
 #write-revew-header .recommend {position: absolute; top: 195px; color: black; left: 265px; width: 300px;}
 
-#write-revew-header .voters .title,
-#write-revew-header .recommend .title{float: left; margin-right: 10px;}
+
 
 #write-revew-header .rating_overall {position: absolute; width: 240px; top: 20px; color: white; right: 10px;}
-/*#write-revew-header*/ .rating_overall .title{margin-right: 10px; float: left; font-weight: normal !important;}
+/*#write-revew-header*/ .rating_overall .title{font-weight: normal !important;}
 #write-revew-header .rating_overall .fivestar{margin-top: 2px;}
 
 #write-revew-header .rating_overall.NA {width: 95px;}

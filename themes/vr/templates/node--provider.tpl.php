@@ -169,7 +169,7 @@
                 
                     <div id="tabs-2">
 
-                          <div class="vr_votes">
+                          <div class="votes_overall">
                             <?php 
                               $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
                               echo '<div class="rating_overall"><span class="title">Rating: ' . $node->vr_rating_overall . ' out of 5</span>' . $stars_overall . '</div>';
@@ -205,7 +205,7 @@
                   
                   <div id="write-revew-header">
                     
-
+                    <div class="votes_overall">
                       <?php 
                         if (!empty($node->vr_rating_overall)) {
                           $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
@@ -218,11 +218,8 @@
                           echo '<div class="voters NA"><div class="title">Number of Reviews: </div><div class="count">N/A</div></div>'; 
                           echo '<div class="recommend NA"><div class="title">Would recommend: </div><div class="data">N/A</div></div>'; 
                         }
-                          
-                          
-                        
                       ?>
-                    
+                    </div>
                   </div>
 
                   <?php 
