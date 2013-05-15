@@ -1105,9 +1105,9 @@ margin-top: 100px;
 
 .node-type-provider .reviews {overflow: hidden; background: white; padding: 10px; border-radius: 10px;}
 .node-type-provider #main .reviews .main-content {width: 710px;}
-.node-type-provider .reviews .form-item-sort-by .ui-selectmenu {width: 100px; height: 20px;}
-.node-type-provider .reviews .form-item-sort-order .ui-selectmenu {width: 70px; height: 20px;}
-.node-type-provider .reviews .form-item-items-per-page .ui-selectmenu {width: 65px; height: 20px;}
+.node-type-provider .reviews .form-item-sort-by .ui-selectmenu {width: 100px !important; height: 20px;}
+.node-type-provider .reviews .form-item-sort-order .ui-selectmenu {width: 70px !important; height: 20px;}
+.node-type-provider .reviews .form-item-items-per-page .ui-selectmenu {width: 65px !important; height: 20px;}
 
 
 
