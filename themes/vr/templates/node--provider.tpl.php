@@ -222,9 +222,9 @@
                           echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->vr_recommend . '% of Users' . '</div></div>'; 
                         }
                         else {
-                          echo '<div class="rating_overall"><span class="title">Rating: N/A</span></div>';
-                          echo '<div class="voters"><div class="title">Number of Reviews: </div><div class="count">N/A</div></div>'; 
-                          echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">N/A</div></div>'; 
+                          echo '<div class="rating_overall NA"><span class="title">Rating: N/A</span></div>';
+                          echo '<div class="voters NA"><div class="title">Number of Reviews: </div><div class="count">N/A</div></div>'; 
+                          echo '<div class="recommend NA"><div class="title">Would recommend: </div><div class="data">N/A</div></div>'; 
                         }
                           
                           
