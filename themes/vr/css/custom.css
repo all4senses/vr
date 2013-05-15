@@ -375,7 +375,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .block-views .view-id-providers .more-link{position: absolute; right: 0; top: 10px;}
 .block-views .view-id-providers .more-link a{color: #478AFD; font-size: 12px; font-weight: bold;}
 
-h2, h3{color: red; font-size: 28px; margin: 15px 0 5px 0;}
+h2, h3{font-size: 28px; margin: 15px 0 5px 0;}
 
 h1.preface,
 h2.preface{margin:0;}
