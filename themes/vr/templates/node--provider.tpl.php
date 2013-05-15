@@ -165,7 +165,7 @@
                 
                 
                 
-                <?php if (isset($content['vr_ratings']) && $content['vr_ratings']): ?>
+                <?php if (!empty($content['vr_ratings'])): ?>
                 
                     <div id="tabs-2">
 
@@ -188,9 +188,7 @@
                           </div>
 
 
-                        <?php 
-                          dpm($content);
-                          if (isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+                        <?php if (!empty($content['reviews_entity_view_1'])): ?>
                             <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' User Reviews' ?></h2>
                             <div class="reviews">
                               <div class="header">
