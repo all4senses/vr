@@ -183,7 +183,7 @@
                             
                             <div class="reviews">
                               <div class="header">
-                                <h2 class="button"><?php echo $node->field_p_name['und'][0]['value'], ' User Reviews' ?></h2>
+                                <h2><?php echo $node->field_p_name['und'][0]['value'], ' User Reviews' ?></h2>
                                 <a id="reviews"></a>
                               </div>
 
