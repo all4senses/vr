@@ -8,9 +8,6 @@
   <?php print $head; ?>
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
-  
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js" ></script>
-
   <?php print $styles; ?>
   <?php $args = arg(); 
         if ($args[0] == 'node' && ($args[1] == 'add' || isset($args[2]) && $args[2] == 'edit')) { $top = TRUE; print $scripts; } 
