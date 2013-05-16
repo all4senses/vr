@@ -3027,34 +3027,25 @@ function vr_misc_testPage() {
   
   drupal_add_library('system', 'ui.core');
   drupal_add_library('system', 'ui.widget');
-  drupal_add_library('system', 'ui.position');  
-  
-  drupal_add_library('system', 'ui.effects');
-  drupal_add_library('system', 'ui.accordion');
-  drupal_add_library('system', 'ui.draggable');
-  drupal_add_library('system', 'ui.droppable');
-  drupal_add_library('system', 'ui.selectable');
-  drupal_add_library('system', 'ui.mouse');
-  drupal_add_library('system', 'ui.sortable');
-  drupal_add_library('system', 'ui.slider');
+//  drupal_add_library('system', 'ui.position');  
+//  
+//  drupal_add_library('system', 'ui.effects');
+//  drupal_add_library('system', 'ui.accordion');
+//  drupal_add_library('system', 'ui.draggable');
+//  drupal_add_library('system', 'ui.droppable');
+//  drupal_add_library('system', 'ui.selectable');
+//  drupal_add_library('system', 'ui.mouse');
+//  drupal_add_library('system', 'ui.sortable');
+//  drupal_add_library('system', 'ui.slider');
   
   drupal_add_library('system', 'ui.tabs');
-  
-//  drupal_add_js('jQuery(document).ready(function(){
-//		jQuery("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
-//	});
-//', 'inline');
   
   $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
   drupal_add_js($path_to_custom_js . 'vr_homeBannerRotator.js');
   
   $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
-  //drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
+  drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
   
-  
-//  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js" ></script>
-
-
 $out .= '
 
 
