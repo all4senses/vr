@@ -3026,9 +3026,9 @@ function vr_misc_testPage() {
 
   //$module_path = drupal_get_path('module', 'vr_pages');
   
-//  drupal_add_library('system', 'ui.core');
-//  drupal_add_library('system', 'ui.widget');
-//  drupal_add_library('system', 'ui.position');  
+  drupal_add_library('system', 'ui.core');
+  drupal_add_library('system', 'ui.widget');
+  drupal_add_library('system', 'ui.position');  
 
   
   
