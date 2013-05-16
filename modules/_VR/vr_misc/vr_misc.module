@@ -3034,7 +3034,7 @@ function vr_misc_testPage() {
   
   drupal_add_library('system', 'ui.tabs');
   
-  drupal_add_js('$(document).ready(function(){
+  drupal_add_js('jQuery(document).ready(function(){
 		jQuery("#featured > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);
 	});
 ', 'inline');
