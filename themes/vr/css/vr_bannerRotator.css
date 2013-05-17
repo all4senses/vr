@@ -8,11 +8,10 @@
 	background:#fff;
   */
   
-  #featured ul.ui-tabs-nav
   width: 770px;
   position: relative;
   border: none;
-  height: 270px;
+  height: 280px;
   overflow: hidden;
   background: none;
 }
@@ -28,7 +27,7 @@
   
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 0 0;
   width: 290px;
   height: 250px;
   overflow: auto;
@@ -109,11 +108,13 @@
   
   width: 475px;
   height: 250px;
-  background: #999;
+  background: white;
   position: absolute;
   left: 255px;
   top: 0;
-  border-radius: 15px;
+  border-radius: 10px 0 0 10px;
+  border: 4px solid orange;
+  
 }
 #featured .ui-tabs-panel .info{ 
 	/*position:absolute; 
