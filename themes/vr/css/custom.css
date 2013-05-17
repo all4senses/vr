@@ -1566,7 +1566,7 @@ font-size: 15px;
 
 #block-vr-blocks-request-quote-v1 .ui-selectmenu {border-radius: 3px; height: 15px; padding: 0 0 6px 0; margin-bottom: 8px; background: white !important; font-size: 12px; font-family: arial;}
 
-#block-vr-blocks-request-quote-v1 a.ui-selectmenu {padding: 4PX 0 3px 0;}
+#block-vr-blocks-request-quote-v1 a.ui-selectmenu {padding: 4px 0 3px 0; width: 175px !important;}
 #block-vr-blocks-request-quote-v1 a.ui-selectmenu:hover{text-decoration: none; color: black;}
 
 #block-vr-blocks-request-quote-v1 .content a, #block-vr-blocks-request-quote-v1 .content .views-row a{background: none; text-indent: 0;}
@@ -1579,7 +1579,7 @@ font-size: 15px;
 #block-vr-blocks-request-quote-v1 .protected{background: url(/sites/all/themes/vr/css/images/sprite-0.png) no-repeat scroll 0 -17px white; bottom: 40px; height: 19px; right: 22px; position: absolute; width: 85px;}
 
 
-#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation{bottom: 0; left: 18px;}
+#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation{bottom: 0; left: 24px;}
 
 /*#block-vr-blocks-request-quote-v1 #requestQuoteFormWrapper #Navigation #next{background: url(/sites/all/themes/vr/css/images/quote-button-green-back.jpg) repeat-x scroll 0 0 transparent; border: none; cursor: pointer; width: 120px; color: white; padding: 6px 0 20px; border-radius: 5px; height: 30px;}*/
 
@@ -1828,6 +1828,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 /* Edit content link */
 #e {position: absolute; right: 20px; top: 116px; color: #0b75b6;}
 #e:hover {color: white; text-decoration: underline;}
+
+/* Default params for .ui-selectmenu */
+.ui-selectmenu {width: auto !important; padding: 0 10px 0 0;}
 
 .ui-selectmenu-menu li a, .ui-selectmenu-status {padding: 0px 10px; font-size: 12px;}
 .ui-selectmenu-open {border: 1px solid lightgray; border-radius: 5px;}
