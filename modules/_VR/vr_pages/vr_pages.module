@@ -1842,8 +1842,8 @@ function vr_pages_form_alter(&$form, &$form_state, $form_id) {
         $form['field_preface_bottom']['und'][$key]['field_preface_b_body']['und'][0]['#format'] = 'full_html'; // link Ckeditor
       }
       
-      if ($form['field_preface_key']['und'][0]['value']['#default_value'] != 'frontn') {
-        $form['field_preface_bottom']['#access'] = FALSE;
+      if ($form['field_preface_key']['und'][0]['value']['#default_value'] != 'front') {
+        $form['field_preface_middle']['#access'] = FALSE;
       }
       
     break; // End of case 'preface_node_form':
