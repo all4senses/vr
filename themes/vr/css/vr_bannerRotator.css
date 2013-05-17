@@ -29,7 +29,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 250px;
+  width: 290px;
   height: 250px;
   overflow: auto;
   overflow-x: hidden;
@@ -83,7 +83,7 @@
 }
 #featured li.ui-tabs-nav-item a:hover{ 
 	/*background:#f2f2f2; */
-  background: url("images/home_sprite_1.png") no-repeat 0 0 transparent;
+  /*background: url("images/home_sprite_1.png") no-repeat 0 0 transparent;*/
 }
 #featured li.ui-tabs-selected, #featured li.ui-tabs-active{ 
 	/*background:url('images/selected-item.gif') top left no-repeat;  */
@@ -91,6 +91,7 @@
 #featured ul.ui-tabs-nav li.ui-tabs-selected a, #featured ul.ui-tabs-nav li.ui-tabs-active a{ 
 	/*background:#ccc; */
   cursor: alias;
+  background: url("images/home_sprite_1.png") no-repeat 0 -60px transparent;
 }
 #featured .ui-tabs-panel{ 
   /*
@@ -102,7 +103,7 @@
   height: 250px;
   background: #999;
   position: absolute;
-  left: 260px;
+  left: 300px;
   top: 0;
 }
 #featured .ui-tabs-panel .info{ 
