@@ -86,14 +86,18 @@
       hide($content['links']);
       hide($content['field_tags']);
       
+      echo render($content['body']);
+      
       if (@$node->field_display_type['und'][0]['value'] != 1) {
         hide($content['field_preface_bottom']);
       }
       
+      
+      
       // Create a banner rotator on the home page from the field_preface_middle data.
       if (@$node->field_preface_key['und'][0]['value'] == 'front') {
         
-        dpm($content);
+        //dpm($content);
         
         hide($content['field_preface_middle']);
         
