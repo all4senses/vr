@@ -114,7 +114,7 @@
             dpm($value['field_preface_b_title'][0]['#markup']);
             dpm($value['field_preface_b_body'][0]['#markup']);
             
-            $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '"><span>' . $value['field_preface_b_title'][0]['#markup'] . '</span></a></li>';
+            $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '"><div>' . $value['field_preface_b_title'][0]['#markup'] . '</div></a></li>';
             $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value['field_preface_b_body'][0]['#markup'] . '</div></div>';
             
             break; // Here should be just one item, but with an undefined key.
