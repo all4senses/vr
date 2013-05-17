@@ -78,7 +78,7 @@
   height: 100%;
   text-decoration: none;
   color: white;
-  background: url("images/home_sprite_1.png") no-repeat 0 0 transparent;
+  background: url("images/home_sprite_1.png") no-repeat 0 -60px transparent;
   line-height: 20px;
   outline: none;
   width: 100%;
@@ -99,7 +99,7 @@
 #featured ul.ui-tabs-nav li.ui-tabs-selected a, #featured ul.ui-tabs-nav li.ui-tabs-active a{ 
 	/*background:#ccc; */
   cursor: alias;
-  background: url("images/home_sprite_1.png") no-repeat 0 -60px transparent;
+  background: url("images/home_sprite_1.png") no-repeat 0 0 transparent;
 }
 #featured .ui-tabs-panel{ 
   /*
