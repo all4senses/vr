@@ -1830,7 +1830,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #e:hover {color: white; text-decoration: underline;}
 
 /* Default params for .ui-selectmenu */
-.ui-selectmenu {width: auto !important; padding: 0 10px 0 0;}
+.ui-selectmenu {height: 20px; width: auto !important; padding: 0 10px 0 0;}
 
 .ui-selectmenu-menu li a, .ui-selectmenu-status {padding: 0px 10px; font-size: 12px;}
 .ui-selectmenu-open {border: 1px solid lightgray; border-radius: 5px;}
