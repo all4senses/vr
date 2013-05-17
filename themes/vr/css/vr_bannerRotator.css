@@ -11,7 +11,7 @@
   width: 770px;
   position: relative;
   border: none;
-  height: 280px;
+  /*height: 280px;*/
   overflow: hidden;
   background: none;
 }
@@ -29,7 +29,7 @@
   padding: 0;
   margin: 10px 0 0 0;
   width: 290px;
-  height: 250px;
+  height: 325px;
   overflow: auto;
   overflow-x: hidden;
   background: none;
@@ -107,7 +107,7 @@
   */
   
   width: 475px;
-  height: 250px;
+  height: 295px;
   background: white;
   position: absolute;
   left: 255px;
