@@ -92,7 +92,7 @@
       
       // Create a banner rotator on the home page from the field_preface_middle data.
       if (@$node->field_preface_key['und'][0]['value'] == 'front') {
-        dpm($content);
+
         hide($content['field_preface_middle']);
         
         drupal_add_library('system', 'ui.core');
@@ -111,9 +111,6 @@
         foreach ($middles as $key) {
           
           foreach($content['field_preface_middle'][$key]['entity']['field_collection_item'] as $value) {
-            dpm($value['field_preface_b_title'][0]['#markup']);
-            dpm($value['field_preface_b_body'][0]['#markup']);
-            
             $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '"><div>' . $value['field_preface_b_title'][0]['#markup'] . '</div></a></li>';
             $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value['field_preface_b_body'][0]['#markup'] . '</div></div>';
             
