@@ -3050,7 +3050,7 @@ function vr_misc_testPage() {
 $out .= '
 
 
-<div id="featured" >
+<div id="featured">
 		  <ul class="ui-tabs-nav">
 	        <li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-1"><a href="#fragment-1"><img src="images/image1-small.jpg" alt="" /><span>15+ Excellent High Speed Photographs</span></a></li>
 	        <li class="ui-tabs-nav-item" id="nav-fragment-2"><a href="#fragment-2"><img src="images/image2-small.jpg" alt="" /><span>20 Beautiful Long Exposure Photographs</span></a></li>

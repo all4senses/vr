@@ -105,15 +105,24 @@
         $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
         drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
 
+        $ui_tabs_nav = '';
+        $fragments = '';
         $middles = element_children($content['field_preface_middle']);
         foreach ($middles as $key) {
           
           foreach($content['field_preface_middle'][$key]['entity']['field_collection_item'] as $value) {
             dpm($value['field_preface_b_title'][0]['#markup']);
             dpm($value['field_preface_b_body'][0]['#markup']);
+            
+            $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '"><span>' . $value['field_preface_b_title'][0]['#markup'] . '</span></a></li>';
+            $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value['field_preface_b_body'][0]['#markup'] . '</div></div>';
+            
+            break; // Here should be just one item, but with an undefined key.
           }
           
         }
+        
+        echo '<div id="featured"><ul class="ui-tabs-nav">', $ui_tabs_nav, '</ul>', $fragments, '</div>';
         
       }
 
