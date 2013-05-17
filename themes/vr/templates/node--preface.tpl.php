@@ -86,11 +86,35 @@
       hide($content['links']);
       hide($content['field_tags']);
       
-      dpm($content);
-      dpm($node);
-      
       if (@$node->field_display_type['und'][0]['value'] != 1) {
         hide($content['field_preface_bottom']);
+      }
+      
+      // Create a banner rotator on the home page from the field_preface_middle data.
+      if (@$node->field_preface_key['und'][0]['value'] == 'front') {
+        dpm($content);
+        hide($content['field_preface_middle']);
+        
+        drupal_add_library('system', 'ui.core');
+        drupal_add_library('system', 'ui.widget');
+        drupal_add_library('system', 'ui.tabs');
+
+        $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
+        drupal_add_js($path_to_custom_js . 'vr_homeBannerRotator.js');
+
+        $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
+        drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
+
+        $middles = element_children($content['field_preface_middle']);
+        foreach ($middles as $key => $v) {
+          
+          foreach($v[0]['entity']['field_collection_item'] as $value) {
+            dpm($value['field_preface_b_title'][0]['#markup']);
+            dpm($value['field_preface_b_body'][0]['#markup']);
+          }
+          
+        }
+        
       }
 
       print render($content);
