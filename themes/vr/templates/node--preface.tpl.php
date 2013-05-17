@@ -106,9 +106,9 @@
         drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
 
         $middles = element_children($content['field_preface_middle']);
-        foreach ($middles as $key => $v) {
-          dpm($v);
-          foreach($v[0]['entity']['field_collection_item'] as $value) {
+        foreach ($middles as $key) {
+          
+          foreach($content['field_preface_middle'][$key]['entity']['field_collection_item'] as $value) {
             dpm($value['field_preface_b_title'][0]['#markup']);
             dpm($value['field_preface_b_body'][0]['#markup']);
           }
