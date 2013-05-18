@@ -29,7 +29,7 @@
   padding: 0;
   margin: 10px 0 0 0;
   width: 290px;
-  height: 325px;
+  height: 270px;
   overflow: auto;
   overflow-x: hidden;
   background: none;
@@ -98,7 +98,7 @@
 #featured ul.ui-tabs-nav li.ui-tabs-selected a, #featured ul.ui-tabs-nav li.ui-tabs-active a{ 
 	/*background:#ccc; */
   cursor: alias;
-  background: url("images/home_sprite_1.png") no-repeat 0 0 transparent;
+  background: url("images/home_sprite_2.png") no-repeat 0 0 transparent;
 }
 #featured .ui-tabs-panel{ 
   /*
@@ -107,7 +107,7 @@
   */
   
   width: 475px;
-  height: 295px;
+  height: 235px;
   background: white;
   position: absolute;
   left: 255px;
