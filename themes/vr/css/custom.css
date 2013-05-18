@@ -438,7 +438,7 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 .view-providers table thead th {background: #365ab7;}
 
 .view-display-id-page_chart_providers table thead th:first-child,
-.view-providers table thead th:first-child {border-radius: 10px 0 0 0;}
+.view-providers table thead th:first-child {border-radius: 10px 0 0 0; border-left: 4px solid transparent;}
 .view-display-id-page_chart_providers table thead th:last-child,
 .view-providers table thead th:last-child {border-radius: 0 10px 0 0;}
 
