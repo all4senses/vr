@@ -410,7 +410,7 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
 
 .view-display-id-page_chart_providers table,
-.view-providers table{margin-bottom: 0; border-radius: 10px 10px 0 0; overflow: hidden;}
+.view-providers table{margin-bottom: 0; /*border-radius: 10px 10px 0 0;*/ overflow: hidden;}
 
 .view-providers table tbody{border: 2px solid lightgray; border-right: 3px solid lightgray;}
 
@@ -432,7 +432,16 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 
 
 
-.view-providers thead{background: #365ab7;}
+/*.view-providers thead{background: #365ab7;}*/
+
+.view-display-id-page_chart_providers table thead th,
+.view-providers table thead th {background: #365ab7;}
+
+.view-display-id-page_chart_providers table thead th:first-child,
+.view-providers table thead th:first-child {border-radius: 10px 0 0 0;}
+.view-display-id-page_chart_providers table thead th:last-child,
+.view-providers table thead th:last-child {border-radius: 0 10px 0 0;}
+
 
 .view-display-id-page_chart_providers thead tr{border-bottom: 3px solid lightgray;}
 
