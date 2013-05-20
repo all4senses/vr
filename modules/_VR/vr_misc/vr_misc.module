@@ -5901,12 +5901,17 @@ function vr_misc_getHomeBlogPostsForBannerRotator() {
   $query = db_select('node', 'n');
   $query->fields('n', array('nid'));
   $query->condition('n.type', 'blog_post');
-  $query->orderBy('created', 'ASC');
+  $query->orderBy('created', 'DESC');
   $query->range(0, 2);
   $results = $query->execute()->fetchAllAssoc('nid');
 
   dpm($results);
-  
+  $blog_posts = '';
+  foreach($results as $nid => $value) {
+    $node = node_load($nid);
+    $blog_posts .= render(node_view($node, 'teaser'));
+  }
+  return $blog_posts;
 //  foreach($results as $result) {
 //    $result->link = array('link_title' => $result->name, 'href' => 'taxonomy/term/' . $result->tid);
 //    $tags_array[$result->tid] = $result;

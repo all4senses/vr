@@ -129,7 +129,7 @@
         $blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';
         $blog_fragment = '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">Blog content</div></div>';
         echo '<div id="featured"><ul class="ui-tabs-nav">', $ui_tabs_nav, $blog_tab, '</ul>', $fragments, $blog_fragment, '</div>';
-        vr_misc_getHomeBlogPostsForBannerRotator();
+        dpm(vr_misc_getHomeBlogPostsForBannerRotator());
       }
 
       
