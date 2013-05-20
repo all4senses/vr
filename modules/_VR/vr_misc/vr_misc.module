@@ -5902,7 +5902,7 @@ function vr_misc_getHomeBlogPostsForBannerRotator() {
   $query->fields('n', array('nid'));
   $query->condition('n.type', 'blog_post');
   $query->orderBy('created', 'ASC');
-  //$query->limit(2);
+  $query->range(0, 1);
   $results = $query->execute()->fetchAllAssoc('nid');
 
   dpm($results);
