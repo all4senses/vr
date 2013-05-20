@@ -5905,7 +5905,6 @@ function vr_misc_getHomeBlogPostsForBannerRotator() {
   $query->range(0, 2);
   $results = $query->execute()->fetchAllAssoc('nid');
 
-  dpm($results);
   $blog_posts = '';
   foreach($results as $nid => $value) {
     $node = node_load($nid);
