@@ -12,7 +12,7 @@
             $("#featured").tabs("rotate",0,true);  
           },  
           function() {  
-            $("#featured").tabs("rotate",5000,true);  
+            $("#featured").tabs("rotate",25000,true);  
           }  
       );  
        
