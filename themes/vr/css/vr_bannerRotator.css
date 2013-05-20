@@ -149,3 +149,10 @@
 #featured .ui-tabs-hide{ 
 	display:none; 
 }
+
+
+
+
+#featured .ui-tabs-panel .node-blog-post {
+width: 450px;
+}
