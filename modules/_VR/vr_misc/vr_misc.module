@@ -5891,3 +5891,26 @@ function vr_misc_sendMessageAndNewsletterSubscribe_form_submit(&$form, &$form_st
   
   drupal_goto(ltrim(@$_SERVER['REDIRECT_URL'], '/'), array('query' => array('nocache' => 1)));
 }
+
+
+/**
+ * Return 2 latest blog posts for the home banner rotator.
+ */
+function vr_misc_getHomeBlogPostsForBannerRotator() {
+  
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid'));
+  $query->condition('n.type', 'blog_post');
+  $query->orderBy('created', 'ASC');
+  $query->limit(2);
+  $results = $query->execute()->fetchAllAssoc('nid');
+
+  dpm($results);
+  
+//  foreach($results as $result) {
+//    $result->link = array('link_title' => $result->name, 'href' => 'taxonomy/term/' . $result->tid);
+//    $tags_array[$result->tid] = $result;
+//  }
+ 
+}
+
