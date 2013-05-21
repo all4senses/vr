@@ -1624,7 +1624,9 @@ font-size: 15px;
 #edit-s {margin-bottom: 30px;}
 
 #types-n-feat {float: left; margin-left: 45px;}
-#listpositions {float: left;}
+#types-n-feat #edit-field-p-types-und {margin-top: 20px;}
+#types-n-feat .form-type-checkbox {margin-bottom: 38px;}
+#listpositions {float: left; margin-top: 20px;}
 
 label[for="edit-field-p-types-und"] {color: #478AFD;}
  
