@@ -93,13 +93,14 @@
       }
       
       
+      hide($content['field_preface_middle']);
       global $user;
       // Create a banner rotator on the home page from the field_preface_middle data.
       if ($user->uid && @$node->field_preface_key['und'][0]['value'] == 'front') {
         
         //dpm($content);
         
-        hide($content['field_preface_middle']);
+        
         
         drupal_add_library('system', 'ui.core');
         drupal_add_library('system', 'ui.widget');
