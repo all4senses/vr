@@ -93,9 +93,9 @@
       }
       
       
-      
+      global $user;
       // Create a banner rotator on the home page from the field_preface_middle data.
-      if (@$node->field_preface_key['und'][0]['value'] == 'front') {
+      if ($user->uid && @$node->field_preface_key['und'][0]['value'] == 'front') {
         
         //dpm($content);
         
