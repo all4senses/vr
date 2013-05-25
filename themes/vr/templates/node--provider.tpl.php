@@ -59,20 +59,25 @@
                 <div id="organization" typeof="Organization">
                   
                   <?php 
-                  /* 
-                    <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] . '</span>')); ?></div> 
-                  */ ?>
-                  <div><?php echo '<div class="title">' . t('Founded') . ':</div>' . $node->p_data['info']['i_founded']; ?></div>
-                  <div><?php echo '<div class="title">' . t('Headquarters') . ':</div><div property="v:address">' . $node->p_data['info']['i_heads'] . '</div>'; ?></div>
-                  <div><?php echo '<div class="title">' . t('Service Availability') . ':</div>' . $node->p_data['info']['i_availability']; ?></div>
-                  <div>
-                    <?php 
-                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                        $goto_link_title = (isset($node->p_data['info']['i_web_display']) && $node->p_data['info']['i_web_display']) ? $node->p_data['info']['i_web_display'] : str_replace(array('http://', 'https://'), '', $node->p_data['info']['i_web']);
-                        echo '<div class="title">' . t('Website') . ':</div>' . vr_misc_getTrackingUrl($goto_link_title, NULL, NULL, NULL, NULL, array('key' => 'rel', 'value' => 'v:url'));
-                      }
-                      ?>
-                  </div>
+                    /* 
+                      <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] . '</span>')); ?></div> 
+                    */ 
+                    if (!empty($node->p_data['info']['i_founded'])) {
+                      echo '<div><div class="title">Founded:</div>', $node->p_data['info']['i_founded'], '</div>';
+                    }
+                    if (!empty($node->p_data['info']['i_heads'])) {
+                      echo '<div><div class="title">Headquarters:</div><div property="v:address">', $node->p_data['info']['i_heads'], '</div>';
+                    }
+                    if (!empty($node->p_data['info']['i_availability'])) {
+                      echo '<div><div class="title">Service Availability:</div>', $node->p_data['info']['i_availability'], '</div>';
+                    }
+
+                    if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                      $goto_link_title = (isset($node->p_data['info']['i_web_display']) && $node->p_data['info']['i_web_display']) ? $node->p_data['info']['i_web_display'] : str_replace(array('http://', 'https://'), '', $node->p_data['info']['i_web']);
+                      echo '<div><div class="title">Website:</div>', vr_misc_getTrackingUrl($goto_link_title, NULL, NULL, NULL, NULL, array('key' => 'rel', 'value' => 'v:url')), '</div>';
+                    }
+                  ?>
+                  
                   
                 </div>
                 
