@@ -3049,6 +3049,10 @@ function vr_misc_testPage() {
   curl_close($curl);
  
   dpm($data_from);
+  
+  dpm(gethostbyaddr('199.27.128.134'));
+  dpm(gethostbyaddr('50.62.82.224'));
+  
 
 
   
