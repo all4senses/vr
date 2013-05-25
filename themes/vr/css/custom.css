@@ -963,7 +963,7 @@ margin-top: 100px;
 
 
 .node-type-provider #main .main-content{padding: 0;}
-.node-type-provider #main .main-content .content{border:none; margin-top: 0; padding: 0; float: left;}
+.node-type-provider #main .main-content .content{border:none; margin-top: 0; padding: 0; float: left; position: static !important;}
 
 #basic-info{float: left; width: 240px; font-size: 12px; background: #e7e7e7; margin: 0 20px 0 0;}
 #basic-info .title{margin-right: 10px; font-weight: bold; float: left;}
