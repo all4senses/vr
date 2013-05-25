@@ -66,7 +66,7 @@
                       echo '<div><div class="title">Founded:</div>', $node->p_data['info']['i_founded'], '</div>';
                     }
                     if (!empty($node->p_data['info']['i_heads'])) {
-                      echo '<div><div class="title">Headquarters:</div><div property="v:address">', $node->p_data['info']['i_heads'], '</div>';
+                      echo '<div><div class="title">Headquarters:</div><div property="v:address">', $node->p_data['info']['i_heads'], '</div></div>';
                     }
                     if (!empty($node->p_data['info']['i_availability'])) {
                       echo '<div><div class="title">Service Availability:</div>', $node->p_data['info']['i_availability'], '</div>';
