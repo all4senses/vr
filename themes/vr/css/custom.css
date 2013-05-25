@@ -1187,7 +1187,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 .review-right .cons{float: right;}
 
 
-.node-review .links{bottom: 5px; position: absolute; right: 10px; text-align: right; width: 500px;}
+.node-review .links{bottom: 25px; position: absolute; right: 10px; text-align: right; width: 500px;}
 .node-type-review .links{bottom: 5px; position: absolute; right: 0; text-align: right; width: 500px;}
 .links .review-provider{white-space: nowrap;}
 .links .rlinks{float: right;}
@@ -1276,7 +1276,7 @@ h1.preface{color: #365ab7; font-size: 35px; line-height: normal;}
 
 
 /* Articles teasers */
-.node-teaser{margin-bottom: 0; float: left; width: 780px;}
+.node-teaser{margin-bottom: 0; float: left;}
 .node-teaser h2{display: block; overflow: hidden; position: static; text-indent: 0;}
 .node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
 
