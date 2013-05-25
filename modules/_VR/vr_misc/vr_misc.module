@@ -3026,7 +3026,7 @@ function vr_misc_testPage() {
 
   
   $data_to = array(
-    'op' => 'get2',
+    'op' => 'get providers',
   );
   
   $url = 'http://getvoip.com/r-share';
@@ -3052,7 +3052,15 @@ function vr_misc_testPage() {
   
   curl_close($curl);
  
+  
   dpm($data_from);
+  if (!is_array($data_from)) {
+    //Error
+  }
+  elseif ($data_from['error']) {
+    //Error
+  }
+  
   
 
 
