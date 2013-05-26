@@ -3026,7 +3026,7 @@ function vr_misc_testPage() {
 
   
   $data_to = array(
-    'op' => 'get providers',
+    'op' => 'get all reviews grouped by providers',// 'get providers',
   );
   
   $url = 'http://getvoip.com/r-share';
