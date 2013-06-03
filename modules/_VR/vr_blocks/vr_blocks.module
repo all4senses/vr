@@ -71,6 +71,12 @@ function vr_blocks_block_info() {
     'info' => 'Request a quote block v1 (sidebar 2 steps)',
     'cache' => DRUPAL_NO_CACHE,
   ); 
+  
+  $blocks['request_quote_v12'] = array(
+    'info' => 'Request a quote block v12 (sidebar 2 steps)with captcha',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   /*
   $blocks['send_msg_n_subscribe'] = array(
     'info' => 'Send a message and Newsletter Sign Up',
@@ -175,10 +181,17 @@ function vr_blocks_block_view($delta = '') {
       $block['content'] = vr_blocks_get_blogArchive();
       break; 
     */
+
     case 'request_quote_v1':
       $block['subject'] = 'Get FREE VoIP Quotes';
       $block['content'] = vr_blocks_get_requestQuote_block_v1();
       break;
+    
+    case 'request_quote_v12':
+      $block['subject'] = 'Get FREE VoIP Quotes';
+      $block['content'] = vr_blocks_get_requestQuote_block_v12();
+      break;
+    
     /*
     case 'send_msg_n_subscribe':
       $block['subject'] = '';// 'Send a message and Newsletter Sign Up';
@@ -573,7 +586,7 @@ function vr_blocks_get_accessToFootprintBanner() {
 
 
 /**
- * Block Request a quote with a multistep form v6.
+ * Block Request a quote with a multistep form v1 without captcha.
  */
 function vr_blocks_get_requestQuote_block_v1() {
   
@@ -604,6 +617,7 @@ function vr_blocks_get_requestQuote_block_v1() {
   $token = md5(time()); //drupal_get_token('test');
   $_SESSION['requestQuoteToken'] = $token;
 
+ 
   $out = '
    <div id="up">
       <!--<div class="guide"></div>-->
@@ -705,6 +719,209 @@ function vr_blocks_get_requestQuote_block_v1() {
                                 <div class="wrapper middle company">
                                     <input class="after" name="company" id="company" title="Company" />
                                 </div>
+                                
+
+
+
+                            <div class="bottom-clear"></div>
+                            
+          
+                            
+                            <!--<div id="on_error"></div>-->
+
+                            <div class="protected"></div>
+
+                    </div>
+
+
+
+
+
+                
+                </div>
+                
+                
+            
+                <div id="Navigation"> 							
+                        <input class="navigation_button" id="back" value="Back" type="reset" />
+                        <input class="navigation_button" id="next" value="Get Quotes" type="submit" />
+                </div>
+                
+                
+                <input type="hidden" name="token" value="' . $token . '" />
+                <input type="hidden" name="source" value="block" />
+                <input type="hidden" name="version" value="1" />
+                <input type="hidden" name="referrer" value="" />
+                <input type="hidden" name="url" value="" />
+                
+        </form>
+
+        <p id="data"></p>
+</div>
+<div class="block_footer"></div>
+  ';
+  
+  return $out;
+}
+
+
+/**
+ * Block Request a quote with a multistep form v12 - with captcha.
+ */
+function vr_blocks_get_requestQuote_block_v12() {
+  
+  drupal_add_library('system', 'ui.core');
+  drupal_add_library('system', 'ui.widget');
+  drupal_add_library('system', 'ui.position');  
+
+  drupal_add_js('sites/all/libraries/jquery.plugins/jquery.hint-with-password.js');
+  
+  $path_to_custom_js = drupal_get_path('module', 'vr_blocks') . '/js/';
+  drupal_add_js($path_to_custom_js . 'vr_requestquote_v1.js');
+  
+  $path_to_custom_js = 'sites/all/libraries/jquery.plugins/multipart_form/';
+  drupal_add_js($path_to_custom_js . 'jquery.form.js');
+  drupal_add_js($path_to_custom_js . 'jquery.validate.js');
+  drupal_add_js($path_to_custom_js . 'jquery.form.wizard-min.js');
+
+  
+  // works with bug (scroll to the bottom of the page on the first click on a select box), so use a drupal module selectmenu instead of that.
+  //drupal_add_js(drupal_get_path('module', 'selectmenu') . '/js/jquery.ui.selectmenu' . '/jquery.ui.selectmenu.js');
+  
+//  drupal_add_js('sites/all/libraries/jquery.plugins/ui/jquery.ui.selectmenu.js');
+  //drupal_add_css('sites/all/libraries/jquery.plugins/ui/themes/base/jquery.ui.selectmenu.css');
+  
+  
+  
+  // height: 140px; 
+  $token = md5(time()); //drupal_get_token('test');
+  $_SESSION['requestQuoteToken'] = $token;
+
+ 
+  $out = '
+   <div id="up">
+      <!--<div class="guide"></div>-->
+      <!--<img src="/sites/all/themes/vr/css/images/voipguide.png" />-->
+      <!--<img src="/sites/all/themes/vr/css/images/quote-pic-globe.png" />-->
+      <div class="text">
+        <ul>
+          <li>No Contracts & Easy Setup</li>
+          <li>Enterprise Phone Sytems</li>
+          <li class="last">Unlimited Calling & Faxing</li>
+        </ul>
+        <div class="guide-text">Plus a <strong>FREE</strong> VoIP Guide with Request</div>
+      </div>
+      <div class="bottom-clear"></div>
+   </div>
+   <div class="bottom-clear"></div>   
+   <div id="requestQuoteFormWrapper">
+        <div class="sending results" style="display: none;"></div>
+        <div class="success results" style="display: none;"></div>
+        <div class="fail results" style="display: none;">The Request has failed! <br>Something went wrong. <br>Please, contact the site administrator.</div>
+        
+        <form class="multipartForm bbq" method="post" action="/request" style="overflow: hidden;">
+
+                
+                <div id="fieldWrapper">
+                    
+                    <div class="step" id="questions_section">
+                           
+                                <div class="wrapper top first">
+                                  <div class="question">Lines needed:</div>
+                                  <select name="phones_amt" id="phones_amt" class="styled-select input required">
+                                    <!-- <option value="1 - 4">1 - 4</option> -->
+                                    <option value="1">1</option>
+                                    <option value="2 - 4">2 - 4</option>
+                                    <option selected="selected" value="5 - 10">5 - 10</option>
+                                    <option value="11 - 20">11 - 20</option>
+                                    <option value="21 - 50">21 - 50</option>
+                                    <option value="More than 50">More than 50</option>
+                                  </select>
+                                </div>
+
+                                <div class="wrapper top">
+                                  <div class="question">Service For:</div>
+                                  <select name="q_type" id="q_type" class="styled-select input required">
+                                    <option selected="selected" value="Business">Business</option>
+                                    <option value="Home">Home</option>
+                                    <option value="Home-Based Business">Home-Based Business</option>
+                                  </select>
+                                </div>
+
+
+                                <div class="wrapper top last">
+                                  <div class="question">Buying time frame:</div>
+                                  <select name="buying_time" id="buying_time" class="styled-select input required">
+                                    <!--<option value="">- Select a value -</option>-->
+                                    <option value="ASAP">ASAP</option>
+                                    <option value="1-3 Months">1-3 Months</option>
+                                    <option value="3-6 Months">3-6 Months</option>
+                                  </select>
+                                </div>
+                          
+
+                            <div class="bottom-clear"></div>
+                            
+                            <!--<div class="quote-pic"></div>-->
+                              
+                            <!--<div id="on_error"></div>-->
+
+                            <div class="step-notice">' . t('Step <span class="f">!first</span>of<span class="s">!second</span>', array('!first' => 1, '!second' => 2)) . '</div>
+                                
+
+                    </div>
+
+
+
+                    
+
+
+                    <div class="step" id="personal_data">
+                    
+           
+                            
+                                <div class="wrapper middle first">
+                                    <input class="after required firstname" name="firstname" id="firstname" title="First Name *" />
+                                </div>
+
+                                <div class="wrapper middle">
+                                    <input class="after required lastname" name="lastname" id="lastname" title="Last Name *" />
+                                </div>
+
+                                <div class="wrapper middle last">
+                                    <input class="after email required" name="email" id="email" title="Email Address *" />
+                                </div>
+
+                                <div class="wrapper middle phone">
+                                    <input class="after required phone" name="phone" id="phone" value="" title="Phone Number *" />
+                                </div>
+
+                                <div class="wrapper middle company">
+                                    <input class="after" name="company" id="company" title="Company" />
+                                </div>
+                                
+
+
+' 
+      
+    . 
+          
+          '<div class="gv-captcha">
+    <img id="siimage" style="border: 1px solid #000; margin-right: 15px" src="/securimage_show?sid=' . md5(uniqid()) . '" alt="CAPTCHA Image" align="left" />
+    <object id="play-btn" type="application/x-shockwave-flash" data="/sites/all/libraries/jquery.plugins/securimage/securimage_play.swf?bgcol=#ffffff&amp;icon_file=/sites/all/libraries/jquery.plugins/securimage/images/audio_icon.png&amp;audio_file=/sites/all/libraries/jquery.plugins/securimage/securimage_play.php" height="32" width="32">
+    <param name="movie" value="/sites/all/libraries/jquery.plugins/securimage/securimage_play.swf?bgcol=#ffffff&amp;icon_file=/sites/all/libraries/jquery.plugins/securimage/images/audio_icon.png&amp;audio_file=/sites/all/libraries/jquery.plugins/securimage/securimage_play.php" />
+    </object>
+
+    <a id="reload-btn" tabindex="-1" style="border-style: none;" href="#" title="Refresh Image" onclick="document.getElementById(' . "'siimage'" . ').src = ' . "'/securimage_show?sid='" . ' + Math.random(); this.blur(); return false"><img src="/sites/all/libraries/jquery.plugins/securimage/images/refresh.png" alt="Reload Image" height="32" width="32" onclick="this.blur()" align="bottom" border="0" /></a>
+    <div id="code">Enter Code*:</div>' . /* @$_SESSION["ctform"]["captcha_error"] .*/ '
+    <input type="text" class="required ct_captcha" id="ct_captcha" name="ct_captcha" size="12" maxlength="16" />
+  </div>'
+    
+    . 
+          ' 
+
+
+
 
                             <div class="bottom-clear"></div>
                             

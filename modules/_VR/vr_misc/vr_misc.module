@@ -18,6 +18,21 @@
  */
 function vr_misc_menu() {
  
+  $items['securimage_show'] = array(
+    'title' => 'Securimage',
+    'page callback' => 'vr_misc_securimage_show_ajax',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  $items['check_ctcaptcha'] = array(
+    'title' => 'Check CT Captcha',
+    'page callback' => 'vr_misc_checkCtCaptcha_ajax',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  
   
   $items['request'] = array(
     'title' => 'Make a request',
@@ -121,6 +136,49 @@ function vr_misc_menu() {
   return $items;
 }
 
+
+/**
+ * Returns a captcha image.
+ */
+function vr_misc_securimage_show_ajax() {
+
+  //require_once dirname(__FILE__) . '/securimage.php';
+  
+  // http://www.phpcaptcha.org/documentation/setting-options/
+  
+  require_once '/home/vradmin/public_html/sites/all/libraries/jquery.plugins/securimage/securimage.php';
+
+  //$img = new Securimage(array('captcha_type' => Securimage::SI_CAPTCHA_MATHEMATIC /* use math captcha */));
+  $img = new Securimage();
+  
+  $img->code_length = 3;
+  $img->num_lines = 0;
+
+  $img->show();  // outputs the image and content headers to the browser
+}
+
+
+/**
+ * Returns json result data with OK or error.
+ */
+function vr_misc_checkCtCaptcha_ajax() {
+  $status = TRUE;
+  $output = '';
+  
+  $post = array();
+  foreach ($_POST as $key => $value) {
+    $post[$key] = check_plain(strip_tags($value));
+  }
+
+  if ($post['op'] == 'get') {
+    $cap = $_SESSION['securimage_code_value']['default'];
+  }
+  else {
+    $cap = NULL;
+  }
+  
+  drupal_json_output(array('status' => $status, 'cap' => $cap));
+}
 
 
 /**
@@ -3026,7 +3084,7 @@ function vr_misc_testPage() {
 
   
   $data_to = array(
-    'op' => 'get all reviews grouped by providers',// 'get providers',
+    'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
   );
   
   $url = 'http://getvoip.com/r-share';
