@@ -1668,6 +1668,17 @@ font-size: 15px;
 
 
 
+/* Quote Block Captcha */
+
+.vr-captcha{margin: 0 0 0 20px; width: 200px; position: relative; height: 50px; clear: both;}
+.vr-captcha #siimage{border: 1px solid lightgray!important; width: 90px; height: 32px; position: absolute; top: 16px; left: 15px;}
+.vr-captcha #play-btn{width: 20px; height: 20px; display: none;}
+.vr-captcha #reload-btn{border-style: none; margin: 0; padding: 0; position: absolute; right: 2px; top: 16px;}
+.vr-captcha #reload-btn img{width: 12px; height: 12px; float: none;}
+.vr-captcha #code{color: gray; font-size: 9px; clear: both; margin-top: 7px; position: absolute; top: 10px; right: 20px;}
+#ct_captcha {background: white; position: absolute; top: 31px; height: 17px; width: 84px !important; left: 113px; font-size: 10px;}
+
+
 
 
 

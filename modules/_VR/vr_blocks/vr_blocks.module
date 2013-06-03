@@ -906,7 +906,7 @@ function vr_blocks_get_requestQuote_block_v12() {
       
     . 
           
-          '<div class="gv-captcha">
+          '<div class="vr-captcha">
     <img id="siimage" style="border: 1px solid #000; margin-right: 15px" src="/securimage_show?sid=' . md5(uniqid()) . '" alt="CAPTCHA Image" align="left" />
     <object id="play-btn" type="application/x-shockwave-flash" data="/sites/all/libraries/jquery.plugins/securimage/securimage_play.swf?bgcol=#ffffff&amp;icon_file=/sites/all/libraries/jquery.plugins/securimage/images/audio_icon.png&amp;audio_file=/sites/all/libraries/jquery.plugins/securimage/securimage_play.php" height="32" width="32">
     <param name="movie" value="/sites/all/libraries/jquery.plugins/securimage/securimage_play.swf?bgcol=#ffffff&amp;icon_file=/sites/all/libraries/jquery.plugins/securimage/images/audio_icon.png&amp;audio_file=/sites/all/libraries/jquery.plugins/securimage/securimage_play.php" />
