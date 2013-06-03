@@ -878,7 +878,16 @@ function vr_blocks_get_requestQuote_block_v12() {
                     <div class="step" id="personal_data">
                     
            
-                            
+                                
+                                <div id="up">
+                                  <div class="text">
+                                    <div class="guide-text">Plus a <strong>FREE</strong> VoIP Guide with Request</div>
+                                  </div>
+                                </div>
+                                <div class="bottom-clear"></div>   
+
+
+
                                 <div class="wrapper middle first">
                                     <input class="after required firstname" name="firstname" id="firstname" title="First Name *" />
                                 </div>
