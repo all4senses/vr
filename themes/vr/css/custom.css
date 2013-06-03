@@ -264,7 +264,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 
 #block-vr-blocks-request-quote .question{border-bottom: 1px solid #D5D4D4; font-size: 15px; margin: 10px 5px 15px; padding-bottom: 5px;}
 
-#requestQuoteFormWrapper .step{position: relative; font-size: 14px; height: 253px; overflow: hidden; border-radius: 0;}
+#requestQuoteFormWrapper .step{position: relative; font-size: 14px; height: 400px; overflow: hidden; border-radius: 0;}
 #requestQuoteFormWrapper .step#personal_info{padding-right: 7px;}
          
 /*#requestQuoteFormWrapper .ui-corner-all{border-radius: 0;}*/
@@ -1603,7 +1603,7 @@ font-size: 15px;
 #block-vr-blocks-request-quote-v12 #up .img{background: url("/sites/all/themes/vr/css/images/sprite-0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
 
 
-#block-vr-blocks-request-quote-v12 #requestQuoteFormWrapper{width: auto; height: 225px;}
+#block-vr-blocks-request-quote-v12 #requestQuoteFormWrapper{width: auto; height: 380px;}
 
 #block-vr-blocks-request-quote-v12 .step#questions_section .quote-pic {background: url("/sites/all/themes/vr/css/images/quote-pic-globe.png") no-repeat scroll 0 0 transparent; width: 95px; height: 100px; float: right;}
 
