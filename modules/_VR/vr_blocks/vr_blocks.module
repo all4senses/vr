@@ -799,21 +799,6 @@ function vr_blocks_get_requestQuote_block_v12() {
 
  
   $out = '
-   <div id="up">
-      <!--<div class="guide"></div>-->
-      <!--<img src="/sites/all/themes/vr/css/images/voipguide.png" />-->
-      <!--<img src="/sites/all/themes/vr/css/images/quote-pic-globe.png" />-->
-      <div class="text">
-        <ul>
-          <li>No Contracts & Easy Setup</li>
-          <li>Enterprise Phone Sytems</li>
-          <li class="last">Unlimited Calling & Faxing</li>
-        </ul>
-        <div class="guide-text">Plus a <strong>FREE</strong> VoIP Guide with Request</div>
-      </div>
-      <div class="bottom-clear"></div>
-   </div>
-   <div class="bottom-clear"></div>   
    <div id="requestQuoteFormWrapper">
         <div class="sending results" style="display: none;"></div>
         <div class="success results" style="display: none;"></div>
@@ -825,7 +810,21 @@ function vr_blocks_get_requestQuote_block_v12() {
                 <div id="fieldWrapper">
                     
                     <div class="step" id="questions_section">
-                           
+                                
+                                <div id="up">
+                                  <div class="text">
+                                    <ul>
+                                      <li>No Contracts & Easy Setup</li>
+                                      <li>Enterprise Phone Sytems</li>
+                                      <li class="last">Unlimited Calling & Faxing</li>
+                                    </ul>
+                                    <div class="guide-text">Plus a <strong>FREE</strong> VoIP Guide with Request</div>
+                                    </div>
+                                    <div class="bottom-clear"></div>
+                                  </div>
+                                <div class="bottom-clear"></div>   
+
+
                                 <div class="wrapper top first">
                                   <div class="question">Lines needed:</div>
                                   <select name="phones_amt" id="phones_amt" class="styled-select input required">
