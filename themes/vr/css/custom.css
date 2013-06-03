@@ -614,14 +614,13 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 .sidebar .block .content ul{list-style: none; padding: 0; margin: 0;}
 
 
-/*.sidebar .block .content a{color: #777777; font-size: 12px; padding: 4px 10px; display: block;}*/
 
 .sidebar .block .content .view-id-reviews .views-row a{background: url("images/sprite-2.png") no-repeat scroll 5px -796px transparent; padding: 7px 10px 10px 34px;}
 .sidebar .block .content a:hover{color: #478AFD; text-decoration: underline;}
 
 
 .sidebar .block .content a,
-.sidebar .block .content .views-row a{background: url("images/circle-arrow-right.png") no-repeat 0 3px; color: #959597; font-size: 15px; display: block; width: 205px; margin: 0 0 0px 15px; text-indent: 27px;}
+.sidebar .block .content .views-row a{background: url("images/circle-arrow-right.png") no-repeat 0 3px; color: #959597; font-size: 15px; display: block; margin: 0 0 0px 15px; text-indent: 27px;}
 
 
 .sidebar #block-views-articles-block-1 .views-row-last a{border: none;}
@@ -1624,7 +1623,7 @@ font-size: 15px;
 
 #block-vr-blocks-request-quote-v12 #personal_data .wrapper {margin: 3px 0;}
 
-#block-vr-blocks-request-quote-v12 .wrapper input{float: left; text-align: left; width: 235px; height: 18px; margin: 1px 0 2px 20px; padding: 2px 0 2px 10px; font-size: 12px; border-radius: 3px; background: white;} 
+#block-vr-blocks-request-quote-v12 .wrapper input{float: left; text-align: left; width: 235px; height: 21px; margin: 1px 0 3px 20px; padding: 2px 0 2px 10px; font-size: 12px; border-radius: 3px; background: white;} 
 #block-vr-blocks-request-quote-v12 .wrapper input.error {border: 1px solid red;}
 
 #block-vr-blocks-request-quote-v12 #personal_data .wrapper.first{margin-top: 3px;}
