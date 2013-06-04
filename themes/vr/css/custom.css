@@ -1660,11 +1660,12 @@ font-size: 15px;
 
 
 #block-vr-blocks-request-quote-v12 .results{margin: 0px auto; height: auto; width: 250px; color: gray;}
-#block-vr-blocks-request-quote-v12 .results .quote-final p{font-size: 12px; margin: 0; line-height: 16px; color: gray;}
+#block-vr-blocks-request-quote-v12 .results .quote-final p{font-size: 14px; margin: 0; line-height: 24px; color: gray;}
 #block-vr-blocks-request-quote-v12 .guide{background: url("/sites/all/themes/vr/css/images/quote-guide.jpg") no-repeat scroll 0 0 transparent; width: 70px; height: 80px; float: left;}
-#block-vr-blocks-request-quote-v12 .results .guide{font-size: 14px; width: 200px; background: none; text-indent: 0;}
+#block-vr-blocks-request-quote-v12 .results .guide{font-size: 16px; width: 200px; background: none; text-indent: 0; line-height: 24px; margin: 30px 0 20px 25px;}
 #block-vr-blocks-request-quote-v12 .results .guide img{width: 80px; padding: 0 63px; margin: 5px 0 0 0;}
 
+#requestQuoteFormWrapper .results .quote-final a {display: block; font-size: 13px; padding: 0; color: orange; background: none; text-indent: 0; margin-left: 0; font-weight: bold;}
 
 
 
