@@ -3138,7 +3138,7 @@ function vr_misc_remoteReviews_curl($data_to, &$out) {
     watchdog('Request for reviews', $error_message, NULL, WATCHDOG_WARNING);
   }
   
-  $out = $data_from->out;
+  $out = @$data_from->out;
   return $error_message;
 }
 
