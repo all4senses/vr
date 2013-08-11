@@ -3099,22 +3099,11 @@ function vr_misc_testPage() {
 }
 
 
+
 /**
- * Pull all changed (from the previous pullUpdate session) reviews and update them locally.
+ * Curl function especially for reviews fetching.
  */
-function vr_misc_remoteReviews_pullUpdate_all() {
-  
-  variable_set('vr_previous_pullUpdate_info', array('time' => 1370312524, 'fetched_reviews_amount' => 0));
-  
-  $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
-  $fetched_reviews_amount = 0;
-  
-  dpm($previous_pullUpdate_info);
-  
-  $data_to = array(
-    'op' => 'get all reviews grouped by providers changed after...', //'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
-    'changed_after' => $previous_pullUpdate_info['time'], //'1370312524',
-  );
+function vr_misc_remoteReviews_curl($data_to, &$out) {
   
   $url = 'http://getvoip.com/r-share';
   
@@ -3138,31 +3127,71 @@ function vr_misc_remoteReviews_pullUpdate_all() {
     }
   }
   curl_close($curl);
- 
-  // If error.
+  
+  $error_message = FALSE;
   if (!is_object($data_from)) {
     $error_message = 'Error while fetching data. ' . $data_from;
     watchdog('Request for reviews', $error_message, NULL, WATCHDOG_WARNING);
-    return $error_message;
   }
   elseif ($data_from->error) {
     $error_message = 'Error while fetching data. ' . $data_from->out;
     watchdog('Request for reviews', $error_message, NULL, WATCHDOG_WARNING);
-    return $error_message;
+  }
+  
+  $out = $data_from->out;
+  return $error_message;
+}
+
+
+/**
+ * Pull all changed (from the previous pullUpdate session) reviews and update them locally.
+ */
+function vr_misc_remoteReviews_pullUpdate_all() {
+  
+  $reviews_by_providers = NULL;
+  $review = NULL;
+  $fetched_reviews_amount = NULL;
+  
+  variable_set('vr_previous_pullUpdate_info', array('time' => 1370312524, 'fetched_reviews_amount' => 0));
+  
+  $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
+  
+  dpm($previous_pullUpdate_info);
+  
+//  $data_to = array(
+//    'op' => 'get all reviews grouped by providers changed after...', //'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
+//    'changed_after' => $previous_pullUpdate_info['time'], //'1370312524',
+//  );
+  
+  
+  // Fetch and exit If errors.
+  if ($error = vr_misc_remoteReviews_curl(array('op' => 'get all reviews grouped by providers changed after...', 'changed_after' => $previous_pullUpdate_info['time']), $reviews_by_providers)) {
+    return $error;
   }
 
   // Successful fetching. Proceed with updating the data locally if there are any changes.
-  dpm($data_from);
+  dpm($reviews_by_providers);
   
-  if (empty($data_from->out)) {
+  if (empty($reviews_by_providers)) {
     variable_set('vr_previous_pullUpdate_info', array('time' => time(), 'fetched_reviews_amount' => 0));
     watchdog('Request for reviews', 'No new or updated reviews have been fetched.', NULL, WATCHDOG_WARNING);
     return FALSE; // FALSE = Success.
   }
   
-  foreach ($data_from->out as $provider => $reviews) {
+  foreach ($reviews_by_providers as $provider => $reviews) {
     foreach ($reviews as $nid => $review) {
+      
+      // Get reviews one by one.
+      if ($error = vr_misc_remoteReviews_curl(array('op' => 'get review by nid', 'nid' => $nid), $review)) {
+        return $error;
+      }
+      
+      dpm($review);
+      
       $fetched_reviews_amount++;
+      
+      // Just testing.
+      break 2;
     }
   }
   
