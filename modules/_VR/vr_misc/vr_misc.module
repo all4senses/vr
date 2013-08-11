@@ -3139,14 +3139,25 @@ function vr_misc_remoteReviews_pullUpdate_all() {
  
   // If error.
   if (!is_object($data_from)) {
-    return 'Error while fetching data. ' . $data_from;
+    $error_message = 'Error while fetching data. ' . $data_from;
+    watchdog('Request for reviews', $error_message . ' ' . check_plain($_GET['q']) . ' '. print_r($_SERVER, TRUE) . ' ' . print_r($user, TRUE), NULL, WATCHDOG_WARNING);
+    return $error_message;
   }
   elseif ($data_from->error) {
-    return 'Error while fetching data. ' . $data_from->out;
+    $error_message = 'Error while fetching data. ' . $data_from->out;
+    watchdog('Request for reviews', $error_message . ' ' . check_plain($_GET['q']) . ' '. print_r($_SERVER, TRUE) . ' ' . print_r($user, TRUE), NULL, WATCHDOG_WARNING);
+    return $error_message;
   }
 
   // Successful fetching. Proceed with updating the data locally if there are any changes.
   dpm($data_from);
+  
+  if (empty($data_from->out)) {
+    variable_set('vr_previous_pullUpdate_info', array('time' => time(), 'fetched_reviews_amount' => 0));
+    watchdog('Request for reviews', 'No new or updated reviews have been fetched. ' . check_plain($_GET['q']) . ' '. print_r($_SERVER, TRUE) . ' ' . print_r($user, TRUE), NULL, WATCHDOG_WARNING);
+    return FALSE; // FALSE = Success.
+  }
+  
   foreach ($data_from->out as $provider => $reviews) {
     foreach ($reviews as $nid => $review) {
       $fetched_reviews_amount++;
@@ -3155,6 +3166,7 @@ function vr_misc_remoteReviews_pullUpdate_all() {
   
   
   variable_set('vr_previous_pullUpdate_info', array('time' => time(), 'fetched_reviews_amount' => $fetched_reviews_amount));
+  watchdog('Request for reviews', $fetched_reviews_amount . ' new or updated reviews have been fetched. ' . check_plain($_GET['q']) . ' '. print_r($_SERVER, TRUE) . ' ' . print_r($user, TRUE), NULL, WATCHDOG_WARNING);
   return FALSE; // FALSE = Success.
 }
 
