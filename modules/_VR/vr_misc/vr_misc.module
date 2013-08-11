@@ -3104,11 +3104,13 @@ function vr_misc_testPage() {
  */
 function vr_misc_remoteReviews_pullUpdate_all() {
   
-  $previous_pullUpdate_time = variable_get('vr_previous_pullUpdate_time');
+  $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
+  
+  dpm($previous_pullUpdate_time);
   
   $data_to = array(
     'op' => 'get all reviews grouped by providers changed after...', //'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
-    'changed_after' => '1370312524',
+    'changed_after' => $previous_pullUpdate_info['time'], //'1370312524',
   );
   
   $url = 'http://getvoip.com/r-share';
@@ -3144,9 +3146,14 @@ function vr_misc_remoteReviews_pullUpdate_all() {
 
   // Successful fetching. Proceed with updating the data locally if there are any changes.
   dpm($data_from);
+  foreach ($data_from->out as $provider => $reviews) {
+    foreach ($reviews as $nid => $review) {
+      $fetched_reviews_amount++;
+    }
+  }
   
   
-  variable_set('vr_previous_pullUpdate_time', time());
+  variable_set('vr_previous_pullUpdate_time', array('time' => time(), 'fetched_reviews_amount' => $fetched_reviews_amount));
   return FALSE; // FALSE = Success.
 }
 
