@@ -3105,6 +3105,7 @@ function vr_misc_testPage() {
 function vr_misc_remoteReviews_pullUpdate_all() {
   
   $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
+  $fetched_reviews_amount = 0;
   
   dpm($previous_pullUpdate_info);
   
