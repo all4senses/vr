@@ -3120,7 +3120,7 @@ function vr_misc_remoteReviews_curl($data_to, &$out) {
 ' . curl_error($curl);
   }
   else {
-    //dpm($data_from);
+    dpm($data_from);
     $string_data_from = $data_from;
     if(!$data_from = json_decode($data_from)) {
       $data_from = $string_data_from;
