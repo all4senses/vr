@@ -3152,7 +3152,7 @@ function vr_misc_remoteReviews_pullUpdate_all() {
   $review = NULL;
   $fetched_reviews_amount = NULL;
   
-  variable_set('vr_previous_pullUpdate_info', array('time' => 1370312524, 'fetched_reviews_amount' => 0));
+  variable_set('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
   
   $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
   
