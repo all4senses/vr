@@ -3169,6 +3169,11 @@ function vr_misc_remoteReviews_pullUpdate_all() {
   
   variable_set('vr_previous_pullUpdate_info', array('time' => time(), 'fetched_reviews_amount' => $fetched_reviews_amount));
   watchdog('Request for reviews', $fetched_reviews_amount . ' new or updated reviews have been fetched.', NULL, WATCHDOG_WARNING);
+  
+  $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
+  dpm($previous_pullUpdate_info);
+  
+  
   return FALSE; // FALSE = Success.
 }
 
