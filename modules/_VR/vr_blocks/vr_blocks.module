@@ -90,6 +90,8 @@ function vr_blocks_block_info() {
   );
   
   
+  
+  // Aquire blocks for all prefaces with defined bottoms.
   $query = db_select('node', 'n');
   $query->leftJoin('field_data_field_preface_bottom', 'pb', 'pb.entity_id = n.nid');
   $query->fields('pb', array('entity_id'));
@@ -102,9 +104,6 @@ function vr_blocks_block_info() {
   $prefaces_v_bottoms = $query->execute()->fetchAllAssoc('entity_id');
 
   variable_set('vr_prefaces_w_bottoms', serialize($prefaces_v_bottoms));
-  //dpm($prefaces_v_bottoms);
-  
-  
  
   foreach ($prefaces_v_bottoms as $prefaces_v_bottom) {
     
@@ -211,8 +210,8 @@ function vr_blocks_block_view($delta = '') {
     
     default:
       
+      // Aquire blocks for all prefaces with defined bottoms.
       $prefaces_v_bottoms = unserialize(variable_get('vr_prefaces_w_bottoms'));
-      //dpm($prefaces_v_bottoms);
  
       foreach ($prefaces_v_bottoms as $prefaces_v_bottom) {
 
@@ -223,13 +222,6 @@ function vr_blocks_block_view($delta = '') {
         
       }
 
-    
-      
-//    case 'b_provider_p_bottom':
-//      $block['subject'] = 'Bottom section of Business providers page preface';
-//      $block['content'] = vr_misc_getPrefaceBottomSection('page-compare-business-voip-providers');
-//      break;
-    
   }
 
   return $block;
