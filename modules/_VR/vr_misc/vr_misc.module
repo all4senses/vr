@@ -3086,7 +3086,12 @@ function vr_misc_testPage() {
   */
 
   
-  
+  if ($error = vr_misc_remoteReviews_pullUpdate_all()) {
+    $out .= $error;
+  }
+  else {
+    $out .= 'Successful updating remote reviews!';
+  }
 
 
   
