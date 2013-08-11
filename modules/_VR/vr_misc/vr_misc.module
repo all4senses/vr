@@ -3135,11 +3135,11 @@ function vr_misc_remoteReviews_pullUpdate_all() {
   curl_close($curl);
  
   // If error.
-  if (!is_array($data_from)) {
+  if (!is_object($data_from)) {
     return 'Error while fetching data. ' . $data_from;
   }
-  elseif ($data_from['error']) {
-    return 'Error while fetching data. ' . $data_from['out'];
+  elseif ($data_from->error) {
+    return 'Error while fetching data. ' . $data_from->out;
   }
 
   // Successful fetching. Proceed with updating the data locally if there are any changes.
