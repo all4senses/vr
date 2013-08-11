@@ -3086,9 +3086,23 @@ function vr_misc_testPage() {
   */
 
   
+  
+
+
+  
+  return $out . '<br>End of Test';
+}
+
+
+/**
+ * Pull all changed (from the previous pullUpdate session) reviews and update them locally.
+ */
+function vr_misc_remoteReviews_pullUpdate_all() {
+  
+  $previous_pullUpdate_time = variable_get('vr_previous_pullUpdate_time');
+  
   $data_to = array(
-    //'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
-    'op' => 'get all reviews grouped by providers changed after...',
+    'op' => 'get all reviews grouped by providers changed after...', //'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
     'changed_after' => '1370312524',
   );
   
@@ -3100,6 +3114,7 @@ function vr_misc_testPage() {
   curl_setopt($curl, CURLOPT_TIMEOUT, 300);
   curl_setopt($curl, CURLOPT_POST, TRUE);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $data_to);
+  
   $data_from = curl_exec($curl);
   if ($data_from === false) {
     $data_from = 'Error!!! 
@@ -3112,26 +3127,29 @@ function vr_misc_testPage() {
       $data_from = $string_data_from;
     }
   }
-  
   curl_close($curl);
  
-  
-  dpm($data_from);
+  // If error.
   if (!is_array($data_from)) {
-    //Error
+    return 'Error while fetching data. ' . $data_from;
   }
   elseif ($data_from['error']) {
-    //Error
+    return 'Error while fetching data. ' . $data_from['out'];
   }
-  
-  
 
-
+  // Successful fetching. Proceed with updating the data locally if there are any changes.
+  dpm($data_from);
   
-  return $out . '<br>End of Test';
+  
+  variable_set('vr_previous_pullUpdate_time', time());
+  return FALSE; // FALSE = Success.
 }
 
 
+
+/**
+ * Recreates reviews from the old site.
+ */
 function create_old_review($nid, $p_name, $rating, $user_ip) {
   $out = 'nid ' . $nid . ' ' . $p_name .  ' => review with ' . $rating . ' stars (' . $user_ip . ')
     
