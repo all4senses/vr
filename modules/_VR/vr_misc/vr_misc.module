@@ -3156,7 +3156,7 @@ function vr_misc_remoteReviews_pullUpdate_all() {
   
   $previous_pullUpdate_info = variable_get('vr_previous_pullUpdate_info', array('time' => 0, 'fetched_reviews_amount' => 0));
   
-  dpm($previous_pullUpdate_info);
+  //dpm($previous_pullUpdate_info);
   
 //  $data_to = array(
 //    'op' => 'get all reviews grouped by providers changed after...', //'op' => 'get all reviews grouped by providers',// 'get providers with reviews',
