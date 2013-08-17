@@ -138,6 +138,48 @@ function vr_misc_menu() {
 
 
 /**
+ * Builds banner rotator with front page preface's fields.
+ * 
+ * $content: $content variable from the preface's template.
+ */
+function vr_misc_buildBannerRotator_fromHomePreface($content) {
+        
+  //dpm($content);
+
+  drupal_add_library('system', 'ui.core');
+  drupal_add_library('system', 'ui.widget');
+  drupal_add_library('system', 'ui.tabs');
+
+  $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
+  drupal_add_js($path_to_custom_js . 'vr_homeBannerRotator.js');
+
+  $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
+  drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
+
+  
+  
+  
+  $ui_tabs_nav = '';
+  $fragments = '';
+  $middles = element_children($content['field_preface_middle']);
+  foreach ($middles as $key) {
+
+    foreach($content['field_preface_middle'][$key]['entity']['field_collection_item'] as $value) {
+      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
+      $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value['field_preface_b_body'][0]['#markup'] . '</div></div>';
+
+      break; // Here should be just one item, but with an undefined key.
+    }
+
+  }
+  $key += 1; 
+  $blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';
+  $blog_fragment = '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . vr_misc_getHomeBlogPostsForBannerRotator() . '</div></div>';
+  return '<div id="featured"><ul class="ui-tabs-nav">' . $ui_tabs_nav . $blog_tab . '</ul>' . $fragments . $blog_fragment . '</div>';
+}
+
+
+/**
  * Returns a captcha image.
  */
 function vr_misc_securimage_show_ajax() {
@@ -1645,7 +1687,7 @@ function vr_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   $last_pos = strrpos($teaser, ' ');
   
   // $teaser = substr_replace ($teaser, '...' . l(t('Read More'), 'node/' . $nid, array('attributes' => array('class' => array('more')))) , $last_pos, strlen($matches[1]));
-  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry »', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   $teaser = substr_replace ($teaser, '...', $last_pos);
   
   
@@ -3591,7 +3633,7 @@ function vr_misc_import_wp_blogPosts() {
     if (preg_match('/(.*)<!--more-->(.*)/s', $form_state['values']['body']['und'][0]['value'], $matches)) {
       //dpm($matches);
       ////$form_state['values']['body']['und'][0]['value'] = $matches[1] . /*'<span id="more"></span>' .*/ $matches[2];
-      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry »</a></p>';
+      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry В»</a></p>';
       $form_state['values']['body']['und'][0]['summary'] = $matches[1];
       //$body_full_markup = preg_replace('|\[video:.*(http.*)\]|', '<a href="$1"> [Watch a video] </a>', $body_full_markup);
     }
@@ -5427,7 +5469,7 @@ function vr_misc_getProviderQuickData($target, $data) {
         $out = theme('vr_misc_fivestar_static', array('rating' => $all_data_quick[$data['data']->nid]['erating'], 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
       }
       
-      $out .= '<div class="link">' . l('Read review »', 'node/' . $data['data']->nid) . '</div>';
+      $out .= '<div class="link">' . l('Read review В»', 'node/' . $data['data']->nid) . '</div>';
       
       return $out;
       

@@ -94,41 +94,11 @@
       
       
       hide($content['field_preface_middle']);
+      dpm($user);
       global $user;
       // Create a banner rotator on the home page from the field_preface_middle data.
       if ($user->uid && @$node->field_preface_key['und'][0]['value'] == 'front') {
-        
-        //dpm($content);
-        
-        
-        
-        drupal_add_library('system', 'ui.core');
-        drupal_add_library('system', 'ui.widget');
-        drupal_add_library('system', 'ui.tabs');
-
-        $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
-        drupal_add_js($path_to_custom_js . 'vr_homeBannerRotator.js');
-
-        $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
-        drupal_add_css($path_to_current_theme . 'vr_bannerRotator.css');
-
-        $ui_tabs_nav = '';
-        $fragments = '';
-        $middles = element_children($content['field_preface_middle']);
-        foreach ($middles as $key) {
-          
-          foreach($content['field_preface_middle'][$key]['entity']['field_collection_item'] as $value) {
-            $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
-            $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value['field_preface_b_body'][0]['#markup'] . '</div></div>';
-            
-            break; // Here should be just one item, but with an undefined key.
-          }
-          
-        }
-        $key += 1; 
-        $blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';
-        $blog_fragment = '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . vr_misc_getHomeBlogPostsForBannerRotator() . '</div></div>';
-        echo '<div id="featured"><ul class="ui-tabs-nav">', $ui_tabs_nav, $blog_tab, '</ul>', $fragments, $blog_fragment, '</div>';
+        echo vr_misc_buildBannerRotator_fromHomePreface($content);
       }
 
       
