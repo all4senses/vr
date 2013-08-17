@@ -94,8 +94,6 @@
       
       
       hide($content['field_preface_middle']);
-      dpm($user);
-      global $user;
       // Create a banner rotator on the home page from the field_preface_middle data.
       if ($user->uid && @$node->field_preface_key['und'][0]['value'] == 'front') {
         echo vr_misc_buildBannerRotator_fromHomePreface($content);
