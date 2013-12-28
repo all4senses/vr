@@ -414,8 +414,8 @@ function vr_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid 
       $subpath = $_SERVER['REDIRECT_URL'];
     }
   }
-  $trackingUrl = '<a href="/click' . $subpath . '" target = "_blank"' . ($a_class ? ' class="' . $a_class . '"' : '') . '>' . $title_or_wrapped_object . '</a>';
-  
+  $trackingUrl = '<a href="/click' . $subpath . '" target = "_blank"  rel="nofollow"' . ($a_class ? ' class="' . $a_class . '"' : '') . '>' . $title_or_wrapped_object . '</a>';
+  // example from GV return '<a href="/go' . $subpath . '" target = "_blank"' . ($a_attr ? ' ' . $a_attr['key'] . '="' . $a_attr['value'] . '"' : ' rel="nofollow"') . ($a_class ? ' class="' . $a_class . '"' : '') . '>' . $title_or_wrapped_object . '</a>';
   return $trackingUrl;
 }
 
@@ -492,7 +492,7 @@ function vr_misc_goToExternalUrl2() {
       $object_id = $p_data_quick->entity_id;
       $p_data_quick = unserialize($p_data_quick->field_p_data_quick_value);
       $object_name = $p_data_quick['name'];
-      $url = $p_data_quick['i_web'];
+      $url = (strpos($p_data_quick['i_web'], '://') ? $p_data_quick['i_web'] : 'http://' . $p_data_quick['i_web']); //$p_data_quick['i_web'];
     }
     
     
@@ -523,7 +523,7 @@ function vr_misc_goToExternalUrl2() {
               ))
               ->execute();
             
-            drupal_goto( (strpos($url, 'http') !== FALSE ? $url : 'http://' . $url), array('external' => TRUE), 301);
+            drupal_goto($url, array('external' => TRUE), 301);
         }
      
     
