@@ -1848,6 +1848,7 @@ function vr_misc_addSocialShareData_toPage($node) {
     $tags = array(
       
       // Add all rss feeds to the home page (exceot the main rss, which will be added to all pages).
+      /*
       'articles_rss' => array(
         '#tag' => 'link', 
         '#attributes' => array( 
@@ -1875,7 +1876,7 @@ function vr_misc_addSocialShareData_toPage($node) {
             'href' => 'http://www.voiprater.com/news/rss.xml',
         ),
       ),
-        
+      */ 
         
     );
     
@@ -1962,7 +1963,7 @@ function vr_misc_addSocialShareData_toPage($node) {
     $image = '/sites/all/themes/vr/css/images/voiprater-logo2-t.png';
   }
 
-  if (!strpos($image, '//www.voiprater.com')) {
+  if (!strpos($image, 'voiprater.com')) {
     $image = 'http://www.voiprater.com/' . ltrim($image, '/');
   }
 
