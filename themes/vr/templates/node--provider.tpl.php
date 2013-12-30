@@ -155,7 +155,7 @@
                     } 
                   ?>
                   
-                  <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li>
+                  <li><a href="#user-reviews"><?php echo 'Write Review'; ?></a></li>
                 </ul>
                 
  
@@ -209,7 +209,7 @@
                 
                 
                 
-                <div id="tabs-3">
+                <div id="user-reviews">
                   
                   <div id="write-revew-header">
                     
