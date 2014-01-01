@@ -7,7 +7,7 @@
       
       <div id="logo-block">
         <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Rater Home'; ?>" id="logo">VoIP Rater</a>
-        <div id="header-caption">2013 Best VoIP Provider Reviews. VoIP Service Ratings and Discount Codes</div>  
+        <div id="header-caption">2014 Best VoIP Provider Reviews. VoIP Service Ratings and Discount Codes</div>  
       </div>
       
       <?php 
@@ -151,7 +151,7 @@
 
       <!--<div id="in-touch"></div> -->
 
-      <div class="c">© 2004-2013 VoIP Rater</div>
+      <div class="c">© 2004-2014 VoIP Rater</div>
       
       <?php 
         echo render($page['footer']);
