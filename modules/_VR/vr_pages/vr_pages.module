@@ -4069,7 +4069,7 @@ function vr_pages_createRedirectionsInBulk_form($form, &$form_state) {
   }
   
   //$form['actions']['submit']['#submit'][] = 'gv_pages_trackClickReport_formSubmit';
-  //$form['#submit'][] = 'vn_pages_trackClickReport_formSubmit';
+  //$form['#submit'][] = 'vr_pages_trackClickReport_formSubmit';
   $form['#validate'][] = 'vr_pages_createRedirectionsInBulk_formValidate';
   
   //dpm($form);
@@ -4109,7 +4109,7 @@ function vr_pages_createRedirectionsInBulk_formValidate(&$form, &$form_state) {
     if ($uploaded == TRUE) {
       drupal_set_message(t('The file has been uploaded.'));
       
-      if (($handle = fopen(vn_misc_getPathFromStreamUri($file->uri), "r")) !== FALSE) {
+      if (($handle = fopen(vr_misc_getPathFromStreamUri($file->uri), "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             $file_data[] = $data;
         }
