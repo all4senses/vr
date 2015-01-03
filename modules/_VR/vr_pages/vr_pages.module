@@ -3402,8 +3402,8 @@ function vr_pages_node_view($node, $view_mode) {
 //          vr_pages_addRatingsToNodeThemed($editor, $votes);
 //          $node->editor = $editor;
 //        }
-        
-        $node->addProviderReviewForm = render(drupal_get_form('vr_pages_addProviderReview_form', $node));
+        $vr_pages_addProviderReview_form_temp = drupal_get_form('vr_pages_addProviderReview_form', $node);
+        $node->addProviderReviewForm = render($vr_pages_addProviderReview_form_temp);
         
         // Add tabs.
         $module_path = drupal_get_path('module', 'vr_pages');
@@ -4142,6 +4142,7 @@ function vr_pages_createRedirectionsInBulk($data) {
     $redirect->language = 'und'; //$path['original']['language'];
     // Check if the redirect exists before saving.
     $hash = redirect_hash($redirect);
+    
     if (!redirect_load_by_hash($hash)) {
       redirect_save($redirect);
     }
@@ -4155,3 +4156,39 @@ function vr_pages_createRedirectionsInBulk($data) {
   
 }
 
+
+
+
+/**
+ * Alter the list of redirects matching a certain source.
+ *
+ * @param $redirects
+ *   An array of redirect objects.
+ * @param $source
+ *   The source request path.
+ * @param $context
+ *   An array with the following key/value pairs:
+ *   - language: The language code of the source request.
+ *   - query: An array of the source request query string.
+ *
+ * @see redirect_load_by_source()
+ * @ingroup redirect_api_hooks
+ */
+function vr_pages_redirect_load_by_source_alter(array &$redirects, $source, array $context) {
+//  dpm($source);
+//  dpm($context);
+//  dpm($redirects);
+  foreach ($redirects as $rid => $redirect) {
+    
+    if (isset($context['query']['noredirect'])) {
+      unset($redirects[$rid]);
+    }
+    
+    // From API example
+//    if ($redirect->source !== $source) {
+//      // If the redirects to do not exactly match $source (e.g. case
+//      // insensitive matches), then remove them from the results.
+//      unset($redirects[$rid]);
+//    }
+  }
+}
